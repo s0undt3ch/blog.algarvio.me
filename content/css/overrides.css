@@ -1,0 +1,21 @@
+#aboutme img.img-thumbnail {
+  border: none;
+}
+
+span.strikethrough { text-decoration: line-through; }
+
+div.warning {
+  border: 1px solid red;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+div.warning p { padding: 5px; }
+div.warning p.admonition-title {
+  background-color: red;
+  padding: 5px;
+  padding-left: 15px;
+}
+
+
