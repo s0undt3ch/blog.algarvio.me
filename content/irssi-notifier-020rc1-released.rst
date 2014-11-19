@@ -7,6 +7,7 @@ Irssi Notifier 0.2.0RC1 Released
 :slug: irssi-notifier-020rc1-released
 :url: irssi-notifier-020rc1-released
 :save_as: irssi-notifier-020rc1-released/index.html
+
 **Irssi Notifier has just gone GUI with the 0.2.0RC1 release.**
 
 This is a release candidate to enable users to provide feedback on

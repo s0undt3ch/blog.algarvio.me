@@ -6,6 +6,7 @@ ChowMe TextPress Theme
 :slug: chowme-textpress-theme
 :url: chowme-textpress-theme
 :save_as: chowme-textpress-theme/index.html
+
 This was my first plugin for `TextPress`_. A theme to get my old blog looks into `TextPress`_.
 
 Here's a preview of it:
