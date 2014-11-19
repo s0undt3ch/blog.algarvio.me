@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>s0undt3ch's Blog</title><link href="https://blog.algarvio.me/" rel="alternate"></link><link href="https://blog.algarvio.me/feeds/python.atom.xml" rel="self"></link><id>https://blog.algarvio.me/</id><updated>2012-12-27T14:27:00+00:00</updated><entry><title>PyLint + Virtualenv</title><link href="https://blog.algarvio.me/2012/12/27/pylint-+-virtualenv" rel="alternate"></link><updated>2012-12-27T14:27:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2012-12-27:2012/12/27/pylint-+-virtualenv</id><summary type="html">&lt;p&gt;I don&amp;#8217;t have the time to write the full blog post, so, here&amp;#8217;s the&amp;nbsp;recipe!&lt;/p&gt;
 &lt;p&gt;On your pylint rcfile&amp;nbsp;setting:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;init-hook=&amp;quot;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;init-hook=&amp;quot;
      exec &amp;#39;aW1wb3J0IHN5cywgb3MKCmlmICdWSVJUVUFMX0VOVicgbm90IGluIG9zLmVudmlyb246CiAgICBz \
      eXMuZXhpdCgwKQoKdmVfZGlyID0gb3MuZW52aXJvblsnVklSVFVBTF9FTlYnXQp2ZV9kaXIgaW4g \
      c3lzLnBhdGggb3Igc3lzLnBhdGguaW5zZXJ0KDAsIHZlX2RpcikKYWN0aXZhdGVfdGhpcyA9IG9z \
@@ -11,8 +19,21 @@
      J1NjcmlwdHMnKSwgJ2FjdGl2YXRlX3RoaXMucHknKQoKZXhlY2ZpbGUoYWN0aXZhdGVfdGhpcywg \
      ZGljdChfX2ZpbGVfXz1hY3RpdmF0ZV90aGlzKSkK&amp;#39;.decode(&amp;#39;base64&amp;#39;)&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Don&amp;#8217;t be scared, the decoded version of the above&amp;nbsp;is:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Don&amp;#8217;t be scared, the decoded version of the above&amp;nbsp;is:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
 
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;VIRTUAL_ENV&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -27,13 +48,119 @@
 
 &lt;span class="nb"&gt;execfile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;activate_this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__file__&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;activate_this&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</summary><category term="PyLint"></category></entry><entry><title>Using gettext in compiled Qt ui files with PySide</title><link href="https://blog.algarvio.me/2012/01/23/using-gettext-in-compiled-qt-ui-files-with-pyside" rel="alternate"></link><updated>2012-01-23T21:12:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2012-01-23:2012/01/23/using-gettext-in-compiled-qt-ui-files-with-pyside</id><summary type="html">&lt;p&gt;This recipe is based on the PyQt recipe found &lt;a class="reference external" href="http://www.themacaque.com/?p=816"&gt;here&lt;/a&gt;.
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="PyLint"></category></entry><entry><title>Using gettext in compiled Qt ui files with PySide</title><link href="https://blog.algarvio.me/2012/01/23/using-gettext-in-compiled-qt-ui-files-with-pyside" rel="alternate"></link><updated>2012-01-23T21:12:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2012-01-23:2012/01/23/using-gettext-in-compiled-qt-ui-files-with-pyside</id><summary type="html">&lt;p&gt;This recipe is based on the PyQt recipe found &lt;a class="reference external" href="http://www.themacaque.com/?p=816"&gt;here&lt;/a&gt;.
 This is just the &lt;a class="reference external" href="http://www.pyside.org/"&gt;PySide&lt;/a&gt; port of&amp;nbsp;it.&lt;/p&gt;
 &lt;p&gt;In some cases you might find yourself in the situation of wanting to use
 gettext in a &lt;a class="reference external" href="http://www.pyside.org/"&gt;PySide&lt;/a&gt; project in which you have &lt;tt class="docutils literal"&gt;.ui&lt;/tt&gt; files generated using&amp;nbsp;QtDesigner.&lt;/p&gt;
 &lt;p&gt;For those kind of situations is a good idea to extend the &lt;a class="reference external" href="http://www.pyside.org/"&gt;PySide&lt;/a&gt; compiler.
 The following example shows how to do so in a distutils&amp;nbsp;command.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CompileUI&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Command&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CompileUI&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Command&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Build PyQt (.ui) files and resources.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
     &lt;span class="n"&gt;description&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;build PySide Qt GUIs (.ui).&amp;quot;&lt;/span&gt;
@@ -141,7 +268,7 @@ The following example shows how to do so in a distutils&amp;nbsp;command.&lt;/p&
             &lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;warn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;You need to have pyside-tools installed in order to &amp;quot;&lt;/span&gt;
                      &lt;span class="s"&gt;&amp;quot;compile .ui files.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And there you have&amp;nbsp;it!&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;And there you have&amp;nbsp;it!&lt;/p&gt;
 </summary><category term="PySide"></category><category term="Qt"></category></entry><entry><title>IPython and virtualenv</title><link href="https://blog.algarvio.me/2009/1/29/ipython-and-virtualenv" rel="alternate"></link><updated>2009-01-29T00:48:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2009-01-29:2009/1/29/ipython-and-virtualenv</id><summary type="html">&lt;p&gt;Recently I started developing my python applications using &lt;a class="reference external" href="http://pypi.python.org/pypi/virtualenv"&gt;virtualenv&lt;/a&gt; so that I don&amp;#8217;t
 clutter up the system&amp;#8217;s python installation with non-system python&amp;nbsp;packages.&lt;/p&gt;
 &lt;p&gt;Everything was good until I wanted to use &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt; instead of python&amp;#8217;s&amp;nbsp;shell&amp;#8230;&lt;/p&gt;
@@ -151,7 +278,20 @@ clutter up the system&amp;#8217;s python installation with non-system python&amp
 &lt;p&gt;In order to solve this issue, &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt; comes along to save the&amp;nbsp;day.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt; provides a way to include additional code to be executed when &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt;&amp;#8216;s shell is&amp;nbsp;started.&lt;/p&gt;
 &lt;p&gt;First, the small script that allows &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt; to get &lt;a class="reference external" href="http://pypi.python.org/pypi/virtualenv"&gt;virtualenv&lt;/a&gt;&amp;#8216;s packages into its &lt;tt class="docutils literal"&gt;sys.path&lt;/tt&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;site&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;site&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;environ&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;os.path&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;join&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;version_info&lt;/span&gt;
@@ -166,19 +306,23 @@ clutter up the system&amp;#8217;s python installation with non-system python&amp
     &lt;span class="k"&gt;del&lt;/span&gt; &lt;span class="n"&gt;virtual_env&lt;/span&gt;
 &lt;span class="k"&gt;del&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version_info&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Save the above snippet into your user&amp;#8217;s &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt; configuration directory &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.ipython&lt;/span&gt;&lt;/tt&gt;.
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Save the above snippet into your user&amp;#8217;s &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt; configuration directory &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.ipython&lt;/span&gt;&lt;/tt&gt;.
 Save it has, for example, &lt;tt class="docutils literal"&gt;virtualenv.py&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;Now, as &lt;a class="reference external" href="http://ipython.scipy.org/moin/Cookbook/UserConfigFile"&gt;IPython&amp;#8217;s documentation&lt;/a&gt;  suggests, edit &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.ipython/ipy_user_conf.py&lt;/span&gt;&lt;/tt&gt; and somewhere
 inside the &lt;tt class="docutils literal"&gt;main()&lt;/tt&gt; function&amp;nbsp;add:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;execf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;~/.ipython/virtualenv.py&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, the next time you start &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt;&amp;#8216;s shell,  if you&amp;#8217;ve activated your &lt;a class="reference external" href="http://pypi.python.org/pypi/virtualenv"&gt;virtualenv&lt;/a&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now, the next time you start &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt;&amp;#8216;s shell,  if you&amp;#8217;ve activated your &lt;a class="reference external" href="http://pypi.python.org/pypi/virtualenv"&gt;virtualenv&lt;/a&gt;
 environment, you’ll also get the packages from there&amp;nbsp;too.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;Develop:user@machine:~&lt;span class="nv"&gt;$ &lt;/span&gt;ipython
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;Develop:user@machine:~&lt;span class="nv"&gt;$ &lt;/span&gt;ipython
 VIRTUAL_ENV -&amp;gt; /home/user/.virtual_python/lib/python2.5/site-packages
 
 In &lt;span class="o"&gt;[&lt;/span&gt;1&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And that&amp;#8217;s it, there you have your &lt;a class="reference external" href="http://pypi.python.org/pypi/virtualenv"&gt;virtualenv&lt;/a&gt; aware &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt;&amp;nbsp;shell!&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;And that&amp;#8217;s it, there you have your &lt;a class="reference external" href="http://pypi.python.org/pypi/virtualenv"&gt;virtualenv&lt;/a&gt; aware &lt;a class="reference external" href="http://ipython.scipy.org/"&gt;IPython&lt;/a&gt;&amp;nbsp;shell!&lt;/p&gt;
 </summary><category term="IPython"></category><category term="virtualenv"></category></entry></feed>

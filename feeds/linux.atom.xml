@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>s0undt3ch's Blog</title><link href="https://blog.algarvio.me/" rel="alternate"></link><link href="https://blog.algarvio.me/feeds/linux.atom.xml" rel="self"></link><id>https://blog.algarvio.me/</id><updated>2011-07-03T08:40:00+01:00</updated><entry><title>Postgres Cron Backups</title><link href="https://blog.algarvio.me/2011/07/03/postgres-cron-backups" rel="alternate"></link><updated>2011-07-03T08:40:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-07-03:2011/07/03/postgres-cron-backups</id><summary type="html">&lt;p&gt;So, I found myself with the need to make automatic backups of my postgres&amp;nbsp;databases&amp;#8230;&lt;/p&gt;
 &lt;p&gt;After some &lt;a class="reference external" href="http://www.google.com"&gt;Google&lt;/a&gt;&amp;#8216;ing and reading of some peoples recipes, here&amp;#8217;s&amp;nbsp;mine.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash&lt;/span&gt;
 &lt;span class="nv"&gt;PG_USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;postgres&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;SUDO_CMD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;which sudo&lt;span class="k"&gt;)&lt;/span&gt;
 &lt;span class="nv"&gt;SUDO&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$SUDO_CMD&lt;/span&gt;&lt;span class="s2"&gt; -u &lt;/span&gt;&lt;span class="nv"&gt;$PG_USER&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
@@ -48,26 +93,27 @@
         &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----&amp;quot;&lt;/span&gt;
   &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</summary><category term="Postgres Bash Backup"></category></entry><entry><title>Maverick Bluedevil and Null pin Mouse’s</title><link href="https://blog.algarvio.me/2011/02/18/maverick-bluedevil-and-null-pin-mouse-s" rel="alternate"></link><updated>2011-02-18T19:58:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-02-18:2011/02/18/maverick-bluedevil-and-null-pin-mouse-s</id><summary type="html">&lt;p&gt;So, I was trying out Kubuntu Maevrick and found out that my bluetooth mouse did not work
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="Postgres Bash Backup"></category></entry><entry><title>Maverick Bluedevil and Null pin Mouse’s</title><link href="https://blog.algarvio.me/2011/02/18/maverick-bluedevil-and-null-pin-mouse-s" rel="alternate"></link><updated>2011-02-18T19:58:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-02-18:2011/02/18/maverick-bluedevil-and-null-pin-mouse-s</id><summary type="html">&lt;p&gt;So, I was trying out Kubuntu Maevrick and found out that my bluetooth mouse did not work
 anymore as it previously did with&amp;nbsp;Jaunty&amp;#8230;&lt;/p&gt;
 &lt;p&gt;The search for the holy grail was not that easy, many posts said to get
 the source and build it&amp;nbsp;yourself&amp;#8230;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;hmm&amp;#8230;. this is a fresh install… I don’t want to start trashing it
 already&amp;#8230;.&amp;nbsp;;)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Well, there’s a solution, add the backports to your &lt;tt class="docutils literal"&gt;sources.list&lt;/tt&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;deb http://archive.ubuntu.com/ubuntu maverick-backports universe
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;deb http://archive.ubuntu.com/ubuntu maverick-backports universe
 deb-src http://archive.ubuntu.com/ubuntu maverick-backport universe
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Update your packages&amp;nbsp;list:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get update
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Update your packages&amp;nbsp;list:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get update
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Get the new bluedevil, the one which will handle &lt;tt class="docutils literal"&gt;null&lt;/tt&gt; pin devices like my&amp;nbsp;mouse:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get upgrade
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Get the new bluedevil, the one which will handle &lt;tt class="docutils literal"&gt;null&lt;/tt&gt; pin devices like my&amp;nbsp;mouse:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get upgrade
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Restart&amp;nbsp;bluetooth:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo /etc/init.d/bluetooth restart
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Restart&amp;nbsp;bluetooth:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;sudo /etc/init.d/bluetooth restart
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, adding a new device will work as supposed&amp;nbsp;;)&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now, adding a new device will work as supposed&amp;nbsp;;)&lt;/p&gt;
 </summary><category term="bluedevil"></category><category term="Bluetooth"></category><category term="Kubuntu"></category></entry><entry><title>DavMail Monit HowTo</title><link href="https://blog.algarvio.me/2011/02/16/davmail-monit-howto" rel="alternate"></link><updated>2011-02-16T19:42:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-02-16:2011/02/16/davmail-monit-howto</id><summary type="html">&lt;p&gt;I recently started to monitor my servers with &lt;a class="reference external" href="http://mmonit.com/monit/"&gt;monit&lt;/a&gt;.
 As such, I started creating scripts for all services that needed monitoring until I
 got stuck on one of them &lt;a class="reference external" href="http://davmail.sourceforge.net/"&gt;DavMail&lt;/a&gt;. It did not
@@ -80,28 +126,33 @@ a way to change the process name of a
 &lt;p&gt;The solution I found was &lt;a class="reference external" href="http://wrapper.tanukisoftware.com/&amp;gt;"&gt;Java Service Wrapper&lt;/a&gt; and bellow are the steps
 on how to use&amp;nbsp;it.&lt;/p&gt;
 &lt;p&gt;First of all, download the debian DavMail&amp;nbsp;package:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;wget http://sourceforge.net/projects/davmail/files/davmail/3.8.8/davmail_3.8.8-1608-1_all.deb/download &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;wget http://sourceforge.net/projects/davmail/files/davmail/3.8.8/davmail_3.8.8-1608-1_all.deb/download &lt;span class="se"&gt;\&lt;/span&gt;
   -O davmail_3.8.8-1608-1_all.deb
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Since this is to be installed on a headless server, we need to remove
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Since this is to be installed on a headless server, we need to remove
 some of the dependencies of the&amp;nbsp;package:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;dpkg -e davmail_3.8.8-1608-1_all.deb
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;dpkg -e davmail_3.8.8-1608-1_all.deb
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now you’ll have a &lt;span class="caps"&gt;DEBIAN&lt;/span&gt; directory, &lt;tt class="docutils literal"&gt;cd&lt;/tt&gt; into&amp;nbsp;it:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;DEBIAN
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now you’ll have a &lt;span class="caps"&gt;DEBIAN&lt;/span&gt; directory, &lt;tt class="docutils literal"&gt;cd&lt;/tt&gt; into&amp;nbsp;it:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;DEBIAN
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now edit the control&amp;nbsp;file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;vi control
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now edit the control&amp;nbsp;file:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;vi control
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Delete the line which starts with &lt;tt class="docutils literal"&gt;Depends:&lt;/tt&gt;, save and exit. Now we’ll
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Delete the line which starts with &lt;tt class="docutils literal"&gt;Depends:&lt;/tt&gt;, save and exit. Now we’ll
 have to update the package with the new control&amp;nbsp;file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;tar -czvf control.tar.gz *
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;tar -czvf control.tar.gz *
 mv control.tar.gz ../
 &lt;span class="nb"&gt;cd&lt;/span&gt; ../
 ar r davmail_3.8.8-1608-1_all.deb control.tar.gz
 mv davmail_3.8.8-1608-1_all.deb davmail_3.8.8-1608-01_all.deb
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now install the new&amp;nbsp;package:&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now install the new&amp;nbsp;package:&lt;/p&gt;
 &lt;p&gt;..code-block::&amp;nbsp;bash&lt;/p&gt;
 &lt;blockquote&gt;
 dpkg -i davmail_3.8.8-1608-01_all.deb&lt;/blockquote&gt;
@@ -110,14 +161,23 @@ dpkg -i davmail_3.8.8-1608-01_all.deb&lt;/blockquote&gt;
 &lt;p&gt;Now comes the wrapper part. Download the community debian package from
 &lt;a class="reference external" href="http://wrapper.tanukisoftware.com/doc/english/download.jsp#stable"&gt;here&lt;/a&gt;.
 For&amp;nbsp;example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;wget http://wrapper.tanukisoftware.com/download/3.5.7/wrapper-linux-x86-64-3.5.7.tar.gz
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;wget http://wrapper.tanukisoftware.com/download/3.5.7/wrapper-linux-x86-64-3.5.7.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Unpack&amp;nbsp;it&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;tar zxvf wrapper-linux-x86-64-3.5.7.tar.gz
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Unpack&amp;nbsp;it&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;tar zxvf wrapper-linux-x86-64-3.5.7.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The method I followed is the &lt;a class="reference external" href="http://wrapper.tanukisoftware.com/doc/english/integrate-simple-nix.html"&gt;Simple App Wrapper&lt;/a&gt;.
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;The method I followed is the &lt;a class="reference external" href="http://wrapper.tanukisoftware.com/doc/english/integrate-simple-nix.html"&gt;Simple App Wrapper&lt;/a&gt;.
 So in &lt;em&gt;baby&lt;/em&gt;&amp;nbsp;steps…:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;wrapper-linux-x86-64-3.5.7/
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;wrapper-linux-x86-64-3.5.7/
 mkdir /usr/share/davmail/bin
 mkdir /usr/share/davmail/conf
 cp bin/wrapper /usr/share/davmail/bin/davmail
@@ -128,11 +188,30 @@ mv src/conf/wrapper.conf.in /usr/share/davmail/conf/wrapper.conf
 mkdir /var/run/davmail
 chown mail:mail /var/run/davmail
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, let’s edit some&amp;nbsp;files:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;vi /usr/share/davmail/bin/davmail-laucher
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now, let’s edit some&amp;nbsp;files:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;vi /usr/share/davmail/bin/davmail-laucher
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Here’s what I&amp;nbsp;changed:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Application&lt;/span&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Here’s what I&amp;nbsp;changed:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Application&lt;/span&gt;
 &lt;span class="nv"&gt;APP_NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;davmail&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;APP_LONG_NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;DAVMail Exchange Gateway&amp;quot;&lt;/span&gt;
 
@@ -153,10 +232,58 @@ chown mail:mail /var/run/davmail
 &lt;span class="c"&gt;#  port needs to be allocated prior to the user being changed.&lt;/span&gt;
 &lt;span class="nv"&gt;RUN_AS_USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;mail
 &lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;vi /usr/share/davmail/conf/wrapper.conf
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;vi /usr/share/davmail/conf/wrapper.conf
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Here’s what I&amp;nbsp;changed:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Java&lt;/span&gt; &lt;span class="n"&gt;Main&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;must&lt;/span&gt; &lt;span class="n"&gt;implement&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;WrapperListener&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Here’s what I&amp;nbsp;changed:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Java&lt;/span&gt; &lt;span class="n"&gt;Main&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;must&lt;/span&gt; &lt;span class="n"&gt;implement&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;WrapperListener&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt;
 &lt;span class="err"&gt;#  &lt;/span&gt;&lt;span class="nc"&gt;or&lt;/span&gt; &lt;span class="n"&gt;guarantee&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;WrapperManager&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;is&lt;/span&gt; &lt;span class="n"&gt;initialized&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;Helper&lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;  &lt;span class="n"&gt;classes&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="n"&gt;provided&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;See&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;Integration&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;  &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;documentation&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;details&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
@@ -206,22 +333,30 @@ chown mail:mail /var/run/davmail
 &lt;span class="err"&gt;#&lt;/span&gt;  &lt;span class="n"&gt;files&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="n"&gt;deleted&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="n"&gt;implies&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;span class="n"&gt;wrapper&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;logfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;maxfiles&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Let&amp;#8217;s test&amp;nbsp;it:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;/usr/share/davmail/bin/davmail-launcher start
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Let&amp;#8217;s test&amp;nbsp;it:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;/usr/share/davmail/bin/davmail-launcher start
 Starting DAVMail Exchange Gateway...
 Waiting &lt;span class="k"&gt;for&lt;/span&gt; DAVMail Exchange Gateway.......
 running: PID:13569
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;It&amp;#8217;s&amp;nbsp;running!!!!&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;It&amp;#8217;s&amp;nbsp;running!!!!&lt;/p&gt;
 &lt;p&gt;Now, the monit configuration&amp;nbsp;file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;check process davmail with pidfile /var/run/davmail/davmail.pid
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;check process davmail with pidfile /var/run/davmail/davmail.pid
     group mail
     start program = &amp;quot;/usr/share/davmail/bin/davmail-launcher start&amp;quot;
     stop  program = &amp;quot;/usr/share/davmail/bin/davmail-launcher stop&amp;quot;
     if failed host YOUR_SERVER_PUBLIC_FQDN port IMAP_PORT protocol imap then restart
     if 5 restarts within 5 cycles then timeout
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Make sure you replace &lt;tt class="docutils literal"&gt;YOUR_SERVER_PUBLIC_FQDN&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;IMAP_PORT&lt;/tt&gt; with
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Make sure you replace &lt;tt class="docutils literal"&gt;YOUR_SERVER_PUBLIC_FQDN&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;IMAP_PORT&lt;/tt&gt; with
 what’s you’ve setup on your &lt;tt class="docutils literal"&gt;davmail.properties&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;For the sake of completeness, here’s my &lt;tt class="docutils literal"&gt;davmail.properties&lt;/tt&gt;,
 obviously obscured where needed&amp;nbsp;:)&lt;/p&gt;
@@ -271,9 +406,9 @@ proprietary drivers, Kubuntu won. I was ready to stop using
 &lt;cite&gt;compiz &amp;lt;http://compiz-fusion.org/&amp;gt;&lt;/cite&gt; once more&amp;nbsp;:&lt;/p&gt;
 &lt;p&gt;So, after &lt;a class="reference external" href="http://www.google.com"&gt;google’ing&lt;/a&gt; a bit, I found a &lt;a class="reference external" href="http://mebentley.blogspot.com/2009/03/upgrading-to-jaunty-kill-fglrx.html"&gt;post&lt;/a&gt; that encouraged me to follow that path.
 The first step was to un-install the &lt;span class="caps"&gt;ATI&lt;/span&gt;&amp;nbsp;drivers:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get remove --purge xorg-driver-fglrx fglrx-kernel-source
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get remove --purge xorg-driver-fglrx fglrx-kernel-source
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After that, the &lt;a class="reference external" href="http://mebentley.blogspot.com/2009/03/upgrading-to-jaunty-kill-fglrx.html"&gt;post&lt;/a&gt; suggested a reboot, and so I did. I was no longer able to get Xorg up
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;After that, the &lt;a class="reference external" href="http://mebentley.blogspot.com/2009/03/upgrading-to-jaunty-kill-fglrx.html"&gt;post&lt;/a&gt; suggested a reboot, and so I did. I was no longer able to get Xorg up
 and&amp;nbsp;running!&lt;/p&gt;
 &lt;p&gt;There was a step missing, edit &lt;tt class="docutils literal"&gt;/etc/X11/xorg.conf&lt;/tt&gt; and change the
 driver from &lt;tt class="docutils literal"&gt;fglrx&lt;/tt&gt; to &lt;tt class="docutils literal"&gt;ati&lt;/tt&gt;.&lt;/p&gt;
@@ -291,10 +426,16 @@ you’re dropping support!? This laptop is not 2 years old!!!! Now&amp;nbsp;What
 &lt;p&gt;If I could, believe me, I’d buy a new laptop and would make &lt;strong&gt;&lt;span class="caps"&gt;SURE&lt;/span&gt;&lt;/strong&gt;
 there wasn’t anything &lt;span class="caps"&gt;ATI&lt;/span&gt; inside, in fact, be sure that you won’t
 &lt;strong&gt;&lt;span class="caps"&gt;EVER&lt;/span&gt;&lt;/strong&gt; again see a penny from&amp;nbsp;me!!!!&lt;/p&gt;
-</summary><category term="ati"></category></entry><entry><title>Rotating Trac Logs</title><link href="https://blog.algarvio.me/2007/Dez/19/rotating-trac-logs" rel="alternate"></link><updated>2007-12-19T16:49:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-12-19:2007/Dez/19/rotating-trac-logs</id><summary type="html">&lt;p&gt;So, you&amp;#8217;re like me and like to have &lt;a class="reference external" href="http://trac.edgewall.org/"&gt;trac&lt;/a&gt; constantly logging to file and you hate those files getting&amp;nbsp;huge?&lt;/p&gt;
+</summary><category term="ati"></category></entry><entry><title>Rotating Trac Logs</title><link href="https://blog.algarvio.me/rotating-trac-logs" rel="alternate"></link><updated>2007-12-19T16:49:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-12-19:rotating-trac-logs</id><summary type="html">&lt;p&gt;So, you&amp;#8217;re like me and like to have &lt;a class="reference external" href="http://trac.edgewall.org/"&gt;trac&lt;/a&gt; constantly logging to file and you hate those files getting&amp;nbsp;huge?&lt;/p&gt;
 &lt;p&gt;It is assumed that you keep all your &lt;a class="reference external" href="http://trac.edgewall.org/"&gt;trac&lt;/a&gt; environments on the same base directory, for example &lt;tt class="docutils literal"&gt;/var/lib/trac/&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;Here&amp;#8217;s a simple logrotate config file(normaly under &lt;tt class="docutils literal"&gt;/etc/logrotate.d/&lt;/tt&gt;):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; /var/lib/trac/*/log/trac.log &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; /var/lib/trac/*/log/trac.log &lt;span class="o"&gt;{&lt;/span&gt;
    weekly
    rotate 7
    missingok
@@ -302,8 +443,8 @@ there wasn’t anything &lt;span class="caps"&gt;ATI&lt;/span&gt; inside, in fac
    compress
 &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;I hope you enjoy this simple&amp;nbsp;solution.&lt;/p&gt;
-</summary><category term="Linux"></category><category term="Trac"></category></entry><entry><title>ZTE MF622 USB Modem Under Linux</title><link href="https://blog.algarvio.me/2007/Nov/30/zte-mf622-usb-modem-under-linux" rel="alternate"></link><updated>2007-11-30T09:40:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-11-30:2007/Nov/30/zte-mf622-usb-modem-under-linux</id><summary type="html">&lt;p&gt;I recently bought a 3G wireless card to use with my laptop, a &lt;span class="caps"&gt;ZTE&lt;/span&gt;, model &lt;span class="caps"&gt;MF622&lt;/span&gt;.
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;I hope you enjoy this simple&amp;nbsp;solution.&lt;/p&gt;
+</summary><category term="Linux"></category><category term="Trac"></category></entry><entry><title>ZTE MF622 USB Modem Under Linux</title><link href="https://blog.algarvio.me/zte-mf622-usb-modem-under-linux" rel="alternate"></link><updated>2007-11-30T09:40:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-11-30:zte-mf622-usb-modem-under-linux</id><summary type="html">&lt;p&gt;I recently bought a 3G wireless card to use with my laptop, a &lt;span class="caps"&gt;ZTE&lt;/span&gt;, model &lt;span class="caps"&gt;MF622&lt;/span&gt;.
 Since the first time I tried Linux, also the first time I encountered this kind
 of problems with my &lt;span class="caps"&gt;USB&lt;/span&gt; &lt;span class="caps"&gt;ADSL&lt;/span&gt; modem, and this being an &lt;span class="caps"&gt;USB&lt;/span&gt; modem also, I knew I was going to have&amp;nbsp;troubles.&lt;/p&gt;
 &lt;p&gt;At first I tried &lt;a class="reference external" href="http://www.draisberghof.de/usb_modeswitch/"&gt;&lt;span class="caps"&gt;USB&lt;/span&gt; ModeSwitch&lt;/a&gt;  which has experimental support for &lt;span class="caps"&gt;ZTE&lt;/span&gt;&amp;#8217;s &lt;span class="caps"&gt;MF620&lt;/span&gt; model with no luck.
@@ -315,7 +456,32 @@ to the modem configuration. &lt;strong&gt;Still&lt;/strong&gt;, no&amp;nbsp;luck
 &lt;a class="reference external" href="http://www.freedesktop.org/wiki/Software/hal"&gt;&lt;span class="caps"&gt;HAL&lt;/span&gt;&lt;/a&gt; was waiting for the device to settle down and guess what!? After a few seconds, the device
 changed itself to the modem configuration. All I needed now was to automate this&amp;nbsp;procedure.&lt;/p&gt;
 &lt;p&gt;Here&amp;#8217;s the &lt;strong&gt;udev&lt;/strong&gt; script that does the&amp;nbsp;job:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;ACTION!&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;GOTO&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ZTE_End&amp;quot;&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;ACTION!&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;GOTO&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ZTE_End&amp;quot;&lt;/span&gt;
 
 &lt;span class="c"&gt;# Is this the ZeroCD device?&lt;/span&gt;
 &lt;span class="nv"&gt;SUBSYSTEM&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;usb&amp;quot;&lt;/span&gt;, SYSFS&lt;span class="o"&gt;{&lt;/span&gt;idProduct&lt;span class="o"&gt;}==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;2000&amp;quot;&lt;/span&gt;,
@@ -342,14 +508,14 @@ RUN+&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/sbin/m
 
 &lt;span class="nv"&gt;LABEL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ZTE_End&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Save this file as &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/udev.d/15-zte-mf622.rules&lt;/span&gt;&lt;/tt&gt; for example(this path is a good one under&amp;nbsp;(K)Ubuntu).&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Save this file as &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/udev.d/15-zte-mf622.rules&lt;/span&gt;&lt;/tt&gt; for example(this path is a good one under&amp;nbsp;(K)Ubuntu).&lt;/p&gt;
 &lt;p&gt;The next time you plug-in the modem, at first, the &lt;tt class="docutils literal"&gt;usb_storage&lt;/tt&gt; module gets removed. After a few seconds,
 since the modem is not being handled like a storage device, it&amp;#8217;ll switch to the modem configuration. At this
 stage we tell &lt;a class="reference external" href="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"&gt;&lt;span class="caps"&gt;UDEV&lt;/span&gt;&lt;/a&gt; to load the &lt;tt class="docutils literal"&gt;usbserial&lt;/tt&gt; kernel module with the vendor and product id&amp;#8217;s and you&amp;#8217;ll get
 3 &lt;tt class="docutils literal"&gt;ttyUSB&lt;/tt&gt; devices. The &lt;tt class="docutils literal"&gt;/dev/ttyUSB0&lt;/tt&gt; will be the one you should use to make a&amp;nbsp;connection.&lt;/p&gt;
 &lt;p&gt;You can now point &lt;tt class="docutils literal"&gt;ppp&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;wvdial&lt;/tt&gt; to that device a start the connection, or, you might also want to check
 &lt;a class="reference external" href="http://umtsmon.sourceforge.net/"&gt;UMTSmon&lt;/a&gt;, this is an application suited for these kind of&amp;nbsp;modems.&lt;/p&gt;
-</summary><category term="Linux"></category></entry><entry><title>Irssi Notifier 0.2.0RC5 Released</title><link href="https://blog.algarvio.me/2007/Nov/05/irssi-notifier-020rc5-released" rel="alternate"></link><updated>2007-11-05T22:00:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-11-05:2007/Nov/05/irssi-notifier-020rc5-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier 0.2.&lt;span class="caps"&gt;0RC5&lt;/span&gt;&amp;nbsp;Released&lt;/strong&gt;&lt;/p&gt;
+</summary><category term="Linux"></category></entry><entry><title>Irssi Notifier 0.2.0RC5 Released</title><link href="https://blog.algarvio.me/irssi-notifier-020rc5-released" rel="alternate"></link><updated>2007-11-05T22:00:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-11-05:irssi-notifier-020rc5-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier 0.2.&lt;span class="caps"&gt;0RC5&lt;/span&gt;&amp;nbsp;Released&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This is hopefully the last release candidate before the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; version&amp;nbsp;release.&lt;/p&gt;
 &lt;p&gt;For detailed info on all changes please see the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/browser/trunk/ChangeLog"&gt;ChangeLog&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you&amp;#8217;d like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
@@ -358,7 +524,7 @@ translation for, and I’ll gladly provide you a file for translation which will
 included in the next&amp;nbsp;release.&lt;/p&gt;
 &lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be&amp;nbsp;fixed.&lt;/p&gt;
 &lt;p&gt;Happy use of &lt;strong&gt;Irssi Notitifier&lt;/strong&gt;.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC4 Released</title><link href="https://blog.algarvio.me/2007/Out/18/irssi-notifier-020rc4-released" rel="alternate"></link><updated>2007-10-18T18:21:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-10-18:2007/Out/18/irssi-notifier-020rc4-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier 0.2.&lt;span class="caps"&gt;0RC4&lt;/span&gt;&amp;nbsp;Released&lt;/strong&gt;&lt;/p&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC4 Released</title><link href="https://blog.algarvio.me/irssi-notifier-020rc4-released" rel="alternate"></link><updated>2007-10-18T18:21:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-10-18:irssi-notifier-020rc4-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier 0.2.&lt;span class="caps"&gt;0RC4&lt;/span&gt;&amp;nbsp;Released&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This is hopefully the last release candidate before the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; version&amp;nbsp;release.&lt;/p&gt;
 &lt;p&gt;It includes some bug fixes and some missing files on the distributed&amp;nbsp;egg.&lt;/p&gt;
 &lt;p&gt;For detailed info on all changes please see the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/browser/trunk/ChangeLog"&gt;ChangeLog&lt;/a&gt;.&lt;/p&gt;
@@ -368,7 +534,7 @@ translation for, and I’ll gladly provide you a file for translation which will
 included in the next&amp;nbsp;release.&lt;/p&gt;
 &lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be&amp;nbsp;fixed.&lt;/p&gt;
 &lt;p&gt;Happy use of &lt;strong&gt;Irssi Notitifier&lt;/strong&gt;.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC2 Released</title><link href="https://blog.algarvio.me/2007/Ago/19/irssi-notifier-020rc2-released" rel="alternate"></link><updated>2007-08-19T01:01:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-08-19:2007/Ago/19/irssi-notifier-020rc2-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier lowered it’s &lt;span class="caps"&gt;CPU&lt;/span&gt; needs with this &lt;span class="caps"&gt;RC2&lt;/span&gt;&amp;nbsp;release.&lt;/strong&gt;&lt;/p&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC2 Released</title><link href="https://blog.algarvio.me/irssi-notifier-020rc2-released" rel="alternate"></link><updated>2007-08-19T01:01:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-08-19:irssi-notifier-020rc2-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier lowered it’s &lt;span class="caps"&gt;CPU&lt;/span&gt; needs with this &lt;span class="caps"&gt;RC2&lt;/span&gt;&amp;nbsp;release.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This is a release candidate to enable users to provide feedback on
 possible bugs found so that they’re fixed on the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; release
 due on&amp;nbsp;01-Sep-2007.&lt;/p&gt;
@@ -393,7 +559,7 @@ translation for, and I’ll gladly provide you a file for translation which will
 included in the next&amp;nbsp;release.&lt;/p&gt;
 &lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be&amp;nbsp;fixed.&lt;/p&gt;
 &lt;p&gt;Happy use of &lt;strong&gt;Irssi Notitifier&lt;/strong&gt;.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC1 Released</title><link href="https://blog.algarvio.me/2007/Jul/24/irssi-notifier-020rc1-released" rel="alternate"></link><updated>2007-07-24T20:38:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-07-24:2007/Jul/24/irssi-notifier-020rc1-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier has just gone &lt;span class="caps"&gt;GUI&lt;/span&gt; with the 0.2.&lt;span class="caps"&gt;0RC1&lt;/span&gt;&amp;nbsp;release.&lt;/strong&gt;&lt;/p&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC1 Released</title><link href="https://blog.algarvio.me/irssi-notifier-020rc1-released" rel="alternate"></link><updated>2007-07-24T20:38:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-07-24:irssi-notifier-020rc1-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier has just gone &lt;span class="caps"&gt;GUI&lt;/span&gt; with the 0.2.&lt;span class="caps"&gt;0RC1&lt;/span&gt;&amp;nbsp;release.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This is a release candidate to enable users to provide feedback on
 possible bugs found so that they’re fixed on the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; release due
 on&amp;nbsp;01-Sep-2007.&lt;/p&gt;
@@ -414,13 +580,13 @@ translation for, and I’ll gladly provide you a file for translation which will
 included in the next&amp;nbsp;release.&lt;/p&gt;
 &lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be&amp;nbsp;fixed.&lt;/p&gt;
 &lt;p&gt;Happy use of &lt;strong&gt;Irssi Notitifier&lt;/strong&gt;.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier Development Site</title><link href="https://blog.algarvio.me/2007/Jul/13/irssi-notifier-development-site" rel="alternate"></link><updated>2007-07-13T17:58:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-07-13:2007/Jul/13/irssi-notifier-development-site</id><summary type="html">&lt;p&gt;Irssi Notifier now has a development site where you can ask for new
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier Development Site</title><link href="https://blog.algarvio.me/irssi-notifier-development-site" rel="alternate"></link><updated>2007-07-13T17:58:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-07-13:irssi-notifier-development-site</id><summary type="html">&lt;p&gt;Irssi Notifier now has a development site where you can ask for new
 features, submit bugs or keep update with it&amp;#8217;s&amp;nbsp;development.&lt;/p&gt;
 &lt;p&gt;Fell free to visit &lt;a class="reference external" href="http://irssinotifier.ufsoft.org"&gt;Irssi Notifier Development Site&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Next version will also support localization and already includes
 English(of course) and Portuguese&amp;nbsp;translations.&lt;/p&gt;
 &lt;p&gt;Check the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org"&gt;Irssi Notifier Development Site&lt;/a&gt; to submit a new&amp;nbsp;translation.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notification</title><link href="https://blog.algarvio.me/2007/Mai/10/irssi-notification" rel="alternate"></link><updated>2007-05-10T01:55:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-05-10:2007/Mai/10/irssi-notification</id><summary type="html">&lt;img alt="Irssi Notification" class="align-center" src="images/irssi.png" /&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notification</title><link href="https://blog.algarvio.me/irssi-notification" rel="alternate"></link><updated>2007-05-10T01:55:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-05-10:irssi-notification</id><summary type="html">&lt;img alt="Irssi Notification" class="align-center" src="images/irssi.png" /&gt;
 &lt;p&gt;To make this possible you need the irssi proxy to be configured(find out
 how &lt;a class="reference external" href="http://www.irssi.org/documentation/proxy"&gt;here&lt;/a&gt;), the &lt;a class="reference external" href="http://www.galago-project.org/news/index.php"&gt;libnotify&lt;/a&gt; library and its python bindings, the python
 &lt;a class="reference external" href="http://python-irclib.sourceforge.net"&gt;irclib library&lt;/a&gt;, python and optionally, if you’re behind a restrictive
@@ -430,36 +596,41 @@ more on this later&amp;nbsp;on.&lt;/p&gt;
 &lt;p&gt;&lt;span class="caps"&gt;OK&lt;/span&gt;, now let&amp;#8217;s go deep into installing a configuring this baby. Install instructions
 will be based on &lt;a class="reference external" href="http://www.kubuntu.org"&gt;Kubuntu&lt;/a&gt;, my laptop&amp;#8217;s distribution, but they should work for any
 &lt;a class="reference external" href="http://www.debian.org"&gt;Debian&lt;/a&gt; based distribution. Let&amp;#8217;s install the needed&amp;nbsp;dependencies:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;apt-get install libnotify1 python-notify python-gtk2 python-setuptools &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;apt-get install libnotify1 python-notify python-gtk2 python-setuptools &lt;span class="se"&gt;\&lt;/span&gt;
   python-irclib notification-daemon
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Once the above is finished, you can use setuptools &lt;tt class="docutils literal"&gt;easy_install&lt;/tt&gt; tool to install
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Once the above is finished, you can use setuptools &lt;tt class="docutils literal"&gt;easy_install&lt;/tt&gt; tool to install
 Irssi Notifier, so let&amp;#8217;s install&amp;nbsp;it:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;easy_install IrssiNotifier
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;easy_install IrssiNotifier
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The above command will install Irssi Notifier into python&amp;#8217;s site-packages and the
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;The above command will install Irssi Notifier into python&amp;#8217;s site-packages and the
 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;irssi-notifier&lt;/span&gt;&lt;/tt&gt; binary into &lt;tt class="docutils literal"&gt;/usr/bin/&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;Now, until you get your configuration settings right and Irssi Notifier  does not
 throw you an error do, in case you’ve setup irssi proxy to listen on domain
 &lt;tt class="docutils literal"&gt;example.tld&lt;/tt&gt;, port &lt;tt class="docutils literal"&gt;55555&lt;/tt&gt; with the proxy password &lt;tt class="docutils literal"&gt;Bar&lt;/tt&gt; for the nick &lt;tt class="docutils literal"&gt;Foo&lt;/tt&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P example.tld:55555:Foo -p BAR
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P example.tld:55555:Foo -p BAR
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If the above did not throw error(it shouldn&amp;#8217;t) then you can write the configuration
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;If the above did not throw error(it shouldn&amp;#8217;t) then you can write the configuration
 to file(defaults to &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.irssinotification&lt;/span&gt;&lt;/tt&gt;):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P example.tld:55555:Foo -p BAR -W
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P example.tld:55555:Foo -p BAR -W
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, next time you want to launch Irssi Notifier, you just have to&amp;nbsp;issue:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now, next time you want to launch Irssi Notifier, you just have to&amp;nbsp;issue:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, some explanation to what gets written to the configuration file plus some other
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now, some explanation to what gets written to the configuration file plus some other
 available configuration&amp;nbsp;options:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[main]&lt;/span&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[main]&lt;/span&gt;
 &lt;span class="na"&gt;passwd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;BAR&lt;/span&gt;
 &lt;span class="na"&gt;proxies&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;example.tld:55555:FOO&lt;/span&gt;
 &lt;span class="na"&gt;timeout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;5&lt;/span&gt;
 &lt;span class="na"&gt;friends&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;foobar barfoo&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;ul class="simple"&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;strong&gt;nick&lt;/strong&gt; - The common nick used in all defined&amp;nbsp;proxies&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;passwd&lt;/strong&gt; - The irssi proxy&amp;nbsp;password&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;proxies&lt;/strong&gt; - A space separated list of irssi proxies to listen to
@@ -481,19 +652,19 @@ connections through a proxy server. There&amp;#8217;s info on how to use the
 its own page, basicly, in my specific case, I need to connect to the
 http proxy and authentication is not required, so I changed my
 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.ssh/config&lt;/span&gt;&lt;/tt&gt; and&amp;nbsp;added:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;ProxyCommand connect-proxy -H &amp;lt;proxy_host&amp;gt;:&amp;lt;proxy_port&amp;gt; %h %p
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;ProxyCommand connect-proxy -H &amp;lt;proxy_host&amp;gt;:&amp;lt;proxy_port&amp;gt; %h %p
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, for every ssh connection that command is executed, and that&amp;#8217;s how
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Now, for every ssh connection that command is executed, and that&amp;#8217;s how
 &lt;strong&gt;I&lt;/strong&gt;&amp;#8216;m able to ssh trough the http proxy. And for irssi notifier,
 basically, I establish a tunnel for each irssi proxy connection defined,
 for&amp;nbsp;example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;ssh -L 55555:localhost:55555 user@remote.tld
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;ssh -L 55555:localhost:55555 user@remote.tld
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Back to your own usage, now you should instead point Irssi Notifier to
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Back to your own usage, now you should instead point Irssi Notifier to
 &lt;tt class="docutils literal"&gt;localhost&lt;/tt&gt; instead of the remote&amp;nbsp;host.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P localhost:55555:Foo -p BAR
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P localhost:55555:Foo -p BAR
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And that&amp;#8217;s it, I hope you enjoy Irssi-Notification and feel free to
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;And that&amp;#8217;s it, I hope you enjoy Irssi-Notification and feel free to
 comment on&amp;nbsp;it.&lt;/p&gt;
 &lt;hr class="docutils" /&gt;
 &lt;p&gt;&lt;strong&gt;23-05-2007&lt;/strong&gt;:&lt;/p&gt;
