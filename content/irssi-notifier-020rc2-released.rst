@@ -5,7 +5,8 @@ Irssi Notifier 0.2.0RC2 Released
 :category: Linux
 :tags: Irssi Notification
 :slug: irssi-notifier-020rc2-released
-
+:url: irssi-notifier-020rc2-released
+:save_as: irssi-notifier-020rc2-released/index.html
 **Irssi Notifier lowered it’s CPU needs with this RC2 release.**
 
 This is a release candidate to enable users to provide feedback on

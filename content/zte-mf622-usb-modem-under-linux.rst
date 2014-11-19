@@ -5,6 +5,8 @@ ZTE MF622 USB Modem Under Linux
 :category: Linux
 :tags: Linux
 :slug: zte-mf622-usb-modem-under-linux
+:url: zte-mf622-usb-modem-under-linux
+:save_as: zte-mf622-usb-modem-under-linux/index.html
 :summary: I recently bought a 3G wireless card to use with my laptop, a ZTE, model MF622.
           Since the first time I tried Linux, also the first time I encountered this kind
           of problems with my USB ADSL modem, and this being an USB modem also, I knew I was going to have troubles.

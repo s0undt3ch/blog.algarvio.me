@@ -4,7 +4,7 @@ PyLint + Virtualenv
 :author: s0undt3ch
 :slug: pylint-virtualenv
 :url: 2012/12/27/pylint-+-virtualenv
-:save_as: 2012/12/27/pylint-+-virtualenv.html
+:save_as: 2012/12/27/pylint-+-virtualenv/index.html
 :category: Python
 :tags: PyLint
 :summary: I don't have the time to write the full blog post, so, here's the recipe!

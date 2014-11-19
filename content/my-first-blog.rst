@@ -3,6 +3,8 @@ My First Blog
 :date: 2007-05-03 11:01
 :author: s0undt3ch
 :slug: my-first-blog
+:url: my-first-blog
+:save_as: my-first-blog/index.html
 
 Welcome to my first blog online.
 

@@ -4,7 +4,8 @@ TextPress Google Adsense For Search Widget
 :author: s0undt3ch
 :slug: textpress-google-adsense-for-search-widget
 :tags: TextPress, TextPress Plugin
-
+:url: textpress-google-adsense-for-search-widget
+:save_as: textpress-google-adsense-for-search-widget/index.html
 
 This TextPress widget enables search on your blog using Google Adsense For Search
 

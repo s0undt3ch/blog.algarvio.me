@@ -5,6 +5,8 @@ Irssi Notifier 0.2.0RC5 Released
 :category: Linux
 :tags: Irssi Notification
 :slug: irssi-notifier-020rc5-released
+:url: irssi-notifier-020rc5-released
+:save_as: irssi-notifier-020rc5-released/index.html
 
 **Irssi Notifier 0.2.0RC5 Released**
 

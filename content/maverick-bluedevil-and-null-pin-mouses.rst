@@ -4,7 +4,7 @@ Maverick Bluedevil and Null pin Mouse's
 :author: s0undt3ch
 :slug: maverick-bluedevil-and-null-pin-mouses
 :url: 2011/02/18/maverick-bluedevil-and-null-pin-mouse-s
-:save_as: 2011/02/18/maverick-bluedevil-and-null-pin-mouse-s.html
+:save_as: 2011/02/18/maverick-bluedevil-and-null-pin-mouse-s/index.html
 :category: Linux
 :tags: bluedevil, Bluetooth, Kubuntu
 :summary:  So, I was trying out Kubuntu Maevrick and found out that my bluetooth

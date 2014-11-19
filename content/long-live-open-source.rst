@@ -6,7 +6,7 @@ Long Live Open-Source
 :category: Linux
 :tags: ATI, Kubuntu
 :url: 2009/4/25/long-live-open-source
-:save_as: 2009/4/25/long-live-open-source.html
+:save_as: 2009/4/25/long-live-open-source/index.html
 
 As you can read on a `previous post of mine <{filename}/ati-for-linux.rst>`_,
 I was, and still am quite pissed at ATI.

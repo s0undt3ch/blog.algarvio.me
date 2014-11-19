@@ -4,7 +4,7 @@ Using gettext in compiled Qt ui files with PySide
 :author: s0undt3ch
 :slug: using-gettext-in-compiled-qt-ui-files-with-pyside
 :url: 2012/01/23/using-gettext-in-compiled-qt-ui-files-with-pyside
-:save_as: 2012/01/23/using-gettext-in-compiled-qt-ui-files-with-pyside.html
+:save_as: 2012/01/23/using-gettext-in-compiled-qt-ui-files-with-pyside/index.html
 :category: Python
 :tags: PySide, Qt
 :summary: This recipe is based on the PyQt recipe found `here <http://www.themacaque.com/?p=816>`_.

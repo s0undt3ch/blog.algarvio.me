@@ -4,6 +4,8 @@ TextPress Extended Last Comments Widget
 :author: s0undt3ch
 :slug: textpress-extended-last-comments-widget
 :tags: TextPress, TextPress Plugin
+:url: textpress-extended-last-comments-widget
+:save_as: textpress-extended-last-comments-widget/index.html
 
 This is the same as the "Latest Comments" TextPress widget except it
 also shows ``n`` words(configurable) words of each comment.

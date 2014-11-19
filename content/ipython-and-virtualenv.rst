@@ -6,7 +6,7 @@ IPython and virtualenv
 :category: Python
 :tags: IPython, virtualenv
 :url: 2009/1/29/ipython-and-virtualenv
-:save_as: 2009/1/29/ipython-and-virtualenv.html
+:save_as: 2009/1/29/ipython-and-virtualenv/index.html
 
 
 .. _`virtualenv`: http://pypi.python.org/pypi/virtualenv

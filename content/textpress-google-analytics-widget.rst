@@ -4,7 +4,8 @@ TextPress Google Analytics Widget
 :author: s0undt3ch
 :slug: textpress-google-analytics-widget
 :tags: TextPress, TextPress Plugin
-
+:url: textpress-google-analytics-widget
+:save_as: textpress-google-analytics-widget/index.html
 
 This was my first serious `TextPress <http://textpress.pocoo.org>`__
 plugin.

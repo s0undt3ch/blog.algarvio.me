@@ -5,6 +5,8 @@ Irssi Notifier Development Site
 :category: Linux
 :tags: Irssi Notification
 :slug: irssi-notifier-development-site
+:url: irssi-notifier-development-site
+:save_as: irssi-notifier-development-site/index.html
 
 Irssi Notifier now has a development site where you can ask for new
 features, submit bugs or keep update with it's development.

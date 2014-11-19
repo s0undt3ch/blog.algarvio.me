@@ -4,6 +4,8 @@ Wordpress Is Gone For Good
 :author: s0undt3ch
 :slug: wordpress-is-gone-for-good
 :tags: TextPress
+:url: wordpress-is-gone-for-good
+:save_as: wordpress-is-gone-for-good/index.html
 
 I try to get my applications written in python, this way I'm able to tweak it as needed.
 

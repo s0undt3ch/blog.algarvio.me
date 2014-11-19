@@ -4,6 +4,8 @@ TextPress ImageBox Plugin
 :author: s0undt3ch
 :slug: textpress-imagebox-plugin
 :tags: TextPress, TextPress Plugin
+:url: textpress-imagebox-plugin
+:save_as: textpress-imagebox-plugin/index.html
 
 TextPress jQuery ImgBox plugin support.
 

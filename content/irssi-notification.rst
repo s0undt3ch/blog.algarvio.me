@@ -5,6 +5,8 @@ Irssi Notification
 :category: Linux
 :tags: Irssi Notification
 :slug: irssi-notification
+:url: irssi-notification
+:save_as: irssi-notification/index.html
 
 .. image:: images/irssi.png
    :alt: Irssi Notification

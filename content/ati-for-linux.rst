@@ -6,7 +6,7 @@ ATI for Linux
 :tags: ati
 :category: Linux
 :url: 2009/4/24/ati-linux-kubuntu
-:save_as: 2009/4/24/ati-linux-kubuntu.html
+:save_as: 2009/4/24/ati-linux-kubuntu/index.html
 
 **Fuck You ATI!!!!!!**
 

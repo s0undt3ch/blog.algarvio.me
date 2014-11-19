@@ -4,6 +4,8 @@ TextPress Blix Theme
 :author: s0undt3ch
 :slug: textpress-blix-theme
 :tags: TextPress, TextPress Plugin
+:url: textpress-blix-theme
+:save_as: textpress-blix-theme/index.html
 
 This is a `TextPress <http://textpress.pocoo.org>`__ theme ported from
 WordPress.

@@ -5,6 +5,8 @@ Rotating Trac Logs
 :category: Linux
 :tags: Linux, Trac
 :slug: rotating-trac-logs
+:url: rotating-trac-logs
+:save_as: rotating-trac-logs/index.html
 
 So, you're like me and like to have `trac`_ constantly logging to file and you hate those files getting huge?
 

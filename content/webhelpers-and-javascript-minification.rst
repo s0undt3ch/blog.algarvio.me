@@ -4,6 +4,8 @@ Webhelpers and Javascript Minification
 :author: s0undt3ch
 :tags: Javascript, Pylons, WebHelpers
 :slug: webhelpers-and-javascript-minification
+:url: webhelpers-and-javascript-minification
+:save_as: webhelpers-and-javascript-minification/index.html
 :summary: Here's a practical idea which I have in use in a `project of mine`_.
 
           Most of you probably use some javascript library or have some javascript files that you use in your pylons application.

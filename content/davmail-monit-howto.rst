@@ -4,7 +4,7 @@ DavMail Monit HowTo
 :author: s0undt3ch
 :slug: davmail-monit-howto
 :url: 2011/02/16/davmail-monit-howto
-:save_as: 2011/02/16/davmail-monit-howto.html
+:save_as: 2011/02/16/davmail-monit-howto/index.html
 :category: Linux
 :tags: DavMail, Monit
 

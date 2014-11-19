@@ -4,7 +4,7 @@ Postgres Cron Backups
 :author: s0undt3ch
 :slug: postgres-cron-backups
 :url: 2011/07/03/postgres-cron-backups
-:save_as: 2011/07/03/postgres-cron-backups.html
+:save_as: 2011/07/03/postgres-cron-backups/index.html
 :category: Linux
 :tags: Postgres Bash Backup
 :summary: So, I found myself with the need to make automatic backups of my postgres databases...
