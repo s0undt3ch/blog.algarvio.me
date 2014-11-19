@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Using gettext in compiled Qt ui files with PySide - s0undt3ch's Blog</title>
+    <title>Using gettext in compiled Qt ui files with PySide - s0undt3ch's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 
         <meta name="author" content="s0undt3ch" />
         <meta name="keywords" content="PySide,Qt" />
-        <meta name="description" content="This recipe is based on the PyQt recipe found here. This is just the PySide port of it. In some cases you might find yourself in the situation of wanting to use gettext in a PySide project in which you have .ui files generated using QtDesigner. For those kind of situations is a good idea to extend the PySide compiler. The following example shows how to do so in a distutils command." />
+        <meta name="description" content="This recipe is based on the PyQt recipe found here. This is just the PySide port of it. In some cases you might find yourself in the situation of wanting to use gettext in a PySide project in which you have .ui files generated using QtDesigner. For those kind of situations is a good idea to extend the PySide compiler. The following example shows how to do so in a distutils command." />
 
 
 
@@ -23,6 +23,7 @@
     <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="../../../theme/css/pygments/fruity.css" rel="stylesheet">
+        <link href="../../../theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
         <link href="../../../static/overrides.css" rel="stylesheet">
 
@@ -50,7 +51,7 @@ s0undt3ch's Blog            </a>
                             <a href="../../../category/linux.html">Linux</a>
                         </li>
                         <li >
-                            <a href="../../../category/misc.html">Misc</a>
+                            <a href="../../../category/misc">Misc</a>
                         </li>
                         <li class="active">
                             <a href="../../../category/python.html">Python</a>
@@ -74,8 +75,8 @@ s0undt3ch's Blog            </a>
                 <h1>
                     <a href="../../../2012/01/23/using-gettext-in-compiled-qt-ui-files-with-pyside"
                        rel="bookmark"
-                       title="Permalink to Using gettext in compiled Qt ui files with PySide">
-                        Using gettext in compiled Qt ui files with PySide
+                       title="Permalink to Using gettext in compiled Qt ui files with PySide">
+                        Using gettext in compiled Qt ui files with&nbsp;PySide
                     </a>
                 </h1>
             </header>
@@ -98,11 +99,11 @@ s0undt3ch's Blog            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>This recipe is based on the PyQt recipe found <a class="reference external" href="http://www.themacaque.com/?p=816">here</a>.
-This is just the <a class="reference external" href="http://www.pyside.org/">PySide</a> port of it.</p>
+This is just the <a class="reference external" href="http://www.pyside.org/">PySide</a> port of&nbsp;it.</p>
 <p>In some cases you might find yourself in the situation of wanting to use
-gettext in a <a class="reference external" href="http://www.pyside.org/">PySide</a> project in which you have <tt class="docutils literal">.ui</tt> files generated using QtDesigner.</p>
+gettext in a <a class="reference external" href="http://www.pyside.org/">PySide</a> project in which you have <tt class="docutils literal">.ui</tt> files generated using&nbsp;QtDesigner.</p>
 <p>For those kind of situations is a good idea to extend the <a class="reference external" href="http://www.pyside.org/">PySide</a> compiler.
-The following example shows how to do so in a distutils command.</p>
+The following example shows how to do so in a distutils&nbsp;command.</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">CompileUI</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Build PyQt (.ui) files and resources.&quot;&quot;&quot;</span>
 
@@ -211,7 +212,7 @@ The following example shows how to do so in a distutils command.</p>
             <span class="n">log</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;You need to have pyside-tools installed in order to &quot;</span>
                      <span class="s">&quot;compile .ui files.&quot;</span><span class="p">)</span>
 </pre></div>
-<p>And there you have it!</p>
+<p>And there you have&nbsp;it!</p>
 
             </div>
             <!-- /.entry-content -->
@@ -274,6 +275,11 @@ The following example shows how to do so in a distutils command.</p>
             <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="../../../tag/textpress-plugin.html">
+                            TextPress Plugin
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="../../../tag/textpress.html">
                             TextPress
                         </a>
@@ -283,14 +289,9 @@ The following example shows how to do so in a distutils command.</p>
                             Irssi Notification
                         </a>
                     </li>
-                    <li class="list-group-item tag-1">
-                        <a href="../../../tag/textpress-plugin.html">
-                            TextPress Plugin
-                        </a>
-                    </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/kubuntu.html">
-                            Kubuntu
+                        <a href="../../../tag/linux.html">
+                            Linux
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -299,18 +300,8 @@ The following example shows how to do so in a distutils command.</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/linux.html">
-                            Linux
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/javascript.html">
-                            Javascript
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/bluetooth.html">
-                            Bluetooth
+                        <a href="../../../tag/kubuntu.html">
+                            Kubuntu
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -324,6 +315,41 @@ The following example shows how to do so in a distutils command.</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="../../../tag/webhelpers.html">
+                            WebHelpers
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/postgres-bash-backup.html">
+                            Postgres Bash Backup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/ipython.html">
+                            IPython
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/bluetooth.html">
+                            Bluetooth
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pylint.html">
+                            PyLint
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pyside.html">
+                            PySide
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/virtualenv.html">
+                            virtualenv
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="../../../tag/qt.html">
                             Qt
                         </a>
@@ -334,43 +360,18 @@ The following example shows how to do so in a distutils command.</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/postgres-bash-backup.html">
-                            Postgres Bash Backup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylons.html">
-                            Pylons
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylint.html">
-                            PyLint
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="../../../tag/trac.html">
                             Trac
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/ipython.html">
-                            IPython
+                        <a href="../../../tag/javascript.html">
+                            Javascript
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/virtualenv.html">
-                            virtualenv
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/webhelpers.html">
-                            WebHelpers
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pyside.html">
-                            PySide
+                        <a href="../../../tag/pylons.html">
+                            Pylons
                         </a>
                     </li>
                 </ul>

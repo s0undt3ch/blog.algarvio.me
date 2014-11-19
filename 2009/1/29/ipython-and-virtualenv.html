@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>IPython and virtualenv - s0undt3ch's Blog</title>
+    <title>IPython and virtualenv - s0undt3ch's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 
         <meta name="author" content="s0undt3ch" />
         <meta name="keywords" content="IPython,virtualenv" />
-        <meta name="description" content="Recently I started developing my python applications using virtualenv so that I don&#39;t clutter up the system&#39;s python installation with non-system python packages. Everything was good until I wanted to use IPython instead of python&#39;s shell... The issue is that virtualenv creates a different python executable that ..." />
+        <meta name="description" content="Recently I started developing my python applications using virtualenv so that I don’t clutter up the system’s python installation with non-system python packages. Everything was good until I wanted to use IPython instead of python’s shell… The issue is that virtualenv creates a different python executable that ..." />
 
 
 
@@ -23,6 +23,7 @@
     <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="../../../theme/css/pygments/fruity.css" rel="stylesheet">
+        <link href="../../../theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
         <link href="../../../static/overrides.css" rel="stylesheet">
 
@@ -50,7 +51,7 @@ s0undt3ch's Blog            </a>
                             <a href="../../../category/linux.html">Linux</a>
                         </li>
                         <li >
-                            <a href="../../../category/misc.html">Misc</a>
+                            <a href="../../../category/misc">Misc</a>
                         </li>
                         <li class="active">
                             <a href="../../../category/python.html">Python</a>
@@ -74,8 +75,8 @@ s0undt3ch's Blog            </a>
                 <h1>
                     <a href="../../../2009/1/29/ipython-and-virtualenv"
                        rel="bookmark"
-                       title="Permalink to IPython and virtualenv">
-                        IPython and virtualenv
+                       title="Permalink to IPython and virtualenv">
+                        IPython and&nbsp;virtualenv
                     </a>
                 </h1>
             </header>
@@ -97,16 +98,15 @@ s0undt3ch's Blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Recently I started developing my python applications using <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> so that I don't
-clutter up the system's python installation with non-system python packages.</p>
-<p>Everything was good until I wanted to use <a class="reference external" href="http://ipython.scipy.org/">IPython</a> instead of python's shell...</p>
+                <p>Recently I started developing my python applications using <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> so that I don&#8217;t
+clutter up the system&#8217;s python installation with non-system python&nbsp;packages.</p>
+<p>Everything was good until I wanted to use <a class="reference external" href="http://ipython.scipy.org/">IPython</a> instead of python&#8217;s&nbsp;shell&#8230;</p>
 <p>The issue is that <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> creates a different python executable that includes the
-<a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>'s packages into <tt class="docutils literal">sys.path</tt> while <a class="reference external" href="http://ipython.scipy.org/">IPython</a> stays unaware of the <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>'s
-packages.</p>
-<p>Yet, there's a solution!!!</p>
-<p>In order to solve this issue, <a class="reference external" href="http://ipython.scipy.org/">IPython</a> comes along to save the day.</p>
-<p><a class="reference external" href="http://ipython.scipy.org/">IPython</a> provides a way to include additional code to be executed when <a class="reference external" href="http://ipython.scipy.org/">IPython</a>'s shell is started.</p>
-<p>First, the small script that allows <a class="reference external" href="http://ipython.scipy.org/">IPython</a> to get <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>'s packages into its <tt class="docutils literal">sys.path</tt>.</p>
+<a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>&#8216;s packages into <tt class="docutils literal">sys.path</tt> while <a class="reference external" href="http://ipython.scipy.org/">IPython</a> stays unaware of the <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>&#8216;s&nbsp;packages.</p>
+<p>Yet, there&#8217;s a&nbsp;solution!!!</p>
+<p>In order to solve this issue, <a class="reference external" href="http://ipython.scipy.org/">IPython</a> comes along to save the&nbsp;day.</p>
+<p><a class="reference external" href="http://ipython.scipy.org/">IPython</a> provides a way to include additional code to be executed when <a class="reference external" href="http://ipython.scipy.org/">IPython</a>&#8216;s shell is&nbsp;started.</p>
+<p>First, the small script that allows <a class="reference external" href="http://ipython.scipy.org/">IPython</a> to get <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>&#8216;s packages into its <tt class="docutils literal">sys.path</tt>.</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">site</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
@@ -122,21 +122,21 @@ packages.</p>
     <span class="k">del</span> <span class="n">virtual_env</span>
 <span class="k">del</span> <span class="n">site</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">join</span><span class="p">,</span> <span class="n">version_info</span>
 </pre></div>
-<p>Save the above snippet into your user's <a class="reference external" href="http://ipython.scipy.org/">IPython</a> configuration directory <tt class="docutils literal"><span class="pre">~/.ipython</span></tt>.
+<p>Save the above snippet into your user&#8217;s <a class="reference external" href="http://ipython.scipy.org/">IPython</a> configuration directory <tt class="docutils literal"><span class="pre">~/.ipython</span></tt>.
 Save it has, for example, <tt class="docutils literal">virtualenv.py</tt>.</p>
-<p>Now, as <a class="reference external" href="http://ipython.scipy.org/moin/Cookbook/UserConfigFile">IPython's documentation</a>  suggests, edit <tt class="docutils literal"><span class="pre">~/.ipython/ipy_user_conf.py</span></tt> and somewhere
-inside the <tt class="docutils literal">main()</tt> function add:</p>
+<p>Now, as <a class="reference external" href="http://ipython.scipy.org/moin/Cookbook/UserConfigFile">IPython&#8217;s documentation</a>  suggests, edit <tt class="docutils literal"><span class="pre">~/.ipython/ipy_user_conf.py</span></tt> and somewhere
+inside the <tt class="docutils literal">main()</tt> function&nbsp;add:</p>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">execf</span><span class="p">(</span><span class="s">&#39;~/.ipython/virtualenv.py&#39;</span><span class="p">)</span>
 </pre></div>
-<p>Now, the next time you start <a class="reference external" href="http://ipython.scipy.org/">IPython</a>'s shell,  if you've activated your <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>
-environment, you’ll also get the packages from there too.</p>
+<p>Now, the next time you start <a class="reference external" href="http://ipython.scipy.org/">IPython</a>&#8216;s shell,  if you&#8217;ve activated your <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>
+environment, you’ll also get the packages from there&nbsp;too.</p>
 <div class="highlight"><pre>Develop:user@machine:~<span class="nv">$ </span>ipython
 VIRTUAL_ENV -&gt; /home/user/.virtual_python/lib/python2.5/site-packages
 
 In <span class="o">[</span>1<span class="o">]</span>:
 </pre></div>
-<p>And that's it, there you have your <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> aware <a class="reference external" href="http://ipython.scipy.org/">IPython</a> shell!</p>
+<p>And that&#8217;s it, there you have your <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> aware <a class="reference external" href="http://ipython.scipy.org/">IPython</a>&nbsp;shell!</p>
 
             </div>
             <!-- /.entry-content -->
@@ -199,6 +199,11 @@ In <span class="o">[</span>1<span class="o">]</span>:
             <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="../../../tag/textpress-plugin.html">
+                            TextPress Plugin
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="../../../tag/textpress.html">
                             TextPress
                         </a>
@@ -208,14 +213,9 @@ In <span class="o">[</span>1<span class="o">]</span>:
                             Irssi Notification
                         </a>
                     </li>
-                    <li class="list-group-item tag-1">
-                        <a href="../../../tag/textpress-plugin.html">
-                            TextPress Plugin
-                        </a>
-                    </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/kubuntu.html">
-                            Kubuntu
+                        <a href="../../../tag/linux.html">
+                            Linux
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -224,18 +224,8 @@ In <span class="o">[</span>1<span class="o">]</span>:
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/linux.html">
-                            Linux
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/javascript.html">
-                            Javascript
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/bluetooth.html">
-                            Bluetooth
+                        <a href="../../../tag/kubuntu.html">
+                            Kubuntu
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -249,6 +239,41 @@ In <span class="o">[</span>1<span class="o">]</span>:
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="../../../tag/webhelpers.html">
+                            WebHelpers
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/postgres-bash-backup.html">
+                            Postgres Bash Backup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/ipython.html">
+                            IPython
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/bluetooth.html">
+                            Bluetooth
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pylint.html">
+                            PyLint
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pyside.html">
+                            PySide
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/virtualenv.html">
+                            virtualenv
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="../../../tag/qt.html">
                             Qt
                         </a>
@@ -259,43 +284,18 @@ In <span class="o">[</span>1<span class="o">]</span>:
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/postgres-bash-backup.html">
-                            Postgres Bash Backup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylons.html">
-                            Pylons
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylint.html">
-                            PyLint
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="../../../tag/trac.html">
                             Trac
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/ipython.html">
-                            IPython
+                        <a href="../../../tag/javascript.html">
+                            Javascript
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/virtualenv.html">
-                            virtualenv
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/webhelpers.html">
-                            WebHelpers
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pyside.html">
-                            PySide
+                        <a href="../../../tag/pylons.html">
+                            Pylons
                         </a>
                     </li>
                 </ul>

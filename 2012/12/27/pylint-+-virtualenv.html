@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>PyLint + Virtualenv - s0undt3ch's Blog</title>
+    <title>PyLint + Virtualenv - s0undt3ch's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 
         <meta name="author" content="s0undt3ch" />
         <meta name="keywords" content="PyLint" />
-        <meta name="description" content="I don&#39;t have the time to write the full blog post, so, here&#39;s the recipe!" />
+        <meta name="description" content="I don’t have the time to write the full blog post, so, here’s the recipe!" />
 
 
 
@@ -23,6 +23,7 @@
     <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="../../../theme/css/pygments/fruity.css" rel="stylesheet">
+        <link href="../../../theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
         <link href="../../../static/overrides.css" rel="stylesheet">
 
@@ -50,7 +51,7 @@ s0undt3ch's Blog            </a>
                             <a href="../../../category/linux.html">Linux</a>
                         </li>
                         <li >
-                            <a href="../../../category/misc.html">Misc</a>
+                            <a href="../../../category/misc">Misc</a>
                         </li>
                         <li class="active">
                             <a href="../../../category/python.html">Python</a>
@@ -74,8 +75,8 @@ s0undt3ch's Blog            </a>
                 <h1>
                     <a href="../../../2012/12/27/pylint-+-virtualenv"
                        rel="bookmark"
-                       title="Permalink to PyLint + Virtualenv">
-                        PyLint + Virtualenv
+                       title="Permalink to PyLint + Virtualenv">
+                        PyLint +&nbsp;Virtualenv
                     </a>
                 </h1>
             </header>
@@ -95,8 +96,8 @@ s0undt3ch's Blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>I don't have the time to write the full blog post, so, here's the recipe!</p>
-<p>On your pylint rcfile setting:</p>
+                <p>I don&#8217;t have the time to write the full blog post, so, here&#8217;s the&nbsp;recipe!</p>
+<p>On your pylint rcfile&nbsp;setting:</p>
 <div class="highlight"><pre>init-hook=&quot;
      exec &#39;aW1wb3J0IHN5cywgb3MKCmlmICdWSVJUVUFMX0VOVicgbm90IGluIG9zLmVudmlyb246CiAgICBz \
      eXMuZXhpdCgwKQoKdmVfZGlyID0gb3MuZW52aXJvblsnVklSVFVBTF9FTlYnXQp2ZV9kaXIgaW4g \
@@ -107,7 +108,7 @@ s0undt3ch's Blog            </a>
      J1NjcmlwdHMnKSwgJ2FjdGl2YXRlX3RoaXMucHknKQoKZXhlY2ZpbGUoYWN0aXZhdGVfdGhpcywg \
      ZGljdChfX2ZpbGVfXz1hY3RpdmF0ZV90aGlzKSkK&#39;.decode(&#39;base64&#39;)&quot;
 </pre></div>
-<p>Don't be scared, the decoded version of the above is:</p>
+<p>Don&#8217;t be scared, the decoded version of the above&nbsp;is:</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
 
 <span class="k">if</span> <span class="s">&#39;VIRTUAL_ENV&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
@@ -185,6 +186,11 @@ s0undt3ch's Blog            </a>
             <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="../../../tag/textpress-plugin.html">
+                            TextPress Plugin
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="../../../tag/textpress.html">
                             TextPress
                         </a>
@@ -194,14 +200,9 @@ s0undt3ch's Blog            </a>
                             Irssi Notification
                         </a>
                     </li>
-                    <li class="list-group-item tag-1">
-                        <a href="../../../tag/textpress-plugin.html">
-                            TextPress Plugin
-                        </a>
-                    </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/kubuntu.html">
-                            Kubuntu
+                        <a href="../../../tag/linux.html">
+                            Linux
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -210,18 +211,8 @@ s0undt3ch's Blog            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/linux.html">
-                            Linux
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/javascript.html">
-                            Javascript
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/bluetooth.html">
-                            Bluetooth
+                        <a href="../../../tag/kubuntu.html">
+                            Kubuntu
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -235,6 +226,41 @@ s0undt3ch's Blog            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="../../../tag/webhelpers.html">
+                            WebHelpers
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/postgres-bash-backup.html">
+                            Postgres Bash Backup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/ipython.html">
+                            IPython
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/bluetooth.html">
+                            Bluetooth
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pylint.html">
+                            PyLint
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pyside.html">
+                            PySide
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/virtualenv.html">
+                            virtualenv
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="../../../tag/qt.html">
                             Qt
                         </a>
@@ -245,43 +271,18 @@ s0undt3ch's Blog            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/postgres-bash-backup.html">
-                            Postgres Bash Backup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylons.html">
-                            Pylons
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylint.html">
-                            PyLint
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="../../../tag/trac.html">
                             Trac
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/ipython.html">
-                            IPython
+                        <a href="../../../tag/javascript.html">
+                            Javascript
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/virtualenv.html">
-                            virtualenv
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/webhelpers.html">
-                            WebHelpers
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pyside.html">
-                            PySide
+                        <a href="../../../tag/pylons.html">
+                            Pylons
                         </a>
                     </li>
                 </ul>

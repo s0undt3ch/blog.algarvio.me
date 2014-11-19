@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>s0undt3ch's Blog</title><link href="https://blog.algarvio.me/" rel="alternate"></link><link href="https://blog.algarvio.me/feeds/linux.atom.xml" rel="self"></link><id>https://blog.algarvio.me/</id><updated>2011-07-03T08:40:00+01:00</updated><entry><title>Postgres Cron Backups</title><link href="https://blog.algarvio.me/2011/07/03/postgres-cron-backups" rel="alternate"></link><updated>2011-07-03T08:40:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-07-03:2011/07/03/postgres-cron-backups</id><summary type="html">&lt;p&gt;So, I found myself with the need to make automatic backups of my postgres databases...&lt;/p&gt;
-&lt;p&gt;After some &lt;a class="reference external" href="http://www.google.com"&gt;Google&lt;/a&gt;'ing and reading of some peoples recipes, here's mine.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>s0undt3ch's Blog</title><link href="https://blog.algarvio.me/" rel="alternate"></link><link href="https://blog.algarvio.me/feeds/linux.atom.xml" rel="self"></link><id>https://blog.algarvio.me/</id><updated>2011-07-03T08:40:00+01:00</updated><entry><title>Postgres Cron Backups</title><link href="https://blog.algarvio.me/2011/07/03/postgres-cron-backups" rel="alternate"></link><updated>2011-07-03T08:40:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-07-03:2011/07/03/postgres-cron-backups</id><summary type="html">&lt;p&gt;So, I found myself with the need to make automatic backups of my postgres&amp;nbsp;databases&amp;#8230;&lt;/p&gt;
+&lt;p&gt;After some &lt;a class="reference external" href="http://www.google.com"&gt;Google&lt;/a&gt;&amp;#8216;ing and reading of some peoples recipes, here&amp;#8217;s&amp;nbsp;mine.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash&lt;/span&gt;
 &lt;span class="nv"&gt;PG_USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;postgres&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;SUDO_CMD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;which sudo&lt;span class="k"&gt;)&lt;/span&gt;
@@ -48,75 +48,75 @@
         &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----8&amp;lt;----&amp;quot;&lt;/span&gt;
   &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</summary><category term="Postgres Bash Backup"></category></entry><entry><title>Maverick Bluedevil and Null pin Mouse's</title><link href="https://blog.algarvio.me/2011/02/18/maverick-bluedevil-and-null-pin-mouse-s" rel="alternate"></link><updated>2011-02-18T19:58:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-02-18:2011/02/18/maverick-bluedevil-and-null-pin-mouse-s</id><summary type="html">&lt;p&gt;So, I was trying out Kubuntu Maevrick and found out that my bluetooth mouse did not work
-anymore as it previously did with Jaunty...&lt;/p&gt;
+</summary><category term="Postgres Bash Backup"></category></entry><entry><title>Maverick Bluedevil and Null pin Mouse’s</title><link href="https://blog.algarvio.me/2011/02/18/maverick-bluedevil-and-null-pin-mouse-s" rel="alternate"></link><updated>2011-02-18T19:58:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-02-18:2011/02/18/maverick-bluedevil-and-null-pin-mouse-s</id><summary type="html">&lt;p&gt;So, I was trying out Kubuntu Maevrick and found out that my bluetooth mouse did not work
+anymore as it previously did with&amp;nbsp;Jaunty&amp;#8230;&lt;/p&gt;
 &lt;p&gt;The search for the holy grail was not that easy, many posts said to get
-the source and build it yourself...&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;hmm.... this is a fresh install… I don’t want to start trashing it
-already.... ;)&lt;/em&gt;&lt;/p&gt;
+the source and build it&amp;nbsp;yourself&amp;#8230;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;hmm&amp;#8230;. this is a fresh install… I don’t want to start trashing it
+already&amp;#8230;.&amp;nbsp;;)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Well, there’s a solution, add the backports to your &lt;tt class="docutils literal"&gt;sources.list&lt;/tt&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;deb http://archive.ubuntu.com/ubuntu maverick-backports universe
 deb-src http://archive.ubuntu.com/ubuntu maverick-backport universe
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Update your packages list:&lt;/p&gt;
+&lt;p&gt;Update your packages&amp;nbsp;list:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get update
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Get the new bluedevil, the one which will handle &lt;tt class="docutils literal"&gt;null&lt;/tt&gt; pin devices like my mouse:&lt;/p&gt;
+&lt;p&gt;Get the new bluedevil, the one which will handle &lt;tt class="docutils literal"&gt;null&lt;/tt&gt; pin devices like my&amp;nbsp;mouse:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get upgrade
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Restart bluetooth:&lt;/p&gt;
+&lt;p&gt;Restart&amp;nbsp;bluetooth:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;sudo /etc/init.d/bluetooth restart
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, adding a new device will work as supposed ;)&lt;/p&gt;
-</summary><category term="bluedevil"></category><category term="Bluetooth"></category><category term="Kubuntu"></category></entry><entry><title>DavMail Monit HowTo</title><link href="https://blog.algarvio.me/2011/02/16/davmail-monit-howto" rel="alternate"></link><updated>2011-02-16T19:42:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-02-16:2011/02/16/davmail-monit-howto</id><summary type="html">&lt;p&gt;I recently started to monitor my servers with &lt;a class="reference external" href="http://mmonit.com/monit/"&gt;monit&lt;/a&gt;.
+&lt;p&gt;Now, adding a new device will work as supposed&amp;nbsp;;)&lt;/p&gt;
+</summary><category term="bluedevil"></category><category term="Bluetooth"></category><category term="Kubuntu"></category></entry><entry><title>DavMail Monit HowTo</title><link href="https://blog.algarvio.me/2011/02/16/davmail-monit-howto" rel="alternate"></link><updated>2011-02-16T19:42:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2011-02-16:2011/02/16/davmail-monit-howto</id><summary type="html">&lt;p&gt;I recently started to monitor my servers with &lt;a class="reference external" href="http://mmonit.com/monit/"&gt;monit&lt;/a&gt;.
 As such, I started creating scripts for all services that needed monitoring until I
 got stuck on one of them &lt;a class="reference external" href="http://davmail.sourceforge.net/"&gt;DavMail&lt;/a&gt;. It did not
-write a pid file and didn't even had a specific process name!&lt;/p&gt;
-&lt;p&gt;This HowTo is meant to run on an ubuntu/debian system.&lt;/p&gt;
+write a pid file and didn&amp;#8217;t even had a specific process&amp;nbsp;name!&lt;/p&gt;
+&lt;p&gt;This HowTo is meant to run on an ubuntu/debian&amp;nbsp;system.&lt;/p&gt;
 &lt;p&gt;I started &lt;a class="reference external" href="http://zine_blog/www.google.com"&gt;googling&lt;/a&gt; for a solution
 and it was not easy. The problem was with java not allowing or providing
 a way to change the process name of a
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Java_Virtual_Machine"&gt;jvm&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The solution I found was &lt;a class="reference external" href="http://wrapper.tanukisoftware.com/&amp;gt;"&gt;Java Service Wrapper&lt;/a&gt; and bellow are the steps
-on how to use it.&lt;/p&gt;
-&lt;p&gt;First of all, download the debian DavMail package:&lt;/p&gt;
+on how to use&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;First of all, download the debian DavMail&amp;nbsp;package:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;wget http://sourceforge.net/projects/davmail/files/davmail/3.8.8/davmail_3.8.8-1608-1_all.deb/download &lt;span class="se"&gt;\&lt;/span&gt;
   -O davmail_3.8.8-1608-1_all.deb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Since this is to be installed on a headless server, we need to remove
-some of the dependencies of the package:&lt;/p&gt;
+some of the dependencies of the&amp;nbsp;package:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;dpkg -e davmail_3.8.8-1608-1_all.deb
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now you’ll have a DEBIAN directory, &lt;tt class="docutils literal"&gt;cd&lt;/tt&gt; into it:&lt;/p&gt;
+&lt;p&gt;Now you’ll have a &lt;span class="caps"&gt;DEBIAN&lt;/span&gt; directory, &lt;tt class="docutils literal"&gt;cd&lt;/tt&gt; into&amp;nbsp;it:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;DEBIAN
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now edit the control file:&lt;/p&gt;
+&lt;p&gt;Now edit the control&amp;nbsp;file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;vi control
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Delete the line which starts with &lt;tt class="docutils literal"&gt;Depends:&lt;/tt&gt;, save and exit. Now we’ll
-have to update the package with the new control file:&lt;/p&gt;
+have to update the package with the new control&amp;nbsp;file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar -czvf control.tar.gz *
 mv control.tar.gz ../
 &lt;span class="nb"&gt;cd&lt;/span&gt; ../
 ar r davmail_3.8.8-1608-1_all.deb control.tar.gz
 mv davmail_3.8.8-1608-1_all.deb davmail_3.8.8-1608-01_all.deb
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now install the new package:&lt;/p&gt;
-&lt;p&gt;..code-block:: bash&lt;/p&gt;
+&lt;p&gt;Now install the new&amp;nbsp;package:&lt;/p&gt;
+&lt;p&gt;..code-block::&amp;nbsp;bash&lt;/p&gt;
 &lt;blockquote&gt;
 dpkg -i davmail_3.8.8-1608-01_all.deb&lt;/blockquote&gt;
 &lt;p&gt;To configure DavMail, follow their &lt;a class="reference external" href="http://davmail.sourceforge.net/serversetup.html"&gt;server setup&lt;/a&gt;. My
 &lt;tt class="docutils literal"&gt;davmail.properties&lt;/tt&gt; is saved on &lt;tt class="docutils literal"&gt;/etc/davmail/davmail.properties&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;Now comes the wrapper part. Download the community debian package from
 &lt;a class="reference external" href="http://wrapper.tanukisoftware.com/doc/english/download.jsp#stable"&gt;here&lt;/a&gt;.
-For example:&lt;/p&gt;
+For&amp;nbsp;example:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;wget http://wrapper.tanukisoftware.com/download/3.5.7/wrapper-linux-x86-64-3.5.7.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Unpack it&lt;/p&gt;
+&lt;p&gt;Unpack&amp;nbsp;it&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar zxvf wrapper-linux-x86-64-3.5.7.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The method I followed is the &lt;a class="reference external" href="http://wrapper.tanukisoftware.com/doc/english/integrate-simple-nix.html"&gt;Simple App Wrapper&lt;/a&gt;.
-So in &lt;em&gt;baby&lt;/em&gt; steps…:&lt;/p&gt;
+So in &lt;em&gt;baby&lt;/em&gt;&amp;nbsp;steps…:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;wrapper-linux-x86-64-3.5.7/
 mkdir /usr/share/davmail/bin
 mkdir /usr/share/davmail/conf
@@ -128,10 +128,10 @@ mv src/conf/wrapper.conf.in /usr/share/davmail/conf/wrapper.conf
 mkdir /var/run/davmail
 chown mail:mail /var/run/davmail
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, let’s edit some files:&lt;/p&gt;
+&lt;p&gt;Now, let’s edit some&amp;nbsp;files:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;vi /usr/share/davmail/bin/davmail-laucher
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Here’s what I changed:&lt;/p&gt;
+&lt;p&gt;Here’s what I&amp;nbsp;changed:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Application&lt;/span&gt;
 &lt;span class="nv"&gt;APP_NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;davmail&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;APP_LONG_NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;DAVMail Exchange Gateway&amp;quot;&lt;/span&gt;
@@ -155,7 +155,7 @@ chown mail:mail /var/run/davmail
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;vi /usr/share/davmail/conf/wrapper.conf
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Here’s what I changed:&lt;/p&gt;
+&lt;p&gt;Here’s what I&amp;nbsp;changed:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Java&lt;/span&gt; &lt;span class="n"&gt;Main&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;must&lt;/span&gt; &lt;span class="n"&gt;implement&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;WrapperListener&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt;
 &lt;span class="err"&gt;#  &lt;/span&gt;&lt;span class="nc"&gt;or&lt;/span&gt; &lt;span class="n"&gt;guarantee&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;WrapperManager&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;is&lt;/span&gt; &lt;span class="n"&gt;initialized&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;Helper&lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;  &lt;span class="n"&gt;classes&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="n"&gt;provided&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;See&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;Integration&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt;
@@ -206,14 +206,14 @@ chown mail:mail /var/run/davmail
 &lt;span class="err"&gt;#&lt;/span&gt;  &lt;span class="n"&gt;files&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="n"&gt;deleted&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="n"&gt;implies&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;span class="n"&gt;wrapper&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;logfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;maxfiles&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Let's test it:&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s test&amp;nbsp;it:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;/usr/share/davmail/bin/davmail-launcher start
 Starting DAVMail Exchange Gateway...
 Waiting &lt;span class="k"&gt;for&lt;/span&gt; DAVMail Exchange Gateway.......
 running: PID:13569
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;It's running!!!!&lt;/p&gt;
-&lt;p&gt;Now, the monit configuration file:&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s&amp;nbsp;running!!!!&lt;/p&gt;
+&lt;p&gt;Now, the monit configuration&amp;nbsp;file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;check process davmail with pidfile /var/run/davmail/davmail.pid
     group mail
     start program = &amp;quot;/usr/share/davmail/bin/davmail-launcher start&amp;quot;
@@ -224,7 +224,7 @@ running: PID:13569
 &lt;p&gt;Make sure you replace &lt;tt class="docutils literal"&gt;YOUR_SERVER_PUBLIC_FQDN&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;IMAP_PORT&lt;/tt&gt; with
 what’s you’ve setup on your &lt;tt class="docutils literal"&gt;davmail.properties&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;For the sake of completeness, here’s my &lt;tt class="docutils literal"&gt;davmail.properties&lt;/tt&gt;,
-obviously obscured where needed :)&lt;/p&gt;
+obviously obscured where needed&amp;nbsp;:)&lt;/p&gt;
 &lt;!-- code-block: conf
 
 #DavMail settings
@@ -261,39 +261,39 @@ log4j.logger.httpclient.wire=WARN
 log4j.logger.org.apache.commons.httpclient=WARN
 log4j.rootLogger=WARN --&gt;
 &lt;p&gt;And that’s it, hope you find this useful. If you find anything
-confusing, let me know…&lt;/p&gt;
-</summary><category term="DavMail"></category><category term="Monit"></category></entry><entry><title>Long Live Open-Source</title><link href="https://blog.algarvio.me/2009/4/25/long-live-open-source" rel="alternate"></link><updated>2009-04-25T00:50:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2009-04-25:2009/4/25/long-live-open-source</id><summary type="html">&lt;p&gt;As you can read on a &lt;a class="reference external" href="https://blog.algarvio.me/2009/4/24/ati-linux-kubuntu"&gt;previous post of mine&lt;/a&gt;,
-I was, and still am quite pissed at ATI.&lt;/p&gt;
+confusing, let me&amp;nbsp;know…&lt;/p&gt;
+</summary><category term="DavMail"></category><category term="Monit"></category></entry><entry><title>Long Live Open-Source</title><link href="https://blog.algarvio.me/2009/4/25/long-live-open-source" rel="alternate"></link><updated>2009-04-25T00:50:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2009-04-25:2009/4/25/long-live-open-source</id><summary type="html">&lt;p&gt;As you can read on a &lt;a class="reference external" href="https://blog.algarvio.me/2009/4/24/ati-linux-kubuntu"&gt;previous post of mine&lt;/a&gt;,
+I was, and still am quite pissed at &lt;span class="caps"&gt;ATI&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;However, being forced to choose from upgrading my favourite linux distribution,
 &lt;a class="reference external" href="http://www.kubuntu.org/"&gt;Kubuntu&lt;/a&gt;, to latest stable version 9.04 and loosing
-the ATI proprietary drivers, or, staying at the old version of kubuntu, but keep the
+the &lt;span class="caps"&gt;ATI&lt;/span&gt; proprietary drivers, or, staying at the old version of kubuntu, but keep the
 proprietary drivers, Kubuntu won. I was ready to stop using
-&lt;cite&gt;compiz &amp;lt;http://compiz-fusion.org/&amp;gt;&lt;/cite&gt; once more :&lt;/p&gt;
+&lt;cite&gt;compiz &amp;lt;http://compiz-fusion.org/&amp;gt;&lt;/cite&gt; once more&amp;nbsp;:&lt;/p&gt;
 &lt;p&gt;So, after &lt;a class="reference external" href="http://www.google.com"&gt;google’ing&lt;/a&gt; a bit, I found a &lt;a class="reference external" href="http://mebentley.blogspot.com/2009/03/upgrading-to-jaunty-kill-fglrx.html"&gt;post&lt;/a&gt; that encouraged me to follow that path.
-The first step was to un-install the ATI drivers:&lt;/p&gt;
+The first step was to un-install the &lt;span class="caps"&gt;ATI&lt;/span&gt;&amp;nbsp;drivers:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get remove --purge xorg-driver-fglrx fglrx-kernel-source
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;After that, the &lt;a class="reference external" href="http://mebentley.blogspot.com/2009/03/upgrading-to-jaunty-kill-fglrx.html"&gt;post&lt;/a&gt; suggested a reboot, and so I did. I was no longer able to get Xorg up
-and running!&lt;/p&gt;
+and&amp;nbsp;running!&lt;/p&gt;
 &lt;p&gt;There was a step missing, edit &lt;tt class="docutils literal"&gt;/etc/X11/xorg.conf&lt;/tt&gt; and change the
 driver from &lt;tt class="docutils literal"&gt;fglrx&lt;/tt&gt; to &lt;tt class="docutils literal"&gt;ati&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;Now you restart &lt;tt class="docutils literal"&gt;kdm&lt;/tt&gt; and you’re now running the ATI Open-Source drivers.&lt;/p&gt;
-&lt;p&gt;As suggested by other people, I also thought I’d loose 3D rendering but &lt;strong&gt;NO&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;Now you restart &lt;tt class="docutils literal"&gt;kdm&lt;/tt&gt; and you’re now running the &lt;span class="caps"&gt;ATI&lt;/span&gt; Open-Source&amp;nbsp;drivers.&lt;/p&gt;
+&lt;p&gt;As suggested by other people, I also thought I’d loose 3D rendering but &lt;strong&gt;&lt;span class="caps"&gt;NO&lt;/span&gt;&lt;/strong&gt;!&lt;/p&gt;
 &lt;p&gt;What’s even greater is that the compiz effects are even faster than with the proprietary drivers.
 Sure, there are still glitches with the open-source drivers, but nothing one can’t live with,
-at least for now.&lt;/p&gt;
-&lt;p&gt;So, here comes what I said in the title of this post:&lt;/p&gt;
-&lt;p class="center"&gt;&lt;strong&gt;Long Live Open Source!!!&lt;/strong&gt;&lt;/p&gt;
-</summary><category term="ATI"></category><category term="Kubuntu"></category></entry><entry><title>ATI for Linux</title><link href="https://blog.algarvio.me/2009/4/24/ati-linux-kubuntu" rel="alternate"></link><updated>2009-04-24T15:39:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2009-04-24:2009/4/24/ati-linux-kubuntu</id><summary type="html">&lt;p&gt;&lt;strong&gt;Fuck You ATI!!!!!!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Ever since I bought my laptop which is &lt;strong&gt;UNFORTUNATELY&lt;/strong&gt; attached to an
-ATI card, I’ve had issues running it on Linux! And now you tell me that
-you’re dropping support!? This laptop is not 2 years old!!!! Now What!?&lt;/p&gt;
-&lt;p&gt;If I could, believe me, I’d buy a new laptop and would make &lt;strong&gt;SURE&lt;/strong&gt;
-there wasn’t anything ATI inside, in fact, be sure that you won’t
-&lt;strong&gt;EVER&lt;/strong&gt; again see a penny from me!!!!&lt;/p&gt;
-</summary><category term="ati"></category></entry><entry><title>Rotating Trac Logs</title><link href="https://blog.algarvio.me/rotating-trac-logs.html" rel="alternate"></link><updated>2007-12-19T16:49:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-12-19:rotating-trac-logs.html</id><summary type="html">&lt;p&gt;So, you're like me and like to have &lt;a class="reference external" href="http://trac.edgewall.org/"&gt;trac&lt;/a&gt; constantly logging to file and you hate those files getting huge?&lt;/p&gt;
+at least for&amp;nbsp;now.&lt;/p&gt;
+&lt;p&gt;So, here comes what I said in the title of this&amp;nbsp;post:&lt;/p&gt;
+&lt;p class="center"&gt;&lt;strong&gt;Long Live Open&amp;nbsp;Source!!!&lt;/strong&gt;&lt;/p&gt;
+</summary><category term="ATI"></category><category term="Kubuntu"></category></entry><entry><title>ATI for Linux</title><link href="https://blog.algarvio.me/2009/4/24/ati-linux-kubuntu" rel="alternate"></link><updated>2009-04-24T15:39:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2009-04-24:2009/4/24/ati-linux-kubuntu</id><summary type="html">&lt;p&gt;&lt;strong&gt;Fuck You &lt;span class="caps"&gt;ATI&lt;/span&gt;!!!!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ever since I bought my laptop which is &lt;strong&gt;&lt;span class="caps"&gt;UNFORTUNATELY&lt;/span&gt;&lt;/strong&gt; attached to an
+&lt;span class="caps"&gt;ATI&lt;/span&gt; card, I’ve had issues running it on Linux! And now you tell me that
+you’re dropping support!? This laptop is not 2 years old!!!! Now&amp;nbsp;What!?&lt;/p&gt;
+&lt;p&gt;If I could, believe me, I’d buy a new laptop and would make &lt;strong&gt;&lt;span class="caps"&gt;SURE&lt;/span&gt;&lt;/strong&gt;
+there wasn’t anything &lt;span class="caps"&gt;ATI&lt;/span&gt; inside, in fact, be sure that you won’t
+&lt;strong&gt;&lt;span class="caps"&gt;EVER&lt;/span&gt;&lt;/strong&gt; again see a penny from&amp;nbsp;me!!!!&lt;/p&gt;
+</summary><category term="ati"></category></entry><entry><title>Rotating Trac Logs</title><link href="https://blog.algarvio.me/2007/Dez/19/rotating-trac-logs" rel="alternate"></link><updated>2007-12-19T16:49:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-12-19:2007/Dez/19/rotating-trac-logs</id><summary type="html">&lt;p&gt;So, you&amp;#8217;re like me and like to have &lt;a class="reference external" href="http://trac.edgewall.org/"&gt;trac&lt;/a&gt; constantly logging to file and you hate those files getting&amp;nbsp;huge?&lt;/p&gt;
 &lt;p&gt;It is assumed that you keep all your &lt;a class="reference external" href="http://trac.edgewall.org/"&gt;trac&lt;/a&gt; environments on the same base directory, for example &lt;tt class="docutils literal"&gt;/var/lib/trac/&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Here's a simple logrotate config file(normaly under &lt;tt class="docutils literal"&gt;/etc/logrotate.d/&lt;/tt&gt;):&lt;/p&gt;
+&lt;p&gt;Here&amp;#8217;s a simple logrotate config file(normaly under &lt;tt class="docutils literal"&gt;/etc/logrotate.d/&lt;/tt&gt;):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt; /var/lib/trac/*/log/trac.log &lt;span class="o"&gt;{&lt;/span&gt;
    weekly
    rotate 7
@@ -302,19 +302,19 @@ there wasn’t anything ATI inside, in fact, be sure that you won’t
    compress
 &lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;I hope you enjoy this simple solution.&lt;/p&gt;
-</summary><category term="Linux"></category><category term="Trac"></category></entry><entry><title>ZTE MF622 USB Modem Under Linux</title><link href="https://blog.algarvio.me/zte-mf622-usb-modem-under-linux.html" rel="alternate"></link><updated>2007-11-30T09:40:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-11-30:zte-mf622-usb-modem-under-linux.html</id><summary type="html">&lt;p&gt;I recently bought a 3G wireless card to use with my laptop, a ZTE, model MF622.
+&lt;p&gt;I hope you enjoy this simple&amp;nbsp;solution.&lt;/p&gt;
+</summary><category term="Linux"></category><category term="Trac"></category></entry><entry><title>ZTE MF622 USB Modem Under Linux</title><link href="https://blog.algarvio.me/2007/Nov/30/zte-mf622-usb-modem-under-linux" rel="alternate"></link><updated>2007-11-30T09:40:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-11-30:2007/Nov/30/zte-mf622-usb-modem-under-linux</id><summary type="html">&lt;p&gt;I recently bought a 3G wireless card to use with my laptop, a &lt;span class="caps"&gt;ZTE&lt;/span&gt;, model &lt;span class="caps"&gt;MF622&lt;/span&gt;.
 Since the first time I tried Linux, also the first time I encountered this kind
-of problems with my USB ADSL modem, and this being an USB modem also, I knew I was going to have troubles.&lt;/p&gt;
-&lt;p&gt;At first I tried &lt;a class="reference external" href="http://www.draisberghof.de/usb_modeswitch/"&gt;USB ModeSwitch&lt;/a&gt;  which has experimental support for ZTE's MF620 model with no luck.
+of problems with my &lt;span class="caps"&gt;USB&lt;/span&gt; &lt;span class="caps"&gt;ADSL&lt;/span&gt; modem, and this being an &lt;span class="caps"&gt;USB&lt;/span&gt; modem also, I knew I was going to have&amp;nbsp;troubles.&lt;/p&gt;
+&lt;p&gt;At first I tried &lt;a class="reference external" href="http://www.draisberghof.de/usb_modeswitch/"&gt;&lt;span class="caps"&gt;USB&lt;/span&gt; ModeSwitch&lt;/a&gt;  which has experimental support for &lt;span class="caps"&gt;ZTE&lt;/span&gt;&amp;#8217;s &lt;span class="caps"&gt;MF620&lt;/span&gt; model with no luck.
 I then followed the instructions on the site to &lt;em&gt;snoop&lt;/em&gt; the usb communication under M$ Win to get the
-messages being sent to the device so I could mimic that under Linux. &lt;strong&gt;Still&lt;/strong&gt;, no luck.&lt;/p&gt;
+messages being sent to the device so I could mimic that under Linux. &lt;strong&gt;Still&lt;/strong&gt;, no&amp;nbsp;luck.&lt;/p&gt;
 &lt;p&gt;I then tried to code a python script which used the &lt;tt class="docutils literal"&gt;libusb&lt;/tt&gt; so that I could make the device switch
-to the modem configuration. &lt;strong&gt;Still&lt;/strong&gt;, no luck.&lt;/p&gt;
+to the modem configuration. &lt;strong&gt;Still&lt;/strong&gt;, no&amp;nbsp;luck.&lt;/p&gt;
 &lt;p&gt;I spent a lot of time on this subject and then one time I removed the &lt;tt class="docutils literal"&gt;usb_storage&lt;/tt&gt; module while
-&lt;a class="reference external" href="http://www.freedesktop.org/wiki/Software/hal"&gt;HAL&lt;/a&gt; was waiting for the device to settle down and guess what!? After a few seconds, the device
-changed itself to the modem configuration. All I needed now was to automate this procedure.&lt;/p&gt;
-&lt;p&gt;Here's the &lt;strong&gt;udev&lt;/strong&gt; script that does the job:&lt;/p&gt;
+&lt;a class="reference external" href="http://www.freedesktop.org/wiki/Software/hal"&gt;&lt;span class="caps"&gt;HAL&lt;/span&gt;&lt;/a&gt; was waiting for the device to settle down and guess what!? After a few seconds, the device
+changed itself to the modem configuration. All I needed now was to automate this&amp;nbsp;procedure.&lt;/p&gt;
+&lt;p&gt;Here&amp;#8217;s the &lt;strong&gt;udev&lt;/strong&gt; script that does the&amp;nbsp;job:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ACTION!&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;GOTO&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ZTE_End&amp;quot;&lt;/span&gt;
 
 &lt;span class="c"&gt;# Is this the ZeroCD device?&lt;/span&gt;
@@ -342,126 +342,117 @@ RUN+&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/sbin/m
 
 &lt;span class="nv"&gt;LABEL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ZTE_End&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Save this file as &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/udev.d/15-zte-mf622.rules&lt;/span&gt;&lt;/tt&gt; for example(this path is a good one under (K)Ubuntu).&lt;/p&gt;
+&lt;p&gt;Save this file as &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/udev.d/15-zte-mf622.rules&lt;/span&gt;&lt;/tt&gt; for example(this path is a good one under&amp;nbsp;(K)Ubuntu).&lt;/p&gt;
 &lt;p&gt;The next time you plug-in the modem, at first, the &lt;tt class="docutils literal"&gt;usb_storage&lt;/tt&gt; module gets removed. After a few seconds,
-since the modem is not being handled like a storage device, it'll switch to the modem configuration. At this
-stage we tell &lt;a class="reference external" href="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"&gt;UDEV&lt;/a&gt; to load the &lt;tt class="docutils literal"&gt;usbserial&lt;/tt&gt; kernel module with the vendor and product id's and you'll get
-3 &lt;tt class="docutils literal"&gt;ttyUSB&lt;/tt&gt; devices. The &lt;tt class="docutils literal"&gt;/dev/ttyUSB0&lt;/tt&gt; will be the one you should use to make a connection.&lt;/p&gt;
+since the modem is not being handled like a storage device, it&amp;#8217;ll switch to the modem configuration. At this
+stage we tell &lt;a class="reference external" href="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"&gt;&lt;span class="caps"&gt;UDEV&lt;/span&gt;&lt;/a&gt; to load the &lt;tt class="docutils literal"&gt;usbserial&lt;/tt&gt; kernel module with the vendor and product id&amp;#8217;s and you&amp;#8217;ll get
+3 &lt;tt class="docutils literal"&gt;ttyUSB&lt;/tt&gt; devices. The &lt;tt class="docutils literal"&gt;/dev/ttyUSB0&lt;/tt&gt; will be the one you should use to make a&amp;nbsp;connection.&lt;/p&gt;
 &lt;p&gt;You can now point &lt;tt class="docutils literal"&gt;ppp&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;wvdial&lt;/tt&gt; to that device a start the connection, or, you might also want to check
-&lt;a class="reference external" href="http://umtsmon.sourceforge.net/"&gt;UMTSmon&lt;/a&gt;, this is an application suited for these kind of modems.&lt;/p&gt;
-</summary><category term="Linux"></category></entry><entry><title>Irssi Notifier 0.2.0RC5 Released</title><link href="https://blog.algarvio.me/irssi-notifier-020rc5-released.html" rel="alternate"></link><updated>2007-11-05T22:00:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-11-05:irssi-notifier-020rc5-released.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier 0.2.0RC5 Released&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This is hopefully the last release candidate before the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; version
-release.&lt;/p&gt;
+&lt;a class="reference external" href="http://umtsmon.sourceforge.net/"&gt;UMTSmon&lt;/a&gt;, this is an application suited for these kind of&amp;nbsp;modems.&lt;/p&gt;
+</summary><category term="Linux"></category></entry><entry><title>Irssi Notifier 0.2.0RC5 Released</title><link href="https://blog.algarvio.me/2007/Nov/05/irssi-notifier-020rc5-released" rel="alternate"></link><updated>2007-11-05T22:00:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-11-05:2007/Nov/05/irssi-notifier-020rc5-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier 0.2.&lt;span class="caps"&gt;0RC5&lt;/span&gt;&amp;nbsp;Released&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is hopefully the last release candidate before the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; version&amp;nbsp;release.&lt;/p&gt;
 &lt;p&gt;For detailed info on all changes please see the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/browser/trunk/ChangeLog"&gt;ChangeLog&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you'd like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
-&lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket?field_component=Translations&amp;amp;field_version=0.2.0RC1&amp;amp;field_type=enhancement"&gt;file a ticket&lt;/a&gt;, stating what's the language and locale you'd like to provide the
+&lt;p&gt;If you&amp;#8217;d like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
+&lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket?field_component=Translations&amp;amp;field_version=0.2.0RC1&amp;amp;field_type=enhancement"&gt;file a ticket&lt;/a&gt;, stating what&amp;#8217;s the language and locale you&amp;#8217;d like to provide the
 translation for, and I’ll gladly provide you a file for translation which will be
-included in the next release.&lt;/p&gt;
-&lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be
-fixed.&lt;/p&gt;
+included in the next&amp;nbsp;release.&lt;/p&gt;
+&lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be&amp;nbsp;fixed.&lt;/p&gt;
 &lt;p&gt;Happy use of &lt;strong&gt;Irssi Notitifier&lt;/strong&gt;.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC4 Released</title><link href="https://blog.algarvio.me/irssi-notifier-020rc4-released.html" rel="alternate"></link><updated>2007-10-18T18:21:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-10-18:irssi-notifier-020rc4-released.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier 0.2.0RC4 Released&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This is hopefully the last release candidate before the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; version
-release.&lt;/p&gt;
-&lt;p&gt;It includes some bug fixes and some missing files on the distributed
-egg.&lt;/p&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC4 Released</title><link href="https://blog.algarvio.me/2007/Out/18/irssi-notifier-020rc4-released" rel="alternate"></link><updated>2007-10-18T18:21:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-10-18:2007/Out/18/irssi-notifier-020rc4-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier 0.2.&lt;span class="caps"&gt;0RC4&lt;/span&gt;&amp;nbsp;Released&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is hopefully the last release candidate before the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; version&amp;nbsp;release.&lt;/p&gt;
+&lt;p&gt;It includes some bug fixes and some missing files on the distributed&amp;nbsp;egg.&lt;/p&gt;
 &lt;p&gt;For detailed info on all changes please see the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/browser/trunk/ChangeLog"&gt;ChangeLog&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you'd like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
-&lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket?field_component=Translations&amp;amp;field_version=0.2.0RC1&amp;amp;field_type=enhancement"&gt;file a ticket&lt;/a&gt;, stating what's the language and locale you'd like to provide the
+&lt;p&gt;If you&amp;#8217;d like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
+&lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket?field_component=Translations&amp;amp;field_version=0.2.0RC1&amp;amp;field_type=enhancement"&gt;file a ticket&lt;/a&gt;, stating what&amp;#8217;s the language and locale you&amp;#8217;d like to provide the
 translation for, and I’ll gladly provide you a file for translation which will be
-included in the next release.&lt;/p&gt;
-&lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be
-fixed.&lt;/p&gt;
+included in the next&amp;nbsp;release.&lt;/p&gt;
+&lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be&amp;nbsp;fixed.&lt;/p&gt;
 &lt;p&gt;Happy use of &lt;strong&gt;Irssi Notitifier&lt;/strong&gt;.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC2 Released</title><link href="https://blog.algarvio.me/irssi-notifier-020rc2-released.html" rel="alternate"></link><updated>2007-08-19T01:01:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-08-19:irssi-notifier-020rc2-released.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier lowered it’s CPU needs with this RC2 release.&lt;/strong&gt;&lt;/p&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC2 Released</title><link href="https://blog.algarvio.me/2007/Ago/19/irssi-notifier-020rc2-released" rel="alternate"></link><updated>2007-08-19T01:01:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-08-19:2007/Ago/19/irssi-notifier-020rc2-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier lowered it’s &lt;span class="caps"&gt;CPU&lt;/span&gt; needs with this &lt;span class="caps"&gt;RC2&lt;/span&gt;&amp;nbsp;release.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This is a release candidate to enable users to provide feedback on
 possible bugs found so that they’re fixed on the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; release
-due on 01-Sep-2007.&lt;/p&gt;
-&lt;p&gt;Main changes from 0.2.0RC1 are:&lt;/p&gt;
+due on&amp;nbsp;01-Sep-2007.&lt;/p&gt;
+&lt;p&gt;Main changes from 0.2.&lt;span class="caps"&gt;0RC1&lt;/span&gt;&amp;nbsp;are:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Extremely reduced CPU usage when running in GUI mode.&lt;/li&gt;
+&lt;li&gt;Extremely reduced &lt;span class="caps"&gt;CPU&lt;/span&gt; usage when running in &lt;span class="caps"&gt;GUI&lt;/span&gt;&amp;nbsp;mode.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Main changes from 0.1.1 are:&lt;/p&gt;
+&lt;p&gt;Main changes from 0.1.1&amp;nbsp;are:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Brand new GUI to tweak settings and preferences that docks on the
-system-tray.&lt;/li&gt;
-&lt;li&gt;Support for ACTION type messages.&lt;/li&gt;
-&lt;li&gt;Added support for a fallback charset in case UTF-8 is not used
-(Thanks David Durrleman).&lt;/li&gt;
+&lt;li&gt;Brand new &lt;span class="caps"&gt;GUI&lt;/span&gt; to tweak settings and preferences that docks on the&amp;nbsp;system-tray.&lt;/li&gt;
+&lt;li&gt;Support for &lt;span class="caps"&gt;ACTION&lt;/span&gt; type&amp;nbsp;messages.&lt;/li&gt;
+&lt;li&gt;Added support for a fallback charset in case &lt;span class="caps"&gt;UTF&lt;/span&gt;-8 is not used
+(Thanks David&amp;nbsp;Durrleman).&lt;/li&gt;
 &lt;li&gt;Application is now translatable and translated to English(of course)
-and Portuguese.&lt;/li&gt;
-&lt;li&gt;Added Support for &lt;a class="reference external" href="http://www.bitlbee.org/"&gt;bitlbee&lt;/a&gt; (Thanks David Durrleman).&lt;/li&gt;
+and&amp;nbsp;Portuguese.&lt;/li&gt;
+&lt;li&gt;Added Support for &lt;a class="reference external" href="http://www.bitlbee.org/"&gt;bitlbee&lt;/a&gt; (Thanks David&amp;nbsp;Durrleman).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For detailed info on all changes please see the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/browser/trunk/ChangeLog"&gt;ChangeLog&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you'd like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
-&lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket?field_component=Translations&amp;amp;field_version=0.2.0RC1&amp;amp;field_type=enhancement"&gt;file a ticket&lt;/a&gt;, stating what's the language and locale you'd like to provide the
+&lt;p&gt;If you&amp;#8217;d like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
+&lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket?field_component=Translations&amp;amp;field_version=0.2.0RC1&amp;amp;field_type=enhancement"&gt;file a ticket&lt;/a&gt;, stating what&amp;#8217;s the language and locale you&amp;#8217;d like to provide the
 translation for, and I’ll gladly provide you a file for translation which will be
-included in the next release.&lt;/p&gt;
-&lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be
-fixed.&lt;/p&gt;
+included in the next&amp;nbsp;release.&lt;/p&gt;
+&lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be&amp;nbsp;fixed.&lt;/p&gt;
 &lt;p&gt;Happy use of &lt;strong&gt;Irssi Notitifier&lt;/strong&gt;.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC1 Released</title><link href="https://blog.algarvio.me/irssi-notifier-020rc1-released.html" rel="alternate"></link><updated>2007-07-24T20:38:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-07-24:irssi-notifier-020rc1-released.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier has just gone GUI with the 0.2.0RC1 release.&lt;/strong&gt;&lt;/p&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier 0.2.0RC1 Released</title><link href="https://blog.algarvio.me/2007/Jul/24/irssi-notifier-020rc1-released" rel="alternate"></link><updated>2007-07-24T20:38:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-07-24:2007/Jul/24/irssi-notifier-020rc1-released</id><summary type="html">&lt;p&gt;&lt;strong&gt;Irssi Notifier has just gone &lt;span class="caps"&gt;GUI&lt;/span&gt; with the 0.2.&lt;span class="caps"&gt;0RC1&lt;/span&gt;&amp;nbsp;release.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This is a release candidate to enable users to provide feedback on
 possible bugs found so that they’re fixed on the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/milestone/0.2.0"&gt;0.2.0&lt;/a&gt; release due
-on 01-Sep-2007.&lt;/p&gt;
-&lt;p&gt;Main changes from 0.1.1 are:&lt;/p&gt;
+on&amp;nbsp;01-Sep-2007.&lt;/p&gt;
+&lt;p&gt;Main changes from 0.1.1&amp;nbsp;are:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Brand new GUI to tweak settings and preferences that docks on the
-system-tray.&lt;/li&gt;
-&lt;li&gt;Support for ACTION type messages.&lt;/li&gt;
-&lt;li&gt;Added support for a fallback charset in case UTF-8 is not used
-(Thanks David Durrleman).&lt;/li&gt;
+&lt;li&gt;Brand new &lt;span class="caps"&gt;GUI&lt;/span&gt; to tweak settings and preferences that docks on the&amp;nbsp;system-tray.&lt;/li&gt;
+&lt;li&gt;Support for &lt;span class="caps"&gt;ACTION&lt;/span&gt; type&amp;nbsp;messages.&lt;/li&gt;
+&lt;li&gt;Added support for a fallback charset in case &lt;span class="caps"&gt;UTF&lt;/span&gt;-8 is not used
+(Thanks David&amp;nbsp;Durrleman).&lt;/li&gt;
 &lt;li&gt;Application is now translatable and translated to English(of course)
-and Portuguese.&lt;/li&gt;
-&lt;li&gt;Added Support for &lt;a class="reference external" href="http://www.bitlbee.org/"&gt;bitlbee&lt;/a&gt; (Thanks David Durrleman).&lt;/li&gt;
+and&amp;nbsp;Portuguese.&lt;/li&gt;
+&lt;li&gt;Added Support for &lt;a class="reference external" href="http://www.bitlbee.org/"&gt;bitlbee&lt;/a&gt; (Thanks David&amp;nbsp;Durrleman).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For detailed info on all changes please see the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/browser/trunk/ChangeLog"&gt;ChangeLog&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you'd like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
-&lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket?field_component=Translations&amp;amp;field_version=0.2.0RC1&amp;amp;field_type=enhancement"&gt;file a ticket&lt;/a&gt;, stating what's the language and locale you'd like to provide the
+&lt;p&gt;If you&amp;#8217;d like to provide a translation in your language, please, &lt;a class="reference external" href="mailto:ufs&amp;#64;ufsoft.org"&gt;drop me an email&lt;/a&gt; or
+&lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket?field_component=Translations&amp;amp;field_version=0.2.0RC1&amp;amp;field_type=enhancement"&gt;file a ticket&lt;/a&gt;, stating what&amp;#8217;s the language and locale you&amp;#8217;d like to provide the
 translation for, and I’ll gladly provide you a file for translation which will be
-included in the next release.&lt;/p&gt;
-&lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be
-fixed.&lt;/p&gt;
+included in the next&amp;nbsp;release.&lt;/p&gt;
+&lt;p&gt;For any bugs you find, please &lt;a class="reference external" href="http://irssinotifier.ufsoft.org/newticket"&gt;file a ticket&lt;/a&gt; with all info you can gather so it can be&amp;nbsp;fixed.&lt;/p&gt;
 &lt;p&gt;Happy use of &lt;strong&gt;Irssi Notitifier&lt;/strong&gt;.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier Development Site</title><link href="https://blog.algarvio.me/irssi-notifier-development-site.html" rel="alternate"></link><updated>2007-07-13T17:58:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-07-13:irssi-notifier-development-site.html</id><summary type="html">&lt;p&gt;Irssi Notifier now has a development site where you can ask for new
-features, submit bugs or keep update with it's development.&lt;/p&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notifier Development Site</title><link href="https://blog.algarvio.me/2007/Jul/13/irssi-notifier-development-site" rel="alternate"></link><updated>2007-07-13T17:58:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-07-13:2007/Jul/13/irssi-notifier-development-site</id><summary type="html">&lt;p&gt;Irssi Notifier now has a development site where you can ask for new
+features, submit bugs or keep update with it&amp;#8217;s&amp;nbsp;development.&lt;/p&gt;
 &lt;p&gt;Fell free to visit &lt;a class="reference external" href="http://irssinotifier.ufsoft.org"&gt;Irssi Notifier Development Site&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Next version will also support localization and already includes
-English(of course) and Portuguese translations.&lt;/p&gt;
-&lt;p&gt;Check the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org"&gt;Irssi Notifier Development Site&lt;/a&gt; to submit a new translation.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notification</title><link href="https://blog.algarvio.me/irssi-notification.html" rel="alternate"></link><updated>2007-05-10T01:55:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-05-10:irssi-notification.html</id><summary type="html">&lt;img alt="Irssi Notification" class="align-center" src="images/irssi.png" /&gt;
+English(of course) and Portuguese&amp;nbsp;translations.&lt;/p&gt;
+&lt;p&gt;Check the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org"&gt;Irssi Notifier Development Site&lt;/a&gt; to submit a new&amp;nbsp;translation.&lt;/p&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notification</title><link href="https://blog.algarvio.me/2007/Mai/10/irssi-notification" rel="alternate"></link><updated>2007-05-10T01:55:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.algarvio.me,2007-05-10:2007/Mai/10/irssi-notification</id><summary type="html">&lt;img alt="Irssi Notification" class="align-center" src="images/irssi.png" /&gt;
 &lt;p&gt;To make this possible you need the irssi proxy to be configured(find out
 how &lt;a class="reference external" href="http://www.irssi.org/documentation/proxy"&gt;here&lt;/a&gt;), the &lt;a class="reference external" href="http://www.galago-project.org/news/index.php"&gt;libnotify&lt;/a&gt; library and its python bindings, the python
 &lt;a class="reference external" href="http://python-irclib.sourceforge.net"&gt;irclib library&lt;/a&gt;, python and optionally, if you’re behind a restrictive
 proxy like for example &lt;a class="reference external" href="http://www.squid-cache.org"&gt;Squid&lt;/a&gt;, an ssh client capable of port forwarding,
-more on this later on.&lt;/p&gt;
+more on this later&amp;nbsp;on.&lt;/p&gt;
 &lt;a class="reference external image-reference" href="images/irc-notification2.png"&gt;&lt;img alt="An Example of what Irssi Notification Does" class="align-center" src="images/irc-notification2.thumbnail.png" /&gt;&lt;/a&gt;
-&lt;p&gt;OK, now let's go deep into installing a configuring this baby. Install instructions
-will be based on &lt;a class="reference external" href="http://www.kubuntu.org"&gt;Kubuntu&lt;/a&gt;, my laptop's distribution, but they should work for any
-&lt;a class="reference external" href="http://www.debian.org"&gt;Debian&lt;/a&gt; based distribution. Let's install the needed dependencies:&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;OK&lt;/span&gt;, now let&amp;#8217;s go deep into installing a configuring this baby. Install instructions
+will be based on &lt;a class="reference external" href="http://www.kubuntu.org"&gt;Kubuntu&lt;/a&gt;, my laptop&amp;#8217;s distribution, but they should work for any
+&lt;a class="reference external" href="http://www.debian.org"&gt;Debian&lt;/a&gt; based distribution. Let&amp;#8217;s install the needed&amp;nbsp;dependencies:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;apt-get install libnotify1 python-notify python-gtk2 python-setuptools &lt;span class="se"&gt;\&lt;/span&gt;
   python-irclib notification-daemon
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once the above is finished, you can use setuptools &lt;tt class="docutils literal"&gt;easy_install&lt;/tt&gt; tool to install
-Irssi Notifier, so let's install it:&lt;/p&gt;
+Irssi Notifier, so let&amp;#8217;s install&amp;nbsp;it:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;easy_install IrssiNotifier
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The above command will install Irssi Notifier into python's site-packages and the
+&lt;p&gt;The above command will install Irssi Notifier into python&amp;#8217;s site-packages and the
 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;irssi-notifier&lt;/span&gt;&lt;/tt&gt; binary into &lt;tt class="docutils literal"&gt;/usr/bin/&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;Now, until you get your configuration settings right and Irssi Notifier  does not
 throw you an error do, in case you’ve setup irssi proxy to listen on domain
 &lt;tt class="docutils literal"&gt;example.tld&lt;/tt&gt;, port &lt;tt class="docutils literal"&gt;55555&lt;/tt&gt; with the proxy password &lt;tt class="docutils literal"&gt;Bar&lt;/tt&gt; for the nick &lt;tt class="docutils literal"&gt;Foo&lt;/tt&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P example.tld:55555:Foo -p BAR
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If the above did not throw error(it shouldn't) then you can write the configuration
+&lt;p&gt;If the above did not throw error(it shouldn&amp;#8217;t) then you can write the configuration
 to file(defaults to &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.irssinotification&lt;/span&gt;&lt;/tt&gt;):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P example.tld:55555:Foo -p BAR -W
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, next time you want to launch Irssi Notifier, you just have to issue:&lt;/p&gt;
+&lt;p&gt;Now, next time you want to launch Irssi Notifier, you just have to&amp;nbsp;issue:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now, some explanation to what gets written to the configuration file plus some other
-available configuration options:&lt;/p&gt;
+available configuration&amp;nbsp;options:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[main]&lt;/span&gt;
 &lt;span class="na"&gt;passwd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;BAR&lt;/span&gt;
 &lt;span class="na"&gt;proxies&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;example.tld:55555:FOO&lt;/span&gt;
@@ -469,50 +460,49 @@ available configuration options:&lt;/p&gt;
 &lt;span class="na"&gt;friends&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;foobar barfoo&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;strong&gt;nick&lt;/strong&gt; - The common nick used in all defined proxies&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;passwd&lt;/strong&gt; - The irssi proxy password&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;nick&lt;/strong&gt; - The common nick used in all defined&amp;nbsp;proxies&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;passwd&lt;/strong&gt; - The irssi proxy&amp;nbsp;password&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;proxies&lt;/strong&gt; - A space separated list of irssi proxies to listen to
 composed of &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;address&amp;gt;:&amp;lt;port&amp;gt;&lt;/span&gt;&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;address&amp;gt;:&amp;lt;port&amp;gt;:&amp;lt;nick&amp;gt;&lt;/span&gt;&lt;/tt&gt;. If
 you choose the first way to define the proxy you must also provide
 the &lt;tt class="docutils literal"&gt;nick&lt;/tt&gt; configuration variable, that’s the way we know
-messages are addressed to you.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;timeout&lt;/strong&gt; - Timeout in seconds for the pop-up notification to go
-away.&lt;/li&gt;
+messages are addressed to&amp;nbsp;you.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;timeout&lt;/strong&gt; - Timeout in seconds for the pop-up notification to go&amp;nbsp;away.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;friends&lt;/strong&gt; - A space separated list of your friends nicks to be
-notified when they join, part, quit or change nicks.&lt;/li&gt;
+notified when they join, part, quit or change&amp;nbsp;nicks.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;That's about what's needed to run Irssi Notifier.&lt;/p&gt;
+&lt;p&gt;That&amp;#8217;s about what&amp;#8217;s needed to run Irssi&amp;nbsp;Notifier.&lt;/p&gt;
 &lt;p&gt;As a secondary subject for those that, like me, are behind a restrictive
 firewall and the only way out is through an http proxy(&lt;a class="reference external" href="http://www.squid-cache.org"&gt;Squid&lt;/a&gt;), you
 still have an option, &lt;a class="reference external" href="http://www.openssh.com/"&gt;OpenSSH&lt;/a&gt; with &lt;a class="reference external" href="http://zippo.taiyo.co.jp/~gotoh/ssh/connect.html"&gt;Connect-Proxy&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://zippo.taiyo.co.jp/~gotoh/ssh/connect.html"&gt;Connect-Proxy&lt;/a&gt; is basically an &lt;a class="reference external" href="http://www.openssh.com/"&gt;OpenSSH&lt;/a&gt; extension to enable ssh
-connections through a proxy server. There's info on how to use the
+connections through a proxy server. There&amp;#8217;s info on how to use the
 &lt;a class="reference external" href="http://zippo.taiyo.co.jp/~gotoh/ssh/connect.html"&gt;Connect-Proxy&lt;/a&gt; on
 its own page, basicly, in my specific case, I need to connect to the
 http proxy and authentication is not required, so I changed my
-&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.ssh/config&lt;/span&gt;&lt;/tt&gt; and added:&lt;/p&gt;
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.ssh/config&lt;/span&gt;&lt;/tt&gt; and&amp;nbsp;added:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ProxyCommand connect-proxy -H &amp;lt;proxy_host&amp;gt;:&amp;lt;proxy_port&amp;gt; %h %p
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, for every ssh connection that command is executed, and that's how
-&lt;strong&gt;I&lt;/strong&gt;'m able to ssh trough the http proxy. And for irssi notifier,
+&lt;p&gt;Now, for every ssh connection that command is executed, and that&amp;#8217;s how
+&lt;strong&gt;I&lt;/strong&gt;&amp;#8216;m able to ssh trough the http proxy. And for irssi notifier,
 basically, I establish a tunnel for each irssi proxy connection defined,
-for example:&lt;/p&gt;
+for&amp;nbsp;example:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ssh -L 55555:localhost:55555 user@remote.tld
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Back to your own usage, now you should instead point Irssi Notifier to
-&lt;tt class="docutils literal"&gt;localhost&lt;/tt&gt; instead of the remote host.&lt;/p&gt;
+&lt;tt class="docutils literal"&gt;localhost&lt;/tt&gt; instead of the remote&amp;nbsp;host.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;irssi-notifier -P localhost:55555:Foo -p BAR
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And that's it, I hope you enjoy Irssi-Notification and feel free to
-comment on it.&lt;/p&gt;
+&lt;p&gt;And that&amp;#8217;s it, I hope you enjoy Irssi-Notification and feel free to
+comment on&amp;nbsp;it.&lt;/p&gt;
 &lt;hr class="docutils" /&gt;
 &lt;p&gt;&lt;strong&gt;23-05-2007&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;Released a bugfix release, IrssiNotification 0.1.1:&lt;/p&gt;
+&lt;p&gt;Released a bugfix release, IrssiNotification&amp;nbsp;0.1.1:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Fixed a bug regarding private messages notification. Whitin a private
-conversation, even our own messages were beeing notified to us.&lt;/li&gt;
+conversation, even our own messages were beeing notified to&amp;nbsp;us.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;07-09-2007&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;Corrected blog post on the missing dependency and wrong package name,
-thanks Markus.&lt;/p&gt;
+thanks&amp;nbsp;Markus.&lt;/p&gt;
 </summary><category term="Irssi Notification"></category></entry></feed>

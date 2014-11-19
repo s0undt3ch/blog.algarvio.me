@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>DavMail Monit HowTo - s0undt3ch's Blog</title>
+    <title>DavMail Monit HowTo - s0undt3ch's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 
         <meta name="author" content="s0undt3ch" />
         <meta name="keywords" content="DavMail,Monit" />
-        <meta name="description" content="I recently started to monitor my servers with monit. As such, I started creating scripts for all services that needed monitoring until I got stuck on one of them DavMail. It did not write a pid file and didn&#39;t even had a specific process name! This HowTo is meant ..." />
+        <meta name="description" content="I recently started to monitor my servers with monit. As such, I started creating scripts for all services that needed monitoring until I got stuck on one of them DavMail. It did not write a pid file and didn’t even had a specific process name! This HowTo is meant ..." />
 
 
 
@@ -23,6 +23,7 @@
     <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="../../../theme/css/pygments/fruity.css" rel="stylesheet">
+        <link href="../../../theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
         <link href="../../../static/overrides.css" rel="stylesheet">
 
@@ -50,7 +51,7 @@ s0undt3ch's Blog            </a>
                             <a href="../../../category/linux.html">Linux</a>
                         </li>
                         <li >
-                            <a href="../../../category/misc.html">Misc</a>
+                            <a href="../../../category/misc">Misc</a>
                         </li>
                         <li >
                             <a href="../../../category/python.html">Python</a>
@@ -74,8 +75,8 @@ s0undt3ch's Blog            </a>
                 <h1>
                     <a href="../../../2011/02/16/davmail-monit-howto"
                        rel="bookmark"
-                       title="Permalink to DavMail Monit HowTo">
-                        DavMail Monit HowTo
+                       title="Permalink to DavMail Monit HowTo">
+                        DavMail Monit&nbsp;HowTo
                     </a>
                 </h1>
             </header>
@@ -100,52 +101,52 @@ s0undt3ch's Blog            </a>
                 <p>I recently started to monitor my servers with <a class="reference external" href="http://mmonit.com/monit/">monit</a>.
 As such, I started creating scripts for all services that needed monitoring until I
 got stuck on one of them <a class="reference external" href="http://davmail.sourceforge.net/">DavMail</a>. It did not
-write a pid file and didn't even had a specific process name!</p>
-<p>This HowTo is meant to run on an ubuntu/debian system.</p>
+write a pid file and didn&#8217;t even had a specific process&nbsp;name!</p>
+<p>This HowTo is meant to run on an ubuntu/debian&nbsp;system.</p>
 <p>I started <a class="reference external" href="http://zine_blog/www.google.com">googling</a> for a solution
 and it was not easy. The problem was with java not allowing or providing
 a way to change the process name of a
 <a class="reference external" href="http://en.wikipedia.org/wiki/Java_Virtual_Machine">jvm</a>.</p>
 <p>The solution I found was <a class="reference external" href="http://wrapper.tanukisoftware.com/&gt;">Java Service Wrapper</a> and bellow are the steps
-on how to use it.</p>
-<p>First of all, download the debian DavMail package:</p>
+on how to use&nbsp;it.</p>
+<p>First of all, download the debian DavMail&nbsp;package:</p>
 <div class="highlight"><pre>wget http://sourceforge.net/projects/davmail/files/davmail/3.8.8/davmail_3.8.8-1608-1_all.deb/download <span class="se">\</span>
   -O davmail_3.8.8-1608-1_all.deb
 </pre></div>
 <p>Since this is to be installed on a headless server, we need to remove
-some of the dependencies of the package:</p>
+some of the dependencies of the&nbsp;package:</p>
 <div class="highlight"><pre>dpkg -e davmail_3.8.8-1608-1_all.deb
 </pre></div>
-<p>Now you’ll have a DEBIAN directory, <tt class="docutils literal">cd</tt> into it:</p>
+<p>Now you’ll have a <span class="caps">DEBIAN</span> directory, <tt class="docutils literal">cd</tt> into&nbsp;it:</p>
 <div class="highlight"><pre><span class="nb">cd </span>DEBIAN
 </pre></div>
-<p>Now edit the control file:</p>
+<p>Now edit the control&nbsp;file:</p>
 <div class="highlight"><pre>vi control
 </pre></div>
 <p>Delete the line which starts with <tt class="docutils literal">Depends:</tt>, save and exit. Now we’ll
-have to update the package with the new control file:</p>
+have to update the package with the new control&nbsp;file:</p>
 <div class="highlight"><pre>tar -czvf control.tar.gz *
 mv control.tar.gz ../
 <span class="nb">cd</span> ../
 ar r davmail_3.8.8-1608-1_all.deb control.tar.gz
 mv davmail_3.8.8-1608-1_all.deb davmail_3.8.8-1608-01_all.deb
 </pre></div>
-<p>Now install the new package:</p>
-<p>..code-block:: bash</p>
+<p>Now install the new&nbsp;package:</p>
+<p>..code-block::&nbsp;bash</p>
 <blockquote>
 dpkg -i davmail_3.8.8-1608-01_all.deb</blockquote>
 <p>To configure DavMail, follow their <a class="reference external" href="http://davmail.sourceforge.net/serversetup.html">server setup</a>. My
 <tt class="docutils literal">davmail.properties</tt> is saved on <tt class="docutils literal">/etc/davmail/davmail.properties</tt></p>
 <p>Now comes the wrapper part. Download the community debian package from
 <a class="reference external" href="http://wrapper.tanukisoftware.com/doc/english/download.jsp#stable">here</a>.
-For example:</p>
+For&nbsp;example:</p>
 <div class="highlight"><pre>wget http://wrapper.tanukisoftware.com/download/3.5.7/wrapper-linux-x86-64-3.5.7.tar.gz
 </pre></div>
-<p>Unpack it</p>
+<p>Unpack&nbsp;it</p>
 <div class="highlight"><pre>tar zxvf wrapper-linux-x86-64-3.5.7.tar.gz
 </pre></div>
 <p>The method I followed is the <a class="reference external" href="http://wrapper.tanukisoftware.com/doc/english/integrate-simple-nix.html">Simple App Wrapper</a>.
-So in <em>baby</em> steps…:</p>
+So in <em>baby</em>&nbsp;steps…:</p>
 <div class="highlight"><pre><span class="nb">cd </span>wrapper-linux-x86-64-3.5.7/
 mkdir /usr/share/davmail/bin
 mkdir /usr/share/davmail/conf
@@ -157,10 +158,10 @@ mv src/conf/wrapper.conf.in /usr/share/davmail/conf/wrapper.conf
 mkdir /var/run/davmail
 chown mail:mail /var/run/davmail
 </pre></div>
-<p>Now, let’s edit some files:</p>
+<p>Now, let’s edit some&nbsp;files:</p>
 <div class="highlight"><pre>vi /usr/share/davmail/bin/davmail-laucher
 </pre></div>
-<p>Here’s what I changed:</p>
+<p>Here’s what I&nbsp;changed:</p>
 <div class="highlight"><pre><span class="c"># Application</span>
 <span class="nv">APP_NAME</span><span class="o">=</span><span class="s2">&quot;davmail&quot;</span>
 <span class="nv">APP_LONG_NAME</span><span class="o">=</span><span class="s2">&quot;DAVMail Exchange Gateway&quot;</span>
@@ -184,7 +185,7 @@ chown mail:mail /var/run/davmail
 </pre></div>
 <div class="highlight"><pre>vi /usr/share/davmail/conf/wrapper.conf
 </pre></div>
-<p>Here’s what I changed:</p>
+<p>Here’s what I&nbsp;changed:</p>
 <div class="highlight"><pre><span class="err">#</span> <span class="n">Java</span> <span class="n">Main</span> <span class="n">class</span><span class="o">.</span>  <span class="n">This</span> <span class="kd">class</span> <span class="nc">must</span> <span class="n">implement</span> <span class="n">the</span> <span class="n">WrapperListener</span> <span class="kd">interface</span>
 <span class="err">#  </span><span class="nc">or</span> <span class="n">guarantee</span> <span class="n">that</span> <span class="n">the</span> <span class="n">WrapperManager</span> <span class="kd">class</span> <span class="nc">is</span> <span class="n">initialized</span><span class="o">.</span>  <span class="n">Helper</span>
 <span class="err">#</span>  <span class="n">classes</span> <span class="n">are</span> <span class="n">provided</span> <span class="n">to</span> <span class="k">do</span> <span class="k">this</span> <span class="k">for</span> <span class="n">you</span><span class="o">.</span>  <span class="n">See</span> <span class="n">the</span> <span class="n">Integration</span> <span class="n">section</span>
@@ -235,14 +236,14 @@ chown mail:mail /var/run/davmail
 <span class="err">#</span>  <span class="n">files</span> <span class="n">are</span> <span class="n">deleted</span><span class="o">.</span>  <span class="n">The</span> <span class="k">default</span> <span class="n">value</span> <span class="n">of</span> <span class="mi">0</span> <span class="n">implies</span> <span class="n">no</span> <span class="n">limit</span><span class="o">.</span>
 <span class="n">wrapper</span><span class="o">.</span><span class="na">logfile</span><span class="o">.</span><span class="na">maxfiles</span><span class="o">=</span><span class="mi">3</span>
 </pre></div>
-<p>Let's test it:</p>
+<p>Let&#8217;s test&nbsp;it:</p>
 <div class="highlight"><pre>/usr/share/davmail/bin/davmail-launcher start
 Starting DAVMail Exchange Gateway...
 Waiting <span class="k">for</span> DAVMail Exchange Gateway.......
 running: PID:13569
 </pre></div>
-<p>It's running!!!!</p>
-<p>Now, the monit configuration file:</p>
+<p>It&#8217;s&nbsp;running!!!!</p>
+<p>Now, the monit configuration&nbsp;file:</p>
 <div class="highlight"><pre>check process davmail with pidfile /var/run/davmail/davmail.pid
     group mail
     start program = &quot;/usr/share/davmail/bin/davmail-launcher start&quot;
@@ -253,7 +254,7 @@ running: PID:13569
 <p>Make sure you replace <tt class="docutils literal">YOUR_SERVER_PUBLIC_FQDN</tt> and <tt class="docutils literal">IMAP_PORT</tt> with
 what’s you’ve setup on your <tt class="docutils literal">davmail.properties</tt>.</p>
 <p>For the sake of completeness, here’s my <tt class="docutils literal">davmail.properties</tt>,
-obviously obscured where needed :)</p>
+obviously obscured where needed&nbsp;:)</p>
 <!-- code-block: conf
 
 #DavMail settings
@@ -290,7 +291,7 @@ log4j.logger.httpclient.wire=WARN
 log4j.logger.org.apache.commons.httpclient=WARN
 log4j.rootLogger=WARN -->
 <p>And that’s it, hope you find this useful. If you find anything
-confusing, let me know…</p>
+confusing, let me&nbsp;know…</p>
 
             </div>
             <!-- /.entry-content -->
@@ -353,6 +354,11 @@ confusing, let me know…</p>
             <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="../../../tag/textpress-plugin.html">
+                            TextPress Plugin
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="../../../tag/textpress.html">
                             TextPress
                         </a>
@@ -362,14 +368,9 @@ confusing, let me know…</p>
                             Irssi Notification
                         </a>
                     </li>
-                    <li class="list-group-item tag-1">
-                        <a href="../../../tag/textpress-plugin.html">
-                            TextPress Plugin
-                        </a>
-                    </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/kubuntu.html">
-                            Kubuntu
+                        <a href="../../../tag/linux.html">
+                            Linux
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -378,18 +379,8 @@ confusing, let me know…</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/linux.html">
-                            Linux
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/javascript.html">
-                            Javascript
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/bluetooth.html">
-                            Bluetooth
+                        <a href="../../../tag/kubuntu.html">
+                            Kubuntu
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -403,6 +394,41 @@ confusing, let me know…</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="../../../tag/webhelpers.html">
+                            WebHelpers
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/postgres-bash-backup.html">
+                            Postgres Bash Backup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/ipython.html">
+                            IPython
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/bluetooth.html">
+                            Bluetooth
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pylint.html">
+                            PyLint
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pyside.html">
+                            PySide
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/virtualenv.html">
+                            virtualenv
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="../../../tag/qt.html">
                             Qt
                         </a>
@@ -413,43 +439,18 @@ confusing, let me know…</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/postgres-bash-backup.html">
-                            Postgres Bash Backup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylons.html">
-                            Pylons
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylint.html">
-                            PyLint
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="../../../tag/trac.html">
                             Trac
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/ipython.html">
-                            IPython
+                        <a href="../../../tag/javascript.html">
+                            Javascript
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/virtualenv.html">
-                            virtualenv
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/webhelpers.html">
-                            WebHelpers
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pyside.html">
-                            PySide
+                        <a href="../../../tag/pylons.html">
+                            Pylons
                         </a>
                     </li>
                 </ul>

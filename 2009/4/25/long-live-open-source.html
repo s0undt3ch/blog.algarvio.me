@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Long Live Open-Source - s0undt3ch's Blog</title>
+    <title>Long Live Open-Source - s0undt3ch's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -23,6 +23,7 @@
     <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="../../../theme/css/pygments/fruity.css" rel="stylesheet">
+        <link href="../../../theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
         <link href="../../../static/overrides.css" rel="stylesheet">
 
@@ -50,7 +51,7 @@ s0undt3ch's Blog            </a>
                             <a href="../../../category/linux.html">Linux</a>
                         </li>
                         <li >
-                            <a href="../../../category/misc.html">Misc</a>
+                            <a href="../../../category/misc">Misc</a>
                         </li>
                         <li >
                             <a href="../../../category/python.html">Python</a>
@@ -74,8 +75,8 @@ s0undt3ch's Blog            </a>
                 <h1>
                     <a href="../../../2009/4/25/long-live-open-source"
                        rel="bookmark"
-                       title="Permalink to Long Live Open-Source">
-                        Long Live Open-Source
+                       title="Permalink to Long Live Open-Source">
+                        Long Live&nbsp;Open-Source
                     </a>
                 </h1>
             </header>
@@ -98,27 +99,27 @@ s0undt3ch's Blog            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>As you can read on a <a class="reference external" href="../../../2009/4/24/ati-linux-kubuntu">previous post of mine</a>,
-I was, and still am quite pissed at ATI.</p>
+I was, and still am quite pissed at <span class="caps">ATI</span>.</p>
 <p>However, being forced to choose from upgrading my favourite linux distribution,
 <a class="reference external" href="http://www.kubuntu.org/">Kubuntu</a>, to latest stable version 9.04 and loosing
-the ATI proprietary drivers, or, staying at the old version of kubuntu, but keep the
+the <span class="caps">ATI</span> proprietary drivers, or, staying at the old version of kubuntu, but keep the
 proprietary drivers, Kubuntu won. I was ready to stop using
-<cite>compiz &lt;http://compiz-fusion.org/&gt;</cite> once more :</p>
+<cite>compiz &lt;http://compiz-fusion.org/&gt;</cite> once more&nbsp;:</p>
 <p>So, after <a class="reference external" href="http://www.google.com">google’ing</a> a bit, I found a <a class="reference external" href="http://mebentley.blogspot.com/2009/03/upgrading-to-jaunty-kill-fglrx.html">post</a> that encouraged me to follow that path.
-The first step was to un-install the ATI drivers:</p>
+The first step was to un-install the <span class="caps">ATI</span>&nbsp;drivers:</p>
 <div class="highlight"><pre>sudo apt-get remove --purge xorg-driver-fglrx fglrx-kernel-source
 </pre></div>
 <p>After that, the <a class="reference external" href="http://mebentley.blogspot.com/2009/03/upgrading-to-jaunty-kill-fglrx.html">post</a> suggested a reboot, and so I did. I was no longer able to get Xorg up
-and running!</p>
+and&nbsp;running!</p>
 <p>There was a step missing, edit <tt class="docutils literal">/etc/X11/xorg.conf</tt> and change the
 driver from <tt class="docutils literal">fglrx</tt> to <tt class="docutils literal">ati</tt>.</p>
-<p>Now you restart <tt class="docutils literal">kdm</tt> and you’re now running the ATI Open-Source drivers.</p>
-<p>As suggested by other people, I also thought I’d loose 3D rendering but <strong>NO</strong>!</p>
+<p>Now you restart <tt class="docutils literal">kdm</tt> and you’re now running the <span class="caps">ATI</span> Open-Source&nbsp;drivers.</p>
+<p>As suggested by other people, I also thought I’d loose 3D rendering but <strong><span class="caps">NO</span></strong>!</p>
 <p>What’s even greater is that the compiz effects are even faster than with the proprietary drivers.
 Sure, there are still glitches with the open-source drivers, but nothing one can’t live with,
-at least for now.</p>
-<p>So, here comes what I said in the title of this post:</p>
-<p class="center"><strong>Long Live Open Source!!!</strong></p>
+at least for&nbsp;now.</p>
+<p>So, here comes what I said in the title of this&nbsp;post:</p>
+<p class="center"><strong>Long Live Open&nbsp;Source!!!</strong></p>
 
             </div>
             <!-- /.entry-content -->
@@ -181,6 +182,11 @@ at least for now.</p>
             <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="../../../tag/textpress-plugin.html">
+                            TextPress Plugin
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="../../../tag/textpress.html">
                             TextPress
                         </a>
@@ -190,14 +196,9 @@ at least for now.</p>
                             Irssi Notification
                         </a>
                     </li>
-                    <li class="list-group-item tag-1">
-                        <a href="../../../tag/textpress-plugin.html">
-                            TextPress Plugin
-                        </a>
-                    </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/kubuntu.html">
-                            Kubuntu
+                        <a href="../../../tag/linux.html">
+                            Linux
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -206,18 +207,8 @@ at least for now.</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="../../../tag/linux.html">
-                            Linux
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/javascript.html">
-                            Javascript
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/bluetooth.html">
-                            Bluetooth
+                        <a href="../../../tag/kubuntu.html">
+                            Kubuntu
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -231,6 +222,41 @@ at least for now.</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="../../../tag/webhelpers.html">
+                            WebHelpers
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/postgres-bash-backup.html">
+                            Postgres Bash Backup
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/ipython.html">
+                            IPython
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/bluetooth.html">
+                            Bluetooth
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pylint.html">
+                            PyLint
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/pyside.html">
+                            PySide
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="../../../tag/virtualenv.html">
+                            virtualenv
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="../../../tag/qt.html">
                             Qt
                         </a>
@@ -241,43 +267,18 @@ at least for now.</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/postgres-bash-backup.html">
-                            Postgres Bash Backup
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylons.html">
-                            Pylons
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pylint.html">
-                            PyLint
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="../../../tag/trac.html">
                             Trac
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/ipython.html">
-                            IPython
+                        <a href="../../../tag/javascript.html">
+                            Javascript
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="../../../tag/virtualenv.html">
-                            virtualenv
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/webhelpers.html">
-                            WebHelpers
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="../../../tag/pyside.html">
-                            PySide
+                        <a href="../../../tag/pylons.html">
+                            Pylons
                         </a>
                     </li>
                 </ul>
