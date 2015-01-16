@@ -27,6 +27,19 @@ EXTRA_PATH_METADATA = {
     'CNAME': {'path': 'CNAME'}
 }
 
+ARTICLE_URL = '{date:%Y}/{date:%b}/{date:%d}/{slug}'
+ARTICLE_SAVE_AS = '{0}/index.html'.format(ARTICLE_URL)
+CATEGORY_URL = 'category/{slug}'
+CATEGORY_SAVE_AS = '{0}/index.html'.format(CATEGORY_URL)
+TAG_URL = 'tag/{slug}'
+TAG_SAVE_AS = '{0}/index.html'.format(TAG_URL)
+AUTHOR_URL = 'author/{slug}'
+#AUTHOR_SAVE_AS = '{0}/index.html'.format(AUTHOR_URL)
+AUTHOR_SAVE_AS = ''  # I'm the only author
+
+DEFAULT_METADATA = {'author': 's0undt3ch'}
+
+TYPOGRIFY = True
 
 PATH = 'content'
 
@@ -43,6 +56,10 @@ AUTHOR_FEED_RSS = None
 
 GITHUB_URL = 'https://github.com/s0undt3ch'
 DISQUS_SITENAME = 's0undt3ch'
+TWITTER_USERNAME = 's0und3tch'
+
+# code blocks with line numbers
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -57,4 +74,4 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = False
