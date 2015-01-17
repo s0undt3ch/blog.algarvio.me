@@ -6,7 +6,6 @@ import os
 AUTHOR = u'Pedro Algarvio, aka, s0undt3ch'
 SITENAME = u"s0undt3ch's Blog"
 SITEURL = 'https://blog.ufsoft.org'
-#SITEURL = 'http://ufsoft.github.io/blog.ufsoft.org'
 PYGMENTS_STYLE = 'fruity'
 CC_LICENSE = 'CC-BY-NC'
 THEME = '.pelican-bootstrap3-themes'
@@ -68,8 +67,13 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+    ('Linked-In', 'http://www.linkedin.com/in/pedroalgarvio'),
+    ('GitHub', 'https://github.com/s0undt3ch'),
+    ('Bitbucket', 'https://bitbucket.org/s0undt3ch'),
+    ('Open Hub - Ohloh', 'https://www.openhub.net/accounts/s0undt3ch'),
+    ('Open Source Report Card', 'https://osrc.dfm.io/s0undt3ch/'),
+)
 
 DEFAULT_PAGINATION = 10
 
