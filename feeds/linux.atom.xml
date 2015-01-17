@@ -592,7 +592,7 @@ how &lt;a class="reference external" href="http://www.irssi.org/documentation/pr
 &lt;a class="reference external" href="http://python-irclib.sourceforge.net"&gt;irclib library&lt;/a&gt;, python and optionally, if you’re behind a restrictive
 proxy like for example &lt;a class="reference external" href="http://www.squid-cache.org"&gt;Squid&lt;/a&gt;, an ssh client capable of port forwarding,
 more on this later&amp;nbsp;on.&lt;/p&gt;
-&lt;a class="reference external image-reference" href="images/irc-notification2.png"&gt;&lt;img alt="An Example of what Irssi Notification Does" class="align-center" src="images/irc-notification2.thumbnail.png" /&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="/images/irc-notification2.png"&gt;&lt;img alt="An Example of what Irssi Notification Does" class="align-center" src="/images/irc-notification2.thumbnail.png" /&gt;&lt;/a&gt;
 &lt;p&gt;&lt;span class="caps"&gt;OK&lt;/span&gt;, now let&amp;#8217;s go deep into installing a configuring this baby. Install instructions
 will be based on &lt;a class="reference external" href="http://www.kubuntu.org"&gt;Kubuntu&lt;/a&gt;, my laptop&amp;#8217;s distribution, but they should work for any
 &lt;a class="reference external" href="http://www.debian.org"&gt;Debian&lt;/a&gt; based distribution. Let&amp;#8217;s install the needed&amp;nbsp;dependencies:&lt;/p&gt;
