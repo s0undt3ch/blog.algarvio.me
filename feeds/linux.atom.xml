@@ -586,7 +586,7 @@ features, submit bugs or keep update with it&amp;#8217;s&amp;nbsp;development.&l
 &lt;p&gt;Next version will also support localization and already includes
 English(of course) and Portuguese&amp;nbsp;translations.&lt;/p&gt;
 &lt;p&gt;Check the &lt;a class="reference external" href="http://irssinotifier.ufsoft.org"&gt;Irssi Notifier Development Site&lt;/a&gt; to submit a new&amp;nbsp;translation.&lt;/p&gt;
-</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notification</title><link href="http://blog.ufsoft.org/irssi-notification" rel="alternate"></link><updated>2007-05-10T01:55:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.ufsoft.org,2007-05-10:irssi-notification</id><summary type="html">&lt;img alt="Irssi Notification" class="align-center" src="images/irssi.png" /&gt;
+</summary><category term="Irssi Notification"></category></entry><entry><title>Irssi Notification</title><link href="http://blog.ufsoft.org/irssi-notification" rel="alternate"></link><updated>2007-05-10T01:55:00+01:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.ufsoft.org,2007-05-10:irssi-notification</id><summary type="html">&lt;img alt="Irssi Notification" class="align-center" src="/images/irssi.png" /&gt;
 &lt;p&gt;To make this possible you need the irssi proxy to be configured(find out
 how &lt;a class="reference external" href="http://www.irssi.org/documentation/proxy"&gt;here&lt;/a&gt;), the &lt;a class="reference external" href="http://www.galago-project.org/news/index.php"&gt;libnotify&lt;/a&gt; library and its python bindings, the python
 &lt;a class="reference external" href="http://python-irclib.sourceforge.net"&gt;irclib library&lt;/a&gt;, python and optionally, if you’re behind a restrictive

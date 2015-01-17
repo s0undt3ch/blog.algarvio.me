@@ -159,13 +159,13 @@ enter your main domain here. For more info, please visit the previous&amp;nbsp;l
 &lt;/div&gt;
 </summary><category term="TextPress"></category><category term="TextPress Plugin"></category></entry><entry><title>TextPress Blix Theme</title><link href="http://blog.ufsoft.org/textpress-blix-theme" rel="alternate"></link><updated>2008-02-25T16:23:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.ufsoft.org,2008-02-25:textpress-blix-theme</id><summary type="html">&lt;p&gt;This is a &lt;a class="reference external" href="http://textpress.pocoo.org"&gt;TextPress&lt;/a&gt; theme ported from&amp;nbsp;WordPress.&lt;/p&gt;
 &lt;p&gt;Here’s a preview of&amp;nbsp;it:&lt;/p&gt;
-&lt;img alt="Blix Theme Preview" class="align-center" src="images/blix_theme_preview.png" /&gt;
+&lt;img alt="Blix Theme Preview" class="align-center" src="/images/blix_theme_preview.png" /&gt;
 &lt;p&gt;You can submit bugs and/or new features to &lt;a class="reference external" href="http://devnull.ufsoft.org"&gt;DevNull&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class="strikethrough"&gt;Download&amp;nbsp;It&lt;/span&gt;&lt;/p&gt;
 </summary><category term="TextPress"></category><category term="TextPress Plugin"></category></entry><entry><title>TextPress Extended Last Comments Widget</title><link href="http://blog.ufsoft.org/textpress-extended-last-comments-widget" rel="alternate"></link><updated>2008-02-25T16:22:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.ufsoft.org,2008-02-25:textpress-extended-last-comments-widget</id><summary type="html">&lt;p&gt;This is the same as the &amp;quot;Latest Comments&amp;quot; TextPress widget except it
 also shows &lt;tt class="docutils literal"&gt;n&lt;/tt&gt; words(configurable) words of each&amp;nbsp;comment.&lt;/p&gt;
 &lt;p&gt;Not much, but&amp;nbsp;useful.&lt;/p&gt;
-&lt;img alt="Extended Last Comments Preview" class="align-center" src="images/extended_latest_comments_preview.png" /&gt;
+&lt;img alt="Extended Last Comments Preview" class="align-center" src="/images/extended_latest_comments_preview.png" /&gt;
 &lt;p&gt;You can submit bugs and/or new features to &lt;a class="reference external" href="http://devnull.ufsoft.org"&gt;DevNull&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class="strikethrough"&gt;Download&amp;nbsp;It&lt;/span&gt;&lt;/p&gt;
 </summary><category term="TextPress"></category><category term="TextPress Plugin"></category></entry><entry><title>TextPress ImageBox Plugin</title><link href="http://blog.ufsoft.org/textpress-imagebox-plugin" rel="alternate"></link><updated>2008-02-25T16:22:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.ufsoft.org,2008-02-25:textpress-imagebox-plugin</id><summary type="html">&lt;p&gt;TextPress jQuery ImgBox plugin&amp;nbsp;support.&lt;/p&gt;
@@ -188,13 +188,13 @@ also shows &lt;tt class="docutils literal"&gt;n&lt;/tt&gt; words(configurable) w
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;strong&gt;The needed step is to wrap your series of image links in, for example a&lt;/strong&gt; &lt;tt class="docutils literal"&gt;span&lt;/tt&gt; &lt;strong&gt;with the class&lt;/strong&gt; &lt;tt class="docutils literal"&gt;imagebox&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;This way you&amp;#8217;re image link will be opened by jQuery&amp;#8217;s ImageBox&amp;nbsp;plugin.&lt;/p&gt;
-&lt;img alt="Imagebox Preview" class="align-center" src="images/imagebox_preview.png" /&gt;
+&lt;img alt="Imagebox Preview" class="align-center" src="/images/imagebox_preview.png" /&gt;
 &lt;p&gt;Read more about &lt;a class="reference external" href="http://plugins.jquery.com/project/imgbox"&gt;jQuery&amp;#8217;s ImgBox plugin&lt;/a&gt; and it&amp;#8217;s&amp;nbsp;usage.&lt;/p&gt;
 &lt;p&gt;You can submit bugs and/or new features to &lt;a class="reference external" href="http://devnull.ufsoft.org"&gt;DevNull&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class="strikethrough"&gt;Download&amp;nbsp;It&lt;/span&gt;&lt;/p&gt;
 </summary><category term="TextPress"></category><category term="TextPress Plugin"></category></entry><entry><title>ChowMe TextPress Theme</title><link href="http://blog.ufsoft.org/chowme-textpress-theme" rel="alternate"></link><updated>2008-02-25T16:17:00+00:00</updated><author><name>s0undt3ch</name></author><id>tag:blog.ufsoft.org,2008-02-25:chowme-textpress-theme</id><summary type="html">&lt;p&gt;This was my first plugin for &lt;a class="reference external" href="http://textpress.pocoo.org"&gt;TextPress&lt;/a&gt;. A theme to get my old blog looks into &lt;a class="reference external" href="http://textpress.pocoo.org"&gt;TextPress&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here&amp;#8217;s a preview of&amp;nbsp;it:&lt;/p&gt;
-&lt;img alt="ChowMe Theme Preview" class="align-center" src="images/chow_me_theme_preview.png" /&gt;
+&lt;img alt="ChowMe Theme Preview" class="align-center" src="/images/chow_me_theme_preview.png" /&gt;
 &lt;p&gt;It&amp;#8217;s the theme this blog&amp;nbsp;uses&lt;/p&gt;
 &lt;p&gt;You can submit bugs and/or new features to &lt;a class="reference external" href="http://devnull.ufsoft.org"&gt;DevNull&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="uploads/ChowMeTheme-0.1.plugin"&gt;Download&amp;nbsp;It&lt;/a&gt;&lt;/p&gt;
