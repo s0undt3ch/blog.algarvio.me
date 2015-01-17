@@ -12,7 +12,7 @@ WordPress.
 
 Here’s a preview of it:
 
-.. image:: images/blix_theme_preview.png
+.. image:: /images/blix_theme_preview.png
    :alt: Blix Theme Preview
    :align: center
 

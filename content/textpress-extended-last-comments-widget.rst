@@ -12,7 +12,7 @@ also shows ``n`` words(configurable) words of each comment.
 
 Not much, but useful.
 
-.. image:: images/extended_latest_comments_preview.png
+.. image:: /images/extended_latest_comments_preview.png
    :alt: Extended Last Comments Preview
    :align: center
 

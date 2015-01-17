@@ -8,7 +8,7 @@ Irssi Notification
 :url: irssi-notification
 :save_as: irssi-notification/index.html
 
-.. image:: images/irssi.png
+.. image:: /images/irssi.png
    :alt: Irssi Notification
    :align: center
 
@@ -23,9 +23,9 @@ __ http://www.irssi.org/documentation/proxy
 __ http://www.galago-project.org/news/index.php
 __ http://python-irclib.sourceforge.net
 
-.. image:: images/irc-notification2.thumbnail.png
+.. image:: /images/irc-notification2.thumbnail.png
    :alt: An Example of what Irssi Notification Does
-   :target: images/irc-notification2.png
+   :target: /images/irc-notification2.png
    :align: center
 
 OK, now let's go deep into installing a configuring this baby. Install instructions

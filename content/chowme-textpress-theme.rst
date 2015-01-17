@@ -12,7 +12,7 @@ This was my first plugin for `TextPress`_. A theme to get my old blog looks into
 Here's a preview of it:
 
 
-.. image:: images/chow_me_theme_preview.png
+.. image:: /images/chow_me_theme_preview.png
    :align: center
    :alt: ChowMe Theme Preview
 

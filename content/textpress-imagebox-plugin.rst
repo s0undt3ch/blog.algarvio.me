@@ -26,7 +26,7 @@ Usage:
 
 This way you're image link will be opened by jQuery's ImageBox plugin.
 
-.. image:: images/imagebox_preview.png
+.. image:: /images/imagebox_preview.png
    :alt: Imagebox Preview
    :align: center
 
