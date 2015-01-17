@@ -5,7 +5,7 @@ import os
 
 AUTHOR = u'Pedro Algarvio, aka, s0undt3ch'
 SITENAME = u"s0undt3ch's Blog"
-SITEURL = 'https://blog.ufsoft.org'
+SITEURL = 'http://blog.ufsoft.org/'
 PYGMENTS_STYLE = 'fruity'
 CC_LICENSE = 'CC-BY-NC'
 THEME = '.pelican-bootstrap3-themes'
@@ -22,6 +22,7 @@ STATIC_PATHS = ['images', 'css/overrides.css', 'CNAME']
 
 # Tell Pelican to change the path to 'static/overrides.css' in the output dir
 EXTRA_PATH_METADATA = {
+    'images': {'path': 'images'},
     'css/overrides.css': {'path': 'static/overrides.css'},
     'CNAME': {'path': 'CNAME'}
 }
