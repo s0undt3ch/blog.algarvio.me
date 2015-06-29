@@ -5,7 +5,7 @@ import os
 
 AUTHOR = u'Pedro Algarvio, aka, s0undt3ch'
 SITENAME = u"s0undt3ch's Blog"
-SITEURL = 'http://blog.ufsoft.org'
+SITEURL = 'http://blog.algarvio.me'
 PYGMENTS_STYLE = 'fruity'
 CC_LICENSE = 'CC-BY-NC'
 THEME = '.pelican-bootstrap3-themes'
