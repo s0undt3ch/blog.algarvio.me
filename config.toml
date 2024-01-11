@@ -2,14 +2,14 @@
 base_url = "https://blog.algarvio.me/"
 
 # The site title and description; used in feeds by default.
-title = "s0undt3ch's Blog"
+title = "~/s0undt3ch"
 description = "Blog posts, rants, things not to forget"
 
 # The default language; used in feeds.
 default_language = "en"
 
 # The site theme to use.
-theme = "kita"
+theme = "tabi"
 
 # For overriding the default output directory `public`, set it to another value (e.g.: "docs")
 output_dir = "public"
@@ -68,7 +68,8 @@ author = "Pedro Algarvio"
 #     ]
 #
 taxonomies = [
-  {name = "tags", feed = true, rss = true}
+  {name = "tags", feed = true, rss = true},
+  {name = "categories", paginate_by = 5},
 ]
 
 # When set to "true", a search index is built from the pages and section
@@ -85,7 +86,8 @@ extra_syntaxes_and_themes = []
 
 # The theme to use for code highlighting.
 # See below for list of allowed values.
-highlight_theme = "solarized-dark"
+#highlight_theme = "solarized-dark"
+highlight_theme = "css"
 
 # When set to "true", emoji aliases translated to their corresponding
 # Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
@@ -189,58 +191,89 @@ index_format = "elasticlunr_javascript"
 # author value will be available using {{ config.extra.author }} in templates
 #
 [extra]
-# Put all your custom variables here
-[extra.style]
-# The custom background color.
-# bg_color = ""
+# Remote repository for your Zola site.
+# Used for `show_remote_changes` and `show_remote_source` (see below).
+# Supports GitHub, GitLab, Gitea, and Codeberg.
+remote_repository_url = "https://github.com/s0undt3ch/blog.algarvio.me"
+# Set this to "auto" to try and auto-detect the platform based on the repository URL.
+# Accepted values are "github", "gitlab", "gitea", and "codeberg".
+remote_repository_git_platform = "auto"  # Defaults to "auto".
+# Branch in the repo hosting the Zola site.
+remote_repository_branch = "master"  # Defaults to "main".
+# Show a link to the commit history of updated posts, right next to the last updated date.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+show_remote_changes = true  # Defaults to true.
+# Show a link to the repository of the site, right next to the "Powered by Zola & tabi" text.
+show_remote_source = true  # Defaults to true.
 
-# The custom background color in dark mode.
-# bg_dark_color = ""
+# Invert the order of the site title and page title in the browser tab.
+# Example: true => "Blog • ~/tabi", false => "~/tabi • Blog"
+#invert_title_order = true
 
-# Enable header blur.
-# header_blur = true
+# Full path after the base URL required. So if you were to place it in "static" it would be "/favicon.png"
+#favicon = "img/seedling.png"
 
-# The custom header color.
-# header_color = ""
+# Add an emoji here to use it as favicon.
+# Compatibility: https://caniuse.com/link-icon-svg
+#favicon_emoji = "🌱"
 
-# The custom header color in dark mode.
-# header_dark_color = ""
+# Path to the fallback image for social media cards (the image shown when sharing a link on WhatsApp, LinkedIn…).
+# Read more: https://nikitahl.com/html-meta-tags-for-social-media
+# Using an image representative of each post is recommended. You can do so by setting this variable in the [extra] section of a post's front matter.
+# If a post doesn't have a social media card, the site's default, below, will be used.
+social_media_card = "imgs/social-cards/blog.jpg"
 
-[extra.profile]
-name = "Kita - Zola Theme"
-bio = "Kita is a clean, elegant and simple blog theme for Zola."
-avatar_url = "icons/github.svg"
-avatar_invert = true
+menu = [
+  { name = "Blog", url = "blog/" },
+  { name = "Archive", url = "archive/" },
+  { name = "Categories", url = "categories/" },
+  { name = "Tags", url = "tags/" },
+  #{ name = "projects", url = "projects/" },
+]
 
-[[extra.profile.social]]
-name = "github"
-url = "https://github.com/st1020/kita"
+# The RSS icon will be shown if (1) it's enabled and (2) the following variable is set to true.
+feed_icon = true
 
-[[extra.profile.social]]
-name = "twitter"
-url = "https://github.com/st1020/kita"
+# Email address for footer's social section.
+# Protect against spambots:
+# 1. Use base64 for email (convert at https://www.base64encode.org/ or `printf 'your@email.com' | base64`).
+# 2. Or, set 'encode_plaintext_email' to true for auto-encoding (only protects on site, not in public repos).
+email = "cGVkcm9AYWxnYXJ2aW8ubWUK"
+# Decoding requires ~400 bytes of JavaScript. If JS is disabled, the email won't be displayed.
+encode_plaintext_email = true  # Setting is ignored if email is already encoded.
 
-[[extra.profile.social]]
-name = "rss"
-url = "$BASE_URL/atom.xml"
+# The icons available can be found in "social_icons" in the "static" folder
+socials = [
+  { name = "linkedin", url = "https://www.linkedin.com/in/pedroalgarvio", icon = "linkedin" },
+  { name = "github", url = "https://github.com/s0undt3ch/", icon = "github" },
+  { name = "gitlab", url = "https://gitlab.com/s0undt3ch/", icon = "gitlab" },
+  { name = "twitter", url = "https://twitter.com/s0undt3ch/", icon = "twitter" },
+  { name = "stack-overflow", url = "https://stackoverflow.com/users/1258307/s0undt3ch", icon = "stack-overflow" },
+]
 
-[[extra.menu]]
-name = "Projects"
-url = "$BASE_URL/projects"
+# Extra menu to show on the footer, below socials section.
+#footer_menu = [
+#    {url = "privacy", name = "privacy", trailing_slash = true},
+#    {url = "https://stats.osc.garden/", name = "site_statistics", trailing_slash = false},
+#    {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+#]
+footer_menu = []
+# Custom security headers. What urls should your website be able to connect to?
+# You need to specify the CSP and the URLs associated with the directive.
+# Useful if you want to load remote content safely (embed YouTube videos, which needs frame-src, for example).
+# Default directive is self.
+# Default config, allows for https remote images and embedding YouTube and Vimeo content.
+# This configuration (along with the right webserver settings) gets an A+ in Mozilla's Observatory: https://observatory.mozilla.org
+allowed_domains = [
+    { directive = "font-src", domains = ["'self'", "data:"] },
+    { directive = "img-src", domains = ["'self'", "https://*", "data:"] },
+    { directive = "script-src", domains = ["'self'"] },
+    { directive = "style-src", domains = ["'self'"] },
+    { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
+]
 
-[[extra.menu]]
-name = "Archive"
-url = "$BASE_URL/archive"
-
-[[extra.menu]]
-name = "Tags"
-url = "$BASE_URL/tags"
-
-[[extra.menu]]
-name = "About"
-url = "$BASE_URL/about"
-
-[extra.footer]
-since = 2020
-license = "CC BY-SA 4.0"
-license_url = "https://creativecommons.org/licenses/by-sa/4.0/deed"
+# Custom subset of characters for the header.
+# If set to true, the `static/custom_subset.css` file will be loaded first.
+# This avoids a flashing text issue in Firefox.
+# Please see https://welpo.github.io/tabi/blog/custom-font-subset/ to learn how to create this file.
+custom_subset = true
