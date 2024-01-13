@@ -277,6 +277,12 @@ allowed_domains = [
     { directive = "font-src", domains = ["https://fonts.gstatic.com", "data:"] },
     { directive = "script-src", domains = ["'unsafe-inline'", "https://www.googletagmanager.com"] },
     { directive = "img-src", domains = ["www.googletagmanager.com"]},
+    { directive = "script-src", domains = ["https://*.googletagmanager.com"] },
+    { directive = "img-src", domains = ["https://*.google-analytics.com", "https://*.analytics.google.com", "https://*.googletagmanager.com",
+                                        "https://*.g.doubleclick.net", "https://*.google.com", "https://*.google.<TLD>"] },
+    { directive = "connect-src", domains = ["https://*.google-analytics.com", "https://*.analytics.google.com",
+                                            "https://*.googletagmanager.com", "https://*.g.doubleclick.net",
+                                            "https://*.google.com", "https://*.google.<TLD>"] },
 ]
 
 # Custom subset of characters for the header.
