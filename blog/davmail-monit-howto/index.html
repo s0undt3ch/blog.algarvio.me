@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2YMBDBSXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H2YMBDBSXH');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://blog.algarvio.me/">
+
+    
+    <title>~/s0undt3ch • DavMail Monit HowTo</title>
+
+    
+    
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="~/s0undt3ch" href="https://blog.algarvio.me/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://blog.algarvio.me/custom_subset.css?h=0b10a20f2c8e790c1d32">
+    
+
+    
+        <link rel="stylesheet" href="https://blog.algarvio.me/main.css?h=cfd5ee6052d82c486e13" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Blog posts, rants, things not to forget" />
+        <meta property="og:description" content="Blog posts, rants, things not to forget" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="DavMail Monit HowTo" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://blog.algarvio.me/imgs/social-cards/blog_davmail_monit_howto.jpg?h=f53bf16b330c4cb9b8be" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://blog.algarvio.me/imgs/social-cards/blog_davmail_monit_howto.jpg?h=f53bf16b330c4cb9b8be" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;blog.algarvio.me&#x2F;blog&#x2F;davmail-monit-howto&#x2F;" /><meta property="og:site_name" content="~&#x2F;s0undt3ch"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+
+        <noscript><link rel="stylesheet" href="https://blog.algarvio.me/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://blog.algarvio.me/js/initializeTheme.min.js"></script>
+        <script defer src="https://blog.algarvio.me/js/themeSwitcher.min.js"></script><script defer src="https://blog.algarvio.me/search_index.en.js?h=ba7a0712f5929fe48b43"></script>
+        <script defer src="https://blog.algarvio.me/js/searchElasticlunr.min.js?h=5ddcb5767730b9edb560"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href=https://blog.algarvio.me>~&#x2F;s0undt3ch</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/blog/">
+                                Blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/archive/">
+                                Archive
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/categories/">
+                                Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/tags/">
+                                Tags
+                                </a>
+                            </li>
+                        <li class="js">
+                        <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                            </svg>
+                        </div>
+                    </li>
+
+                    
+                    
+
+                    <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            DavMail Monit HowTo
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    16th
+    
+        Feb 2011
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="1016 words">6&nbsp;min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://blog.algarvio.me/tags/davmail/>DavMail</a>,&nbsp;</li><li><a href=https://blog.algarvio.me/tags/monit/>Monit</a>,&nbsp;</li><li><a href=https://blog.algarvio.me/tags/linux/>Linux</a></li>
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>I recently started to monitor my servers with <a href="http://mmonit.com/monit/">monit</a>.
+As such, I started creating scripts for all services that needed monitoring until I
+got stuck on one of them <a href="http://davmail.sourceforge.net/">DavMail</a>. It did not
+write a pid file and didn't even had a specific process name!</p>
+<p>This HowTo is meant to run on an ubuntu/debian system.</p>
+<p>I started googling for a solution and it was not easy. The problem was with java not
+allowing or providing a way to change the process name of a <a href="http://en.wikipedia.org/wiki/Java_Virtual_Machine">jvm</a>.</p>
+<p>The solution I found was <a href="http://wrapper.tanukisoftware.com/">Java Service Wrapper</a> and
+bellow are the steps on how to use it.</p>
+<p>First of all, download the debian DavMail package:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">wget</span></span><span class="z-meta z-function-call z-arguments z-shell"> http://sourceforge.net/projects/davmail/files/davmail/3.8.8/davmail_3.8.8-1608-1_all.deb/download <span class="z-punctuation z-separator z-continuation z-line z-shell">\
+</span></span></span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell">  -</span>O</span> davmail_3.8.8-1608-1_all.deb</span>
+</span></code></pre>
+<p>Since this is to be installed on a headless server, we need to remove
+some of the dependencies of the package:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">dpkg</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> davmail_3.8.8-1608-1_all.deb</span>
+</span></code></pre>
+<p>Now you’ll have a DEBIAN directory, <code>cd</code> into it:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> DEBIAN</span>
+</span></code></pre>
+<p>Now edit the control file:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">vi</span></span><span class="z-meta z-function-call z-arguments z-shell"> control</span>
+</span></code></pre>
+<p>Delete the line which starts with <code>Depends:</code>, save and exit. Now we’ll
+have to update the package with the new control file:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">tar</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>czvf</span> control.tar.gz <span class="z-keyword z-operator z-regexp z-quantifier z-shell">*</span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mv</span></span><span class="z-meta z-function-call z-arguments z-shell"> control.tar.gz ../</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> ../</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">ar</span></span><span class="z-meta z-function-call z-arguments z-shell"> r davmail_3.8.8-1608-1_all.deb control.tar.gz</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mv</span></span><span class="z-meta z-function-call z-arguments z-shell"> davmail_3.8.8-1608-1_all.deb davmail_3.8.8-1608-01_all.deb</span>
+</span></code></pre>
+<p>Now install the new package:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">dpkg</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>i</span> davmail_3.8.8-1608-01_all.deb</span>
+</span></code></pre>
+<p>To configure DavMail, follow their <a href="http://davmail.sourceforge.net/serversetup.html">server setup</a>.
+My <code>davmail.properties</code> is saved on <code>/etc/davmail/davmail.properties</code></p>
+<p>Now comes the wrapper part. Download the community debian package from
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp#stable">here</a>.</p>
+<p>For example:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">wget</span></span><span class="z-meta z-function-call z-arguments z-shell"> http://wrapper.tanukisoftware.com/download/3.5.7/wrapper-linux-x86-64-3.5.7.tar.gz</span>
+</span></code></pre>
+<p>Unpack it:</p>
+<pre class="z-code"><code><span class="z-text z-plain">tar zxvf wrapper-linux-x86-64-3.5.7.tar.gz
+</span></code></pre>
+<p>The method I followed is the <a href="http://wrapper.tanukisoftware.com/doc/english/integrate-simple-nix.html">Simple App Wrapper</a>.</p>
+<p>So in <em>baby</em> steps…:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> wrapper-linux-x86-64-3.5.7/</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> /usr/share/davmail/bin</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> /usr/share/davmail/conf</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">cp</span></span><span class="z-meta z-function-call z-arguments z-shell"> bin/wrapper /usr/share/davmail/bin/davmail</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">cp</span></span><span class="z-meta z-function-call z-arguments z-shell"> src/bin/sh.script.in /usr/share/davmail/bin/davmail-laucher</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">cp</span></span><span class="z-meta z-function-call z-arguments z-shell"> lib/libwrapper.so /usr/share/davmail/lib</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">cp</span></span><span class="z-meta z-function-call z-arguments z-shell"> lib/wrapper.jar /usr/share/davmail/lib</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mv</span></span><span class="z-meta z-function-call z-arguments z-shell"> src/conf/wrapper.conf.in /usr/share/davmail/conf/wrapper.conf</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> /var/run/davmail</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">chown</span></span><span class="z-meta z-function-call z-arguments z-shell"> mail:mail /var/run/davmail</span>
+</span></code></pre>
+<p>Now, let’s edit some files:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">vi</span></span><span class="z-meta z-function-call z-arguments z-shell"> /usr/share/davmail/bin/davmail-laucher</span>
+</span></code></pre>
+<p>Here’s what I changed:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> Application</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">APP_NAME</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>davmail<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">APP_LONG_NAME</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>DAVMail Exchange Gateway<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> Wrapper</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">WRAPPER_CMD</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>./davmail<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">WRAPPER_CONF</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>../conf/wrapper.conf<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> Location of the pid file.</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">PIDDIR</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>/var/run/davmail<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> If specified, the Wrapper will be run as the specified user.</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> IMPORTANT - Make sure that the user has the required privileges to write</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell">  the PID file and wrapper.log files.  Failure to be able to write the log</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell">  file will cause the Wrapper to exit without any way to write out an error</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell">  message.</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> NOTE - This will set the user which is used to run the Wrapper as well as</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell">  the JVM and is not useful in situations where a privileged resource or</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell">  port needs to be allocated prior to the user being changed.</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">RUN_AS_USER</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell">mail</span>
+</span></code></pre>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">vi</span></span><span class="z-meta z-function-call z-arguments z-shell"> /usr/share/davmail/conf/wrapper.conf</span>
+</span></code></pre>
+<p>Here’s what I changed:</p>
+<pre data-lang="java" class="language-java z-code"><code class="language-java" data-lang="java"><span class="z-source z-java">
+</span><span class="z-source z-java"># <span class="z-support z-class z-java">Java</span> <span class="z-support z-class z-java">Main</span> <span class="z-meta z-class z-java"><span class="z-meta z-class z-identifier z-java"><span class="z-storage z-type z-java">class</span></span></span><span class="z-punctuation z-accessor z-dot z-java">.</span>  <span class="z-support z-class z-java">This</span> <span class="z-meta z-class z-java"><span class="z-meta z-class z-identifier z-java"><span class="z-storage z-type z-java">class</span> <span class="z-entity z-name z-class z-java">must</span></span> </span>implement the <span class="z-support z-class z-java">WrapperListener</span> <span class="z-meta z-class z-java"><span class="z-meta z-class z-identifier z-java"><span class="z-storage z-type z-java">interface</span>
+</span></span></span><span class="z-source z-java"><span class="z-meta z-class z-java"><span class="z-meta z-class z-identifier z-java"></span></span>#  or guarantee that the <span class="z-support z-class z-java">WrapperManager</span> <span class="z-meta z-class z-java"><span class="z-meta z-class z-identifier z-java"><span class="z-storage z-type z-java">class</span> <span class="z-entity z-name z-class z-java">is</span></span> </span>initialized<span class="z-punctuation z-accessor z-dot z-java">.</span>  <span class="z-support z-class z-java">Helper</span>
+</span><span class="z-source z-java">#  classes are provided to <span class="z-keyword z-control z-loop z-do-while z-java">do</span> <span class="z-variable z-language z-java">this</span> <span class="z-keyword z-control z-loop z-for z-java">for</span> you<span class="z-punctuation z-accessor z-dot z-java">.</span>  <span class="z-support z-class z-java">See</span> the <span class="z-support z-class z-java">Integration</span> section
+</span><span class="z-source z-java">#  of the documentation <span class="z-keyword z-control z-loop z-for z-java">for</span> details<span class="z-punctuation z-accessor z-dot z-java">.</span>
+</span><span class="z-source z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>main<span class="z-meta z-class z-java"><span class="z-meta z-class z-identifier z-java"><span class="z-storage z-type z-java">class</span></span></span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-meta z-path z-java"><span class="z-support z-type z-package z-java">org</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-support z-type z-package z-java">tanukisoftware</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-support z-type z-package z-java">wrapper</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-support z-class z-java">WrapperSimpleApp</span></span>
+</span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java">
+</span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"># <span class="z-support z-class z-java">Java</span> <span class="z-meta z-function-call z-java"><span class="z-variable z-function z-java">Classpath</span> <span class="z-punctuation z-section z-parens z-begin z-java">(</span>include wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>jar<span class="z-punctuation z-section z-parens z-end z-java">)</span></span>  <span class="z-support z-class z-java">Add</span> class path elements as
+</span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java">#  needed starting from <span class="z-constant z-numeric z-integer z-decimal z-java">1</span>
+</span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>2</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>usr<span class="z-keyword z-operator z-arithmetic z-java">/</span>share<span class="z-keyword z-operator z-arithmetic z-java">/</span>davmail<span class="z-keyword z-operator z-arithmetic z-java">/</span>davmail<span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>3</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>activation<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>4</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>commons<span class="z-keyword z-operator z-arithmetic z-java">-</span>logging<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>0</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>4</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>5</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>jcifs<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>3</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>14</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>6</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>log4j<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>2</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>15</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>7</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>stax2<span class="z-keyword z-operator z-arithmetic z-java">-</span>api<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">3<span class="z-punctuation z-separator z-decimal z-java">.</span>0</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>3</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>8</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>commons<span class="z-keyword z-operator z-arithmetic z-java">-</span>codec<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>3</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>9</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>htmlcleaner<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">2<span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>10</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>jdom<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>0</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>11</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>mail<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>4</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>3</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>12</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>woodstox<span class="z-keyword z-operator z-arithmetic z-java">-</span>core<span class="z-keyword z-operator z-arithmetic z-java">-</span>asl<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">4<span class="z-punctuation z-separator z-decimal z-java">.</span>0</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>9</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>13</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>commons<span class="z-keyword z-operator z-arithmetic z-java">-</span>collections<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">3<span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>14</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>jackrabbit<span class="z-keyword z-operator z-arithmetic z-java">-</span>webdav<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>4</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>15</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>junit<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">3<span class="z-punctuation z-separator z-decimal z-java">.</span>8</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>16</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>slf4j<span class="z-keyword z-operator z-arithmetic z-java">-</span>api<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>3</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>17</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>commons<span class="z-keyword z-operator z-arithmetic z-java">-</span>httpclient<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">3<span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>18</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>jcharset<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>3</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>19</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>slf4j<span class="z-keyword z-operator z-arithmetic z-java">-</span>log4j12<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">1<span class="z-punctuation z-separator z-decimal z-java">.</span>3</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>20</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>lib<span class="z-keyword z-operator z-arithmetic z-java">/</span>xercesImpl<span class="z-keyword z-operator z-arithmetic z-java">-</span><span class="z-constant z-numeric z-float z-decimal z-java">2<span class="z-punctuation z-separator z-decimal z-java">.</span>8</span><span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>classpath<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>21</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>usr<span class="z-keyword z-operator z-arithmetic z-java">/</span>share<span class="z-keyword z-operator z-arithmetic z-java">/</span>java<span class="z-keyword z-operator z-arithmetic z-java">/</span>swt<span class="z-punctuation z-accessor z-dot z-java">.</span>jar
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"># <span class="z-support z-class z-java">Maximum</span> <span class="z-support z-class z-java">Java</span> <span class="z-support z-class z-java">Heap</span> <span class="z-meta z-function-call z-java"><span class="z-variable z-function z-java">Size</span> <span class="z-punctuation z-section z-parens z-begin z-java">(</span>in <span class="z-constant z-other z-java">MB</span><span class="z-punctuation z-section z-parens z-end z-java">)</span></span>
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>java<span class="z-punctuation z-accessor z-dot z-java">.</span>maxmemory<span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-constant z-numeric z-integer z-decimal z-java">512</span>
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"># <span class="z-support z-class z-java">Application</span> parameters<span class="z-punctuation z-accessor z-dot z-java">.</span>  <span class="z-support z-class z-java">Add</span> parameters as needed starting from <span class="z-constant z-numeric z-integer z-decimal z-java">1</span>
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>app<span class="z-punctuation z-accessor z-dot z-java">.</span>parameter<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>1</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-meta z-path z-java"><span class="z-support z-type z-package z-java">davmail</span><span class="z-punctuation z-accessor z-dot z-java">.</span><span class="z-support z-class z-java">DavGateway</span></span>
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>app<span class="z-punctuation z-accessor z-dot z-java">.</span>parameter<span class="z-constant z-numeric z-float z-decimal z-java"><span class="z-punctuation z-separator z-decimal z-java">.</span>2</span><span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>etc<span class="z-keyword z-operator z-arithmetic z-java">/</span>davmail<span class="z-keyword z-operator z-arithmetic z-java">/</span>davmail<span class="z-punctuation z-accessor z-dot z-java">.</span>properties
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"># <span class="z-support z-class z-java">Log</span> file to use <span class="z-keyword z-control z-loop z-for z-java">for</span> wrapper output logging<span class="z-punctuation z-accessor z-dot z-java">.</span>
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>logfile<span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-keyword z-operator z-arithmetic z-java">/</span>var<span class="z-keyword z-operator z-arithmetic z-java">/</span>log<span class="z-keyword z-operator z-arithmetic z-java">/</span>davmail<span class="z-keyword z-operator z-arithmetic z-java">-</span>wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>log
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"># <span class="z-support z-class z-java">Maximum</span> size that the log file will be allowed to grow to before
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">#  the log is rolled<span class="z-punctuation z-accessor z-dot z-java">.</span> <span class="z-support z-class z-java">Size</span> is specified in bytes<span class="z-punctuation z-accessor z-dot z-java">.</span>  <span class="z-support z-class z-java">The</span> <span class="z-keyword z-control z-conditional z-default z-java">default</span> value
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">#  of <span class="z-constant z-numeric z-integer z-decimal z-java">0</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="z-punctuation z-separator z-comma z-java">,</span> disables log rolling<span class="z-punctuation z-accessor z-dot z-java">.</span>  <span class="z-support z-class z-java">May</span> abbreviate with the <span class="z-string z-quoted z-single z-java"><span class="z-punctuation z-definition z-string z-begin z-java">&#39;</span>k<span class="z-punctuation z-definition z-string z-end z-java">&#39;</span></span> <span class="z-meta z-parens z-java"><span class="z-punctuation z-section z-parens z-begin z-java">(</span>kb<span class="z-punctuation z-section z-parens z-end z-java">)</span></span> or
+</span><span class="z-source z-java">#  <span class="z-string z-quoted z-single z-java"><span class="z-punctuation z-definition z-string z-begin z-java">&#39;</span>m<span class="z-punctuation z-definition z-string z-end z-java">&#39;</span></span> <span class="z-meta z-parens z-java"><span class="z-punctuation z-section z-parens z-begin z-java">(</span>mb<span class="z-punctuation z-section z-parens z-end z-java">)</span></span> suffix<span class="z-punctuation z-accessor z-dot z-java">.</span>  <span class="z-support z-class z-java">For</span> example<span class="z-keyword z-operator z-ternary z-java">:</span> 10m <span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span> <span class="z-constant z-numeric z-integer z-decimal z-java">10</span> megabytes<span class="z-punctuation z-accessor z-dot z-java">.</span>
+</span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>logfile<span class="z-punctuation z-accessor z-dot z-java">.</span>maxsize<span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span>10m
+</span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">
+</span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java"># <span class="z-support z-class z-java">Maximum</span> number of rolled log files which will be allowed before old
+</span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">#  files are deleted<span class="z-punctuation z-accessor z-dot z-java">.</span>  <span class="z-support z-class z-java">The</span> <span class="z-keyword z-control z-conditional z-default z-java">default</span> value of <span class="z-constant z-numeric z-integer z-decimal z-java">0</span> implies no limit<span class="z-punctuation z-accessor z-dot z-java">.</span>
+</span></span></span><span class="z-source z-java"><span class="z-meta z-assignment z-rhs z-java"><span class="z-meta z-assignment z-rhs z-java">wrapper<span class="z-punctuation z-accessor z-dot z-java">.</span>logfile<span class="z-punctuation z-accessor z-dot z-java">.</span>maxfiles<span class="z-meta z-assignment z-rhs z-java"><span class="z-keyword z-operator z-assignment z-java">=</span><span class="z-constant z-numeric z-integer z-decimal z-java">3</span>
+</span></span></span></span></code></pre>
+<p>Let's test it:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">/usr/share/davmail/bin/davmail-launcher</span></span><span class="z-meta z-function-call z-arguments z-shell"> start</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Starting</span></span><span class="z-meta z-function-call z-arguments z-shell"> DAVMail Exchange Gateway...</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Waiting</span></span><span class="z-meta z-function-call z-arguments z-shell"> for DAVMail Exchange Gateway.......</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">running:</span></span><span class="z-meta z-function-call z-arguments z-shell"> PID:13569</span>
+</span></code></pre>
+<p>It's running!!!!</p>
+<p>Now, the monit configuration file:</p>
+<pre class="z-code"><code><span class="z-text z-plain">check process davmail with pidfile /var/run/davmail/davmail.pid
+</span><span class="z-text z-plain">    group mail
+</span><span class="z-text z-plain">    start program = &quot;/usr/share/davmail/bin/davmail-launcher start&quot;
+</span><span class="z-text z-plain">    stop  program = &quot;/usr/share/davmail/bin/davmail-launcher stop&quot;
+</span><span class="z-text z-plain">    if failed host YOUR_SERVER_PUBLIC_FQDN port IMAP_PORT protocol imap then restart
+</span><span class="z-text z-plain">    if 5 restarts within 5 cycles then timeout
+</span></code></pre>
+<p>Make sure you replace <code>YOUR_SERVER_PUBLIC_FQDN</code> and <code>IMAP_PORT</code> with
+what’s you’ve setup on your <code>davmail.properties</code>.</p>
+<p>For the sake of completeness, here’s my <code>davmail.properties</code>,
+obviously obscured where needed :)</p>
+<pre data-lang="conf" class="language-conf z-code"><code class="language-conf" data-lang="conf"><span class="z-source z-genconfig"><span class="z-meta z-comment z-genconfig"><span class="z-comment z-line z-number-sign z-genconfig">#DavMail settings
+</span></span></span><span class="z-source z-genconfig"><span class="z-meta z-comment z-genconfig"><span class="z-comment z-line z-number-sign z-genconfig">#Wed Jan 12 18:05:34 WET 2011
+</span></span></span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>allowRemote<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-language z-genconfig">true</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>bindAddress<span class="z-keyword z-operator z-genconfig">=</span><span class="z-support z-constant z-genconfig">YOUR_PUBLIC_ADDRESS</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>caldavPastDelay<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-numeric z-genconfig">90</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>caldavPort<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-numeric z-genconfig">11080</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>disableUpdateCheck<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-language z-genconfig">false</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>enableEws<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-language z-genconfig">true</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>enableProxy<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-language z-genconfig">false</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>imapIdleDelay<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>imapPort<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-numeric z-genconfig">11143</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>keepDelay<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-numeric z-genconfig">30</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>ldapPort<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-numeric z-genconfig">11389</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>logFilePath<span class="z-keyword z-operator z-genconfig">=</span><span class="z-keyword z-operator z-genconfig">/</span>var<span class="z-keyword z-operator z-genconfig">/</span>log<span class="z-keyword z-operator z-genconfig">/</span>davmail<span class="z-keyword z-operator z-genconfig">.</span>log
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>popPort<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-numeric z-genconfig">11110</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>proxyHost<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>proxyPassword<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>proxyPort<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>proxyUser<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>sentKeepDelay<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-numeric z-genconfig">90</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>server<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-language z-genconfig">true</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>server<span class="z-keyword z-operator z-genconfig">.</span>certificate<span class="z-keyword z-operator z-genconfig">.</span>hash<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>smtpPort<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-numeric z-genconfig">11025</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>ssl<span class="z-keyword z-operator z-genconfig">.</span>keyPass<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>ssl<span class="z-keyword z-operator z-genconfig">.</span>keystoreFile<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>ssl<span class="z-keyword z-operator z-genconfig">.</span>keystorePass<span class="z-keyword z-operator z-genconfig">=</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>ssl<span class="z-keyword z-operator z-genconfig">.</span>keystoreType<span class="z-keyword z-operator z-genconfig">=</span><span class="z-support z-constant z-genconfig">JKS</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>url<span class="z-keyword z-operator z-genconfig">=</span>https<span class="z-keyword z-operator z-genconfig">\</span><span class="z-keyword z-operator z-genconfig">:</span><span class="z-keyword z-operator z-genconfig">/</span><span class="z-keyword z-operator z-genconfig">/</span><span class="z-support z-constant z-genconfig">YOUR_EXCHANGE_DOMAIN</span><span class="z-keyword z-operator z-genconfig">/</span>owa
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">davmail</span></span><span class="z-keyword z-operator z-genconfig">.</span>useSystemProxies<span class="z-keyword z-operator z-genconfig">=</span><span class="z-constant z-language z-genconfig">false</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">log4j</span></span><span class="z-keyword z-operator z-genconfig">.</span>logger<span class="z-keyword z-operator z-genconfig">.</span>davmail<span class="z-keyword z-operator z-genconfig">=</span><span class="z-support z-constant z-genconfig">DEBUG</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">log4j</span></span><span class="z-keyword z-operator z-genconfig">.</span>logger<span class="z-keyword z-operator z-genconfig">.</span>httpclient<span class="z-keyword z-operator z-genconfig">.</span>wire<span class="z-keyword z-operator z-genconfig">=</span><span class="z-support z-constant z-genconfig">WARN</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">log4j</span></span><span class="z-keyword z-operator z-genconfig">.</span>logger<span class="z-keyword z-operator z-genconfig">.</span>org<span class="z-keyword z-operator z-genconfig">.</span>apache<span class="z-keyword z-operator z-genconfig">.</span>commons<span class="z-keyword z-operator z-genconfig">.</span>httpclient<span class="z-keyword z-operator z-genconfig">=</span><span class="z-support z-constant z-genconfig">WARN</span>
+</span><span class="z-source z-genconfig"><span class="z-meta z-param z-genconfig"><span class="z-variable z-parameter z-genconfig">log4j</span></span><span class="z-keyword z-operator z-genconfig">.</span>rootLogger<span class="z-keyword z-operator z-genconfig">=</span><span class="z-support z-constant z-genconfig">WARN</span>
+</span></code></pre>
+<p>And that’s it, hope you find this useful. If you find anything
+confusing, let me know…</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://blog.algarvio.me/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+                <ul><li>
+                        <a class="nav-links no-hover-padding social" rel=""  href=https://blog.algarvio.me/atom.xml>
+                        <img alt="feed" title="feed" src="https://blog.algarvio.me/social_icons/rss.svg">
+                        </a>
+                    </li><li class="js"><a class="nav-links no-hover-padding social" href="#" data-encoded-email="cGVkcm9AYWxnYXJ2aW8ubWUK"><img alt="email" title="email" src="https://blog.algarvio.me/social_icons/email.svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://www.linkedin.com/in/pedroalgarvio>
+                                <img alt=linkedin title=linkedin src="https://blog.algarvio.me/social_icons/linkedin.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://github.com/s0undt3ch/>
+                                <img alt=github title=github src="https://blog.algarvio.me/social_icons/github.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://gitlab.com/s0undt3ch/>
+                                <img alt=gitlab title=gitlab src="https://blog.algarvio.me/social_icons/gitlab.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://twitter.com/s0undt3ch/>
+                                <img alt=twitter title=twitter src="https://blog.algarvio.me/social_icons/twitter.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://stackoverflow.com/users/1258307/s0undt3ch>
+                                <img alt=stack-overflow title=stack-overflow src="https://blog.algarvio.me/social_icons/stack-overflow.svg">
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel=""  href="https:&#x2F;&#x2F;github.com&#x2F;s0undt3ch&#x2F;blog.algarvio.me">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <script src="https://blog.algarvio.me/js/decodeMail.min.js" async></script><div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox", autocomplete="off", spellcheck="false" aria-expanded="false", aria-controls="results-container", placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info">
+                <span id="n-results">0</span>&nbsp;<span id="result-text-singular">result</span>
+                <span id="result-text-plural">results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>

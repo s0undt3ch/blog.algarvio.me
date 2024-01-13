@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://blog.algarvio.me/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="en" xml:base="https:&#x2F;&#x2F;blog.algarvio.me&#x2F;">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It's free.</str:about_feeds>
+        <str:visit_the_site>Visit website</str:visit_the_site>
+        <str:recent_posts>Recent posts</str:recent_posts>
+    </str:translations><title>~/s0undt3ch - Javascript</title>
+        <subtitle>Blog posts, rants, things not to forget</subtitle>
+    <link href="https://blog.algarvio.me/tags/javascript/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.algarvio.me"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2008-01-02T00:00:00+00:00</updated>
+    <id>https://blog.algarvio.me/tags/javascript/atom.xml</id><entry xml:lang="en">
+        <title>Webhelpers and Javascript Minification</title>
+        <published>2007-12-31T16:51:00+00:00</published>
+        <updated>2008-01-02T00:00:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/webhelpers-and-javascript-minification/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/webhelpers-and-javascript-minification/</id>
+        <summary type="html">Here&#x27;s a practical idea which I have in use in a project of mine.
+Most of you probably use some javascript library or have some javascript files that you use in your pylons application.
+There&#x27;s also some talk going on related to javascript files compression, and more recently, minification.
+While I&#x27;m developing, I like to use the normal(non compressed) javascript files, because it helps on debugging.
+But for production, using compressed javascript files reduces page load times.
+Pylons Webhelpers comes with a useful function to help you include javascript files on your templates,
+javascript_include_tag.
+…</summary>
+        </entry>
+</feed>

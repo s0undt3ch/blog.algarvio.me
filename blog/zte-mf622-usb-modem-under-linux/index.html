@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2YMBDBSXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H2YMBDBSXH');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://blog.algarvio.me/">
+
+    
+    <title>~/s0undt3ch • ZTE MF622 USB Modem Under Linux</title>
+
+    
+    
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="~/s0undt3ch" href="https://blog.algarvio.me/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://blog.algarvio.me/custom_subset.css?h=0b10a20f2c8e790c1d32">
+    
+
+    
+        <link rel="stylesheet" href="https://blog.algarvio.me/main.css?h=cfd5ee6052d82c486e13" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="I recently bought a 3G wireless card to use with my laptop, a ZTE, model MF622.
+Since the first time I tried Linux, also the first time I encountered this kind
+of problems with my USB ADSL modem, and this being an USB modem also, I knew I was going to have troubles.
+…" />
+        <meta property="og:description" content="I recently bought a 3G wireless card to use with my laptop, a ZTE, model MF622.
+Since the first time I tried Linux, also the first time I encountered this kind
+of problems with my USB ADSL modem, and this being an USB modem also, I knew I was going to have troubles.
+…" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="ZTE MF622 USB Modem Under Linux" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://blog.algarvio.me/imgs/social-cards/blog_zte_mf622_usb_modem_under_linux.jpg?h=3fd1bcf97adecdbaa867" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://blog.algarvio.me/imgs/social-cards/blog_zte_mf622_usb_modem_under_linux.jpg?h=3fd1bcf97adecdbaa867" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;blog.algarvio.me&#x2F;blog&#x2F;zte-mf622-usb-modem-under-linux&#x2F;" /><meta property="og:site_name" content="~&#x2F;s0undt3ch"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+
+        <noscript><link rel="stylesheet" href="https://blog.algarvio.me/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://blog.algarvio.me/js/initializeTheme.min.js"></script>
+        <script defer src="https://blog.algarvio.me/js/themeSwitcher.min.js"></script><script defer src="https://blog.algarvio.me/search_index.en.js?h=ba7a0712f5929fe48b43"></script>
+        <script defer src="https://blog.algarvio.me/js/searchElasticlunr.min.js?h=5ddcb5767730b9edb560"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href=https://blog.algarvio.me>~&#x2F;s0undt3ch</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/blog/">
+                                Blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/archive/">
+                                Archive
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/categories/">
+                                Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/tags/">
+                                Tags
+                                </a>
+                            </li>
+                        <li class="js">
+                        <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                            </svg>
+                        </div>
+                    </li>
+
+                    
+                    
+
+                    <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            ZTE MF622 USB Modem Under Linux
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    30th
+    
+        Nov 2007
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="457 words">3&nbsp;min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://blog.algarvio.me/tags/linux/>Linux</a></li>
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>I recently bought a 3G wireless card to use with my laptop, a ZTE, model MF622.
+Since the first time I tried Linux, also the first time I encountered this kind
+of problems with my USB ADSL modem, and this being an USB modem also, I knew I was going to have troubles.</p>
+<span id="continue-reading"></span>
+<p>At first I tried <a href="http://www.draisberghof.de/usb_modeswitch">USB ModeSwitch</a> which has experimental support for ZTE's MF620 model with no luck.
+I then followed the instructions on the site to <em>snoop</em> the usb communication under M$ Win to get the
+messages being sent to the device so I could mimic that under Linux. <strong>Still</strong>, no luck.</p>
+<p>I then tried to code a python script which used the <code>libusb</code> so that I could make the device switch
+to the modem configuration. <strong>Still</strong>, no luck.</p>
+<p>I spent a lot of time on this subject and then one time I removed the <code>usb_storage</code> module while
+<a href="http://www.freedesktop.org/wiki/Software/hal">HAL</a> was waiting for the device to settle down and guess what!? After a few seconds, the device
+changed itself to the modem configuration. All I needed now was to automate this procedure.</p>
+<p>Here's the <strong>udev</strong> script that does the job:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">ACTION!</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>add<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span> <span class="z-variable z-other z-readwrite z-assignment z-shell">GOTO</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>ZTE_End<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> Is this the ZeroCD device?</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">SUBSYSTEM</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell">=<span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>usb<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span> <span class="z-variable z-other z-readwrite z-assignment z-shell">SYSFS{idProduct}</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell">=<span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>2000<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span>
+</span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">SYSFS{idVendor}</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell">=<span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>19d2<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span> <span class="z-variable z-other z-readwrite z-assignment z-shell">GOTO</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>ZTE_ZeroCD<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> Is this the actual modem?</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">SUBSYSTEM</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell">=<span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>usb<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span> <span class="z-variable z-other z-readwrite z-assignment z-shell">SYSFS{idProduct}</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell">=<span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>0001<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span>
+</span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">SYSFS{idVendor}</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell">=<span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>19d2<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span> <span class="z-variable z-other z-readwrite z-assignment z-shell">GOTO</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>ZTE_Modem<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">LABEL</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>ZTE_ZeroCD<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> This is the ZeroCD part of the card, remove</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> the usb_storage kernel module so</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> it does not get treated like a storage device</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">RUN</span><span class="z-keyword z-operator z-assignment z-shell">+=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>/sbin/rmmod usb_storage<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">LABEL</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>ZTE_Modem<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> This is the Modem part of the card, let&#39;s</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> load usbserial with the correct vendor</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> and product ID&#39;s so we get our usb serial devices</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">RUN</span><span class="z-keyword z-operator z-assignment z-shell">+=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>/sbin/modprobe usbserial vendor=0x19d2 product=0x0001<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span>
+</span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> Make users belonging to the dialout group</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-comment z-line z-number-sign z-shell"><span class="z-punctuation z-definition z-comment z-begin z-shell">#</span></span><span class="z-comment z-line z-number-sign z-shell"> able to use the usb serial devices.</span><span class="z-comment z-line z-number-sign z-shell">
+</span></span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">MODE</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>660<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span>,</span> <span class="z-variable z-other z-readwrite z-assignment z-shell">GROUP</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>dialout<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-variable z-other z-readwrite z-assignment z-shell">LABEL</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell"><span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>ZTE_End<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span></code></pre>
+<p>Save this file as <code>/etc/udev.d/15-zte-mf622.rules</code> for example(this path is a good one under (K)Ubuntu).</p>
+<p>The next time you plug-in the modem, at first, the <code>usb_storage</code> module gets removed. After a few seconds,
+since the modem is not being handled like a storage device, it'll switch to the modem configuration. At this
+stage we tell <a href="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">UDEV</a> to load the <code>usbserial</code> kernel module with the vendor and product id's and you'll get
+3 <code>ttyUSB</code> devices. The <code>/dev/ttyUSB0</code> will be the one you should use to make a connection.</p>
+<p>You can now point <code>ppp</code> or <code>wvdial</code> to that device a start the connection, or, you might also want to check
+<a href="http://umtsmon.sourceforge.net">UMTSmon</a>, this is an application suited for these kind of modems.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://blog.algarvio.me/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+                <ul><li>
+                        <a class="nav-links no-hover-padding social" rel=""  href=https://blog.algarvio.me/atom.xml>
+                        <img alt="feed" title="feed" src="https://blog.algarvio.me/social_icons/rss.svg">
+                        </a>
+                    </li><li class="js"><a class="nav-links no-hover-padding social" href="#" data-encoded-email="cGVkcm9AYWxnYXJ2aW8ubWUK"><img alt="email" title="email" src="https://blog.algarvio.me/social_icons/email.svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://www.linkedin.com/in/pedroalgarvio>
+                                <img alt=linkedin title=linkedin src="https://blog.algarvio.me/social_icons/linkedin.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://github.com/s0undt3ch/>
+                                <img alt=github title=github src="https://blog.algarvio.me/social_icons/github.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://gitlab.com/s0undt3ch/>
+                                <img alt=gitlab title=gitlab src="https://blog.algarvio.me/social_icons/gitlab.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://twitter.com/s0undt3ch/>
+                                <img alt=twitter title=twitter src="https://blog.algarvio.me/social_icons/twitter.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://stackoverflow.com/users/1258307/s0undt3ch>
+                                <img alt=stack-overflow title=stack-overflow src="https://blog.algarvio.me/social_icons/stack-overflow.svg">
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel=""  href="https:&#x2F;&#x2F;github.com&#x2F;s0undt3ch&#x2F;blog.algarvio.me">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <script src="https://blog.algarvio.me/js/decodeMail.min.js" async></script><div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox", autocomplete="off", spellcheck="false" aria-expanded="false", aria-controls="results-container", placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info">
+                <span id="n-results">0</span>&nbsp;<span id="result-text-singular">result</span>
+                <span id="result-text-plural">results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>

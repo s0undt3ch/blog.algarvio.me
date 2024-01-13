@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://blog.algarvio.me/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="en" xml:base="https:&#x2F;&#x2F;blog.algarvio.me&#x2F;">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It's free.</str:about_feeds>
+        <str:visit_the_site>Visit website</str:visit_the_site>
+        <str:recent_posts>Recent posts</str:recent_posts>
+    </str:translations><title>~/s0undt3ch - Qt</title>
+        <subtitle>Blog posts, rants, things not to forget</subtitle>
+    <link href="https://blog.algarvio.me/tags/qt/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.algarvio.me"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2012-01-23T21:12:00+00:00</updated>
+    <id>https://blog.algarvio.me/tags/qt/atom.xml</id><entry xml:lang="en">
+        <title>Using gettext in compiled Qt ui files with PySide</title>
+        <published>2012-01-23T21:12:00+00:00</published>
+        <updated>2012-01-23T21:12:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/using-gettext-in-compiled-qt-ui-files-with-pyside/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/using-gettext-in-compiled-qt-ui-files-with-pyside/</id>
+        <summary type="html">This recipe is based on the PyQt recipe found here.
+This is just the PySide port of it.
+In some cases you might find yourself in the situation of wanting to use
+gettext in a PySide project in which you have .ui files generated using QtDesigner.
+For those kind of situations is a good idea to extend the PySide compiler.
+…</summary>
+        </entry>
+</feed>

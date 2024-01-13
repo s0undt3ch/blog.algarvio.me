@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2YMBDBSXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H2YMBDBSXH');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://blog.algarvio.me/">
+
+    
+    <title>~/s0undt3ch • PyTest - A Journey Of 3 Years</title>
+
+    
+    
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="~/s0undt3ch" href="https://blog.algarvio.me/atom.xml">
+
+    
+    
+    
+        <link rel="stylesheet" href="https://blog.algarvio.me/custom_subset.css?h=0b10a20f2c8e790c1d32">
+    
+
+    
+        <link rel="stylesheet" href="https://blog.algarvio.me/main.css?h=cfd5ee6052d82c486e13" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Salt is ending a journey that started 3 years ago with the first pull request to add support for PyTest. In the upcoming weeks, Salt will finally switch to PyTest as its sole test runner, and the previous, and heavily customized unittest runner, runtests.py, finally reaches EOL.
+
+Why?
+…" />
+        <meta property="og:description" content="Salt is ending a journey that started 3 years ago with the first pull request to add support for PyTest. In the upcoming weeks, Salt will finally switch to PyTest as its sole test runner, and the previous, and heavily customized unittest runner, runtests.py, finally reaches EOL.
+
+Why?
+…" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="PyTest - A Journey Of 3 Years" />
+    <meta property="og:type" content="article" />
+
+    
+        
+        
+        
+
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+        <meta property="og:image" content="https://blog.algarvio.me/imgs/social-cards/blog_pytest_a_journey_of_3_years.jpg?h=417d6a3dd2438af46c45" />
+        <meta property="og:image:width" content="1400" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://blog.algarvio.me/imgs/social-cards/blog_pytest_a_journey_of_3_years.jpg?h=417d6a3dd2438af46c45" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+    <meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;blog.algarvio.me&#x2F;blog&#x2F;pytest-a-journey-of-3-years&#x2F;" /><meta property="og:site_name" content="~&#x2F;s0undt3ch"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+
+        <noscript><link rel="stylesheet" href="https://blog.algarvio.me/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://blog.algarvio.me/js/initializeTheme.min.js"></script>
+        <script defer src="https://blog.algarvio.me/js/themeSwitcher.min.js"></script><script defer src="https://blog.algarvio.me/search_index.en.js?h=ba7a0712f5929fe48b43"></script>
+        <script defer src="https://blog.algarvio.me/js/searchElasticlunr.min.js?h=5ddcb5767730b9edb560"></script>
+
+        </head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href=https://blog.algarvio.me>~&#x2F;s0undt3ch</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/blog/">
+                                Blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/archive/">
+                                Archive
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/categories/">
+                                Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://blog.algarvio.me/tags/">
+                                Tags
+                                </a>
+                            </li>
+                        <li class="js">
+                        <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                            </svg>
+                        </div>
+                    </li>
+
+                    
+                    
+
+                    <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            PyTest - A Journey Of 3 Years
+        </h1>
+
+        <ul class="meta">
+            
+
+            
+                <li>
+
+
+
+
+
+    
+
+    
+        
+        
+            
+        
+    
+
+    
+    15th
+    
+        Aug 2020
+    
+
+
+</li>
+            
+
+            
+            
+                • <li title="1192 words">6&nbsp;min read</li>
+            •&nbsp;<li>Tags:&nbsp;</li><li><a href=https://blog.algarvio.me/tags/pytest/>Pytest</a></li>
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <p>Salt is ending a journey that started 3 years ago with the <a href="https://github.com/saltstack/salt/pull/39625">first pull request</a> to add support for <a href="https://docs.pytest.org">PyTest</a>. In the upcoming weeks, Salt <a href="https://github.com/saltstack/salt/pull/57897">will finally switch</a> to PyTest as its <strong>sole</strong> test runner, and the previous, and heavily customized unittest runner, <a href="https://github.com/saltstack/salt/blob/v3001.1/tests/runtests.py"><code>runtests.py</code></a>, finally reaches EOL.</p>
+<h2 id="why"><a class="header-anchor no-hover-padding" href="#why" aria-label="Anchor link for: why"><span class="link-icon" aria-hidden="true"></span></a>
+Why?</h2>
+<span id="continue-reading"></span>
+<p><code>runtests.py</code> served us well, but every time the Salt test suite got a new sub-directory, <code>runtests.py</code> had to be updated in order to pick up those new tests. Often enough, those tests, or sub-directories, would be added and never actually run on the CI pipelines because the needed updates to <code>runtests.py</code> were lacking.</p>
+<p>When we needed additional daemons running for the test suite, for example the multimaster tests, again, it required an update to <code>runtests.py</code> and <a href="https://github.com/saltstack/salt/blob/v3001.1/tests/integration/__init__.py#L177-L1494">quite</a> a <a href="https://github.com/saltstack/salt/blob/v3001.1/tests/multimaster/__init__.py#L61-L779">bit</a> of code duplication.</p>
+<p>There needed to be a better way going forward.</p>
+<h3 id="what-s-the-gain"><a class="header-anchor no-hover-padding" href="#what-s-the-gain" aria-label="Anchor link for: what-s-the-gain"><span class="link-icon" aria-hidden="true"></span></a>
+What's The Gain?</h3>
+<p>If you know PyTest, you already know what it brings to the table. If you're not familiar, here are a few highlights:</p>
+<ul>
+<li>
+<p>If you need &quot;something&quot; added to your test suite, it's likely that someone already <a href="https://plugincompat.herokuapp.com/">created a plugin</a> implementing that.</p>
+</li>
+<li>
+<p>Selecting a group of tests, a single test, a test class, is <a href="https://docs.pytest.org/en/stable/usage.html#specifying-tests-selecting-tests">incredibly poweful and simple</a>, especially when compared to <code>runtests.py</code>.</p>
+<ul>
+<li>
+<p>Running all fileserver related tests:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -k fileserver</span>
+</span></code></pre>
+</li>
+<li>
+<p>Running all proxy related tests:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -k proxy</span>
+</span></code></pre>
+</li>
+<li>
+<p>Running windows specific tests(which commonly contain <code>win</code> in either the test module name or test name):</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -k win</span>
+</span></code></pre>
+</li>
+<li>
+<p>Running the failed tests after a test run, stopping at first failure:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> --lf --maxfail=1</span>
+</span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://docs.pytest.org/en/stable/fixture.html">Fixtures!</a></p>
+<p>These are <strong>powerful</strong> and bring code deduplication to the table. The less code you have to maintain, the better, especially when talking about the test suite.
+Imagine you have a big setup routine to prepare for a test. In the <a href="https://docs.python.org/3/library/unittest.html">unittest</a> world you would use <a href="https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp">setUp</a> or <a href="https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUpClass">setUpClass</a>.
+Now, what if that setup routine had to be used in multiple test classes?
+Likely you would either duplicate code or create a base class to reuse the code.
+In PyTest, you create a function, the fixture, and every test that needs that <em>prep work</em> just needs to add the function name(fixture name) as an <a href="https://docs.pytest.org/en/stable/fixture.html#fixtures-as-function-arguments">argument to the test function</a>, and</p>
+<p><img src="https://blog.algarvio.me/blog/pytest-a-journey-of-3-years/magic.webp" alt="Magic" /></p>
+<p>it <em>&quot;Just Works!&quot;</em></p>
+<p>You can even <a href="https://docs.pytest.org/en/stable/fixture.html#fixture-parametrize">parametrize</a> and provide <a href="https://docs.pytest.org/en/stable/fixture.html#scope-sharing-fixtures-across-classes-modules-packages-or-session">scope</a> for the fixtures!</p>
+</li>
+<li>
+<p><a href="https://docs.pytest.org/en/stable/assert.html">Assertions!</a></p>
+<p>PyTest is smart enough that all you need to do on your test function is <a href="https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement"><code>assert</code></a> something. It knows how to handle python's builtin types and <a href="https://docs.pytest.org/en/stable/assert.html#defining-your-own-explanation-for-failed-assertions">more</a> if needed. Also, in case of failure, it adds useful information on the error output to hint as to why it failed. For example:</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ pytest test_assert2.py
+</span><span class="z-text z-plain">=========================== test session starts ============================
+</span><span class="z-text z-plain">platform linux -- Python 3.x.y, pytest-6.x.y, py-1.x.y, pluggy-0.x.y
+</span><span class="z-text z-plain">cachedir: $PYTHON_PREFIX/.pytest_cache
+</span><span class="z-text z-plain">rootdir: $REGENDOC_TMPDIR
+</span><span class="z-text z-plain">collected 1 item
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">test_assert2.py F                                                    [100%]
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">================================= FAILURES =================================
+</span><span class="z-text z-plain">___________________________ test_set_comparison ____________________________
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">    def test_set_comparison():
+</span><span class="z-text z-plain">        set1 = set(&quot;1308&quot;)
+</span><span class="z-text z-plain">        set2 = set(&quot;8035&quot;)
+</span><span class="z-text z-plain">&gt;       assert set1 == set2
+</span><span class="z-text z-plain">E       AssertionError: assert {&#39;0&#39;, &#39;1&#39;, &#39;3&#39;, &#39;8&#39;} == {&#39;0&#39;, &#39;3&#39;, &#39;5&#39;, &#39;8&#39;}
+</span><span class="z-text z-plain">E         Extra items in the left set:
+</span><span class="z-text z-plain">E         &#39;1&#39;
+</span><span class="z-text z-plain">E         Extra items in the right set:
+</span><span class="z-text z-plain">E         &#39;5&#39;
+</span><span class="z-text z-plain">E         Use -v to get the full diff
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">test_assert2.py:6: AssertionError
+</span><span class="z-text z-plain">========================= short test summary info ==========================
+</span><span class="z-text z-plain">FAILED test_assert2.py::test_set_comparison - AssertionError: assert {&#39;0&#39;...
+</span><span class="z-text z-plain">============================ 1 failed in 0.12s =============================
+</span></code></pre>
+</li>
+</ul>
+<p>There's a lot more to gain by using PyTest and also a lot of resources on the internet that you can read to know more.</p>
+<h2 id="what-changes"><a class="header-anchor no-hover-padding" href="#what-changes" aria-label="Anchor link for: what-changes"><span class="link-icon" aria-hidden="true"></span></a>
+What Changes?</h2>
+<p>To begin with, most of what changes is the way we run the test suite.</p>
+<ul>
+<li>
+<p>Run Unit Tests:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> tests/unit/</span>
+</span></code></pre>
+<p>using the deprecated <code>runtests.py</code> the command would have been:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>runtests-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> --unit-tests</span>
+</span></code></pre>
+</li>
+<li>
+<p>Run unit and integration tests for states:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> tests/unit/states/ tests/integration/states/</span>
+</span></code></pre>
+<p>using the deprecated <code>runtests.py</code> the command would have been:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>runtests-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> --state-tests</span>
+</span></code></pre>
+</li>
+<li>
+<p>Run integration tests for an individual module:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> tests/integration/modules/test_virt.py</span>
+</span></code></pre>
+<p>using the deprecated <code>runtests.py</code> the command would have been:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>runtests-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -n integration.modules.test_virt</span>
+</span></code></pre>
+</li>
+<li>
+<p>Run unit tests for an individual module:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> tests/unit/modules/test_virt.py</span>
+</span></code></pre>
+<p>using the deprecated <code>runtests.py</code> the command would have been:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>runtests-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -n unit.modules.test_virt</span>
+</span></code></pre>
+</li>
+<li>
+<p>Run an individual test by using the class and test name:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>tests/integration/modules/test_virt.py::VirtTest::test_default_kvm_profile<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span>
+</span></code></pre>
+<p>using the deprecated <code>runtests.py</code> the command would have been:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>runtests-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -n integration.modules.test_virt.VirtTest.test_default_kvm_profile</span>
+</span></code></pre>
+</li>
+<li>
+<p>Run all macOS related tests(which commonly contain <code>mac</code> on the test module or test name):</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -k mac</span>
+</span></code></pre>
+<p>using the deprecated <code>runtests.py</code> the command would have been, <strong>impossible</strong>.</p>
+</li>
+<li>
+<p>Run all macOS and Windows tests:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -k <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>mac or win<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span></span>
+</span></code></pre>
+<p>using the deprecated <code>runtests.py</code> the command would have been, <strong>impossible</strong>.</p>
+</li>
+<li>
+<p>Run all MySQL related tests(which commonly contain <code>mysql</code> on the test module or test name):</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">nox</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>e</span> <span class="z-string z-quoted z-single z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&#39;</span>pytest-zeromq-3(coverage=False)<span class="z-punctuation z-definition z-string z-end z-shell">&#39;</span></span><span class="z-keyword z-operator z-end-of-options z-shell"> --</span></span><span class="z-meta z-function-call z-arguments z-shell"> -k mysql</span>
+</span></code></pre>
+<p>using the deprecated <code>runtests.py</code> the command would have been, <strong>impossible</strong>.</p>
+</li>
+</ul>
+<p>As the Salt test suite evolves, <a href="https://github.com/saltstack/salt/tree/master/tests/pytests">new tests</a> are going to be written for PyTest. Existing tests will likely be <a href="https://github.com/saltstack/salt/pull/57599">rewritten</a> for PyTest (most, likely not all, since we have +11k tests).</p>
+<h3 id="what-about-my-open-pull-requests"><a class="header-anchor no-hover-padding" href="#what-about-my-open-pull-requests" aria-label="Anchor link for: what-about-my-open-pull-requests"><span class="link-icon" aria-hidden="true"></span></a>
+What About My Open Pull Requests?</h3>
+<p>At this stage, the Salt project will not require open pull requests to rewrite their tests for PyTest.</p>
+<p>For new code submissions, PyTest tests are preferred. In the event that tests are being added to an existing unittest test module, it's really not a problem. We're already super exited that you're contributing code with tests!</p>
+<p>However, please note that <a href="https://docs.python.org/3/library/unittest.html">unittest</a> tests only get a <a href="https://docs.pytest.org/en/stable/unittest.html">subset</a> of PyTest's mighty power.</p>
+<h2 id="what-s-next"><a class="header-anchor no-hover-padding" href="#what-s-next" aria-label="Anchor link for: what-s-next"><span class="link-icon" aria-hidden="true"></span></a>
+What's Next?</h2>
+<p>We will continue to adapt the test suite for PyTest by creating any neccessary foundational code required and rewrting almost <strong>all</strong> of the testing documentation.</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://blog.algarvio.me/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+                <ul><li>
+                        <a class="nav-links no-hover-padding social" rel=""  href=https://blog.algarvio.me/atom.xml>
+                        <img alt="feed" title="feed" src="https://blog.algarvio.me/social_icons/rss.svg">
+                        </a>
+                    </li><li class="js"><a class="nav-links no-hover-padding social" href="#" data-encoded-email="cGVkcm9AYWxnYXJ2aW8ubWUK"><img alt="email" title="email" src="https://blog.algarvio.me/social_icons/email.svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://www.linkedin.com/in/pedroalgarvio>
+                                <img alt=linkedin title=linkedin src="https://blog.algarvio.me/social_icons/linkedin.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://github.com/s0undt3ch/>
+                                <img alt=github title=github src="https://blog.algarvio.me/social_icons/github.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://gitlab.com/s0undt3ch/>
+                                <img alt=gitlab title=gitlab src="https://blog.algarvio.me/social_icons/gitlab.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://twitter.com/s0undt3ch/>
+                                <img alt=twitter title=twitter src="https://blog.algarvio.me/social_icons/twitter.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="nav-links no-hover-padding social" rel=" me"  href=https://stackoverflow.com/users/1258307/s0undt3ch>
+                                <img alt=stack-overflow title=stack-overflow src="https://blog.algarvio.me/social_icons/stack-overflow.svg">
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel=""  href="https:&#x2F;&#x2F;github.com&#x2F;s0undt3ch&#x2F;blog.algarvio.me">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <script src="https://blog.algarvio.me/js/decodeMail.min.js" async></script><div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox", autocomplete="off", spellcheck="false" aria-expanded="false", aria-controls="results-container", placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info">
+                <span id="n-results">0</span>&nbsp;<span id="result-text-singular">result</span>
+                <span id="result-text-plural">results</span>
+            </div>
+        <div id="results" role="listbox"></div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>

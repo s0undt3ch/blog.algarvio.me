@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://blog.algarvio.me/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="en" xml:base="https:&#x2F;&#x2F;blog.algarvio.me&#x2F;">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It's free.</str:about_feeds>
+        <str:visit_the_site>Visit website</str:visit_the_site>
+        <str:recent_posts>Recent posts</str:recent_posts>
+    </str:translations><title>~/s0undt3ch - Irssi Notification</title>
+        <subtitle>Blog posts, rants, things not to forget</subtitle>
+    <link href="https://blog.algarvio.me/tags/irssi-notification/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.algarvio.me"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2007-11-05T22:00:00+00:00</updated>
+    <id>https://blog.algarvio.me/tags/irssi-notification/atom.xml</id><entry xml:lang="en">
+        <title>Irssi Notifier 0.2.0RC5 Released</title>
+        <published>2007-11-05T22:00:00+00:00</published>
+        <updated>2007-11-05T22:00:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/irssi-notifier-020rc5-released/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/irssi-notifier-020rc5-released/</id>
+        </entry><entry xml:lang="en">
+        <title>Irssi Notifier 0.2.0RC4 Released</title>
+        <published>2007-10-18T18:21:00+00:00</published>
+        <updated>2007-10-18T18:21:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/irssi-notifier-020rc4-released/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/irssi-notifier-020rc4-released/</id>
+        </entry><entry xml:lang="en">
+        <title>Irssi Notifier 0.2.0RC2 Released</title>
+        <published>2007-08-19T01:01:00+00:00</published>
+        <updated>2007-08-19T01:01:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/irssi-notifier-020rc2-released/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/irssi-notifier-020rc2-released/</id>
+        </entry><entry xml:lang="en">
+        <title>Irssi Notifier 0.2.0RC1 Released</title>
+        <published>2007-07-24T20:38:00+00:00</published>
+        <updated>2007-07-24T20:38:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/irssi-notifier-020rc1-released/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/irssi-notifier-020rc1-released/</id>
+        </entry><entry xml:lang="en">
+        <title>Irssi Notifier Development Site</title>
+        <published>2007-07-13T17:58:00+00:00</published>
+        <updated>2007-07-13T17:58:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/irssi-notifier-development-site/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/irssi-notifier-development-site/</id>
+        </entry><entry xml:lang="en">
+        <title>Irssi Notification</title>
+        <published>2007-05-10T01:55:00+00:00</published>
+        <updated>2007-09-07T00:00:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/irssi-notification/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/irssi-notification/</id>
+        </entry>
+</feed>

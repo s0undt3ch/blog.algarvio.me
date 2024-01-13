@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://blog.algarvio.me/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="en" xml:base="https:&#x2F;&#x2F;blog.algarvio.me&#x2F;">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It's free.</str:about_feeds>
+        <str:visit_the_site>Visit website</str:visit_the_site>
+        <str:recent_posts>Recent posts</str:recent_posts>
+    </str:translations><title>~/s0undt3ch - TextPress</title>
+        <subtitle>Blog posts, rants, things not to forget</subtitle>
+    <link href="https://blog.algarvio.me/tags/textpress/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.algarvio.me"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2008-02-27T21:19:00+00:00</updated>
+    <id>https://blog.algarvio.me/tags/textpress/atom.xml</id><entry xml:lang="en">
+        <title>TextPress Google Adsense For Search Widget</title>
+        <published>2008-02-27T21:19:00+00:00</published>
+        <updated>2008-02-27T21:19:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/textpress-google-adsense-for-search-widget/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/textpress-google-adsense-for-search-widget/</id>
+        </entry><entry xml:lang="en">
+        <title>Wordpress Is Gone For Good</title>
+        <published>2008-02-25T16:48:00+00:00</published>
+        <updated>2008-02-25T16:48:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/wordpress-is-gone-for-good/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/wordpress-is-gone-for-good/</id>
+        </entry><entry xml:lang="en">
+        <title>TextPress Google Analytics Widget</title>
+        <published>2008-02-25T16:26:00+00:00</published>
+        <updated>2008-02-25T16:26:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/textpress-google-analytics-widget/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/textpress-google-analytics-widget/</id>
+        </entry><entry xml:lang="en">
+        <title>TextPress Blix Theme</title>
+        <published>2008-02-25T16:23:00+00:00</published>
+        <updated>2008-02-25T16:23:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/textpress-blix-theme/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/textpress-blix-theme/</id>
+        </entry><entry xml:lang="en">
+        <title>TextPress Extended Last Comments Widget</title>
+        <published>2008-02-25T16:22:00+00:00</published>
+        <updated>2008-02-25T16:22:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/textpress-extended-last-comments-widget/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/textpress-extended-last-comments-widget/</id>
+        </entry><entry xml:lang="en">
+        <title>TextPress ImageBox Plugin</title>
+        <published>2008-02-25T16:22:00+00:00</published>
+        <updated>2008-02-25T16:22:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/textpress-imagebox-plugin/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/textpress-imagebox-plugin/</id>
+        </entry><entry xml:lang="en">
+        <title>ChowMe TextPress Theme</title>
+        <published>2008-02-25T00:00:00+00:00</published>
+        <updated>2008-02-25T00:00:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/chowme-textpress-theme/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/chowme-textpress-theme/</id>
+        </entry>
+</feed>

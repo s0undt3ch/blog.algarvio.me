@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://blog.algarvio.me/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="en" xml:base="https:&#x2F;&#x2F;blog.algarvio.me&#x2F;">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It's free.</str:about_feeds>
+        <str:visit_the_site>Visit website</str:visit_the_site>
+        <str:recent_posts>Recent posts</str:recent_posts>
+    </str:translations><title>~/s0undt3ch - Pytest</title>
+        <subtitle>Blog posts, rants, things not to forget</subtitle>
+    <link href="https://blog.algarvio.me/tags/pytest/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.algarvio.me"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2020-08-15T00:00:00+00:00</updated>
+    <id>https://blog.algarvio.me/tags/pytest/atom.xml</id><entry xml:lang="en">
+        <title>PyTest - A Journey Of 3 Years</title>
+        <published>2020-08-15T00:00:00+00:00</published>
+        <updated>2020-08-15T00:00:00+00:00</updated>
+        <author>
+            <name>Pedro Algarvio</name>
+        </author>
+        <link rel="alternate" href="https://blog.algarvio.me/blog/pytest-a-journey-of-3-years/" type="text/html"/>
+        <id>https://blog.algarvio.me/blog/pytest-a-journey-of-3-years/</id>
+        <summary type="html">Salt is ending a journey that started 3 years ago with the first pull request to add support for PyTest. In the upcoming weeks, Salt will finally switch to PyTest as its sole test runner, and the previous, and heavily customized unittest runner, runtests.py, finally reaches EOL.
+
+Why?
+…</summary>
+        </entry>
+</feed>
