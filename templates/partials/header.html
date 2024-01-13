@@ -1,15 +1,5 @@
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2YMBDBSXH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H2YMBDBSXH');
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="base" content="{{ config.base_url | safe }}">
@@ -192,5 +182,15 @@
             <script defer src="{{ get_url(path='js/lunr/lunr.' ~ lang ~ '.min.js') | safe }}"></script>
         {%- endif -%}
     {%- endif -%}
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2YMBDBSXH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H2YMBDBSXH');
+    </script>
 
 </head>
