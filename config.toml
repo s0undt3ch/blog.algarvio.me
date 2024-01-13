@@ -270,6 +270,12 @@ allowed_domains = [
     { directive = "script-src", domains = ["'self'"] },
     { directive = "style-src", domains = ["'self'"] },
     { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
+    # Google Analytics
+    { directive = "script-src", domains = ["https://googletagmanager.com", "https://tagmanager.google.com"] },
+    { directive = "style-src", domains = ["https://googletagmanager.com", "https://tagmanager.google.com", "https://fonts.googleapis.com"] },
+    { directive = "img-src", domains = ["https://googletagmanager.com", "https://ssl.gstatic.com", "https://www.gstatic.com"] },
+    { directive = "font-src", domains = ["https://fonts.gstatic.com", "data:"] },
+
 ]
 
 # Custom subset of characters for the header.
