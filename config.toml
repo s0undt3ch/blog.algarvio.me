@@ -265,21 +265,14 @@ footer_menu = []
 # Default config, allows for https remote images and embedding YouTube and Vimeo content.
 # This configuration (along with the right webserver settings) gets an A+ in Mozilla's Observatory: https://observatory.mozilla.org
 allowed_domains = [
-    { directive = "font-src", domains = ["'self'", "data:"] },
-    { directive = "img-src", domains = ["'self'", "https://*", "data:"] },
-    { directive = "script-src", domains = ["'self'"] },
-    { directive = "style-src", domains = ["'self'"] },
-    { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
-    # Google Analytics
-    { directive = "script-src", domains = ["https://googletagmanager.com", "https://tagmanager.google.com"] },
-    { directive = "style-src", domains = ["https://googletagmanager.com", "https://tagmanager.google.com", "https://fonts.googleapis.com"] },
-    { directive = "img-src", domains = ["https://googletagmanager.com", "https://ssl.gstatic.com", "https://www.gstatic.com"] },
-    { directive = "font-src", domains = ["https://fonts.gstatic.com", "data:"] },
-    { directive = "script-src", domains = ["'unsafe-inline'", "https://www.googletagmanager.com"] },
-    { directive = "img-src", domains = ["www.googletagmanager.com"]},
-    { directive = "script-src", domains = ["https://*.googletagmanager.com"] },
-    { directive = "img-src", domains = ["https://*.google-analytics.com", "https://*.analytics.google.com", "https://*.googletagmanager.com",
+    { directive = "font-src", domains = ["'self'", "data:", "https://fonts.gstatic.com"] },
+    { directive = "img-src", domains = ["'self'", "https://*", "data:", "https://googletagmanager.com", "https://ssl.gstatic.com", "https://www.gstatic.com", "www.googletagmanager.com",
+                                        "https://*.google-analytics.com", "https://*.analytics.google.com", "https://*.googletagmanager.com",
                                         "https://*.g.doubleclick.net", "https://*.google.com", "https://*.google.<TLD>"] },
+    { directive = "script-src", domains = ["'self'", "https://*.googletagmanager.com", "https://googletagmanager.com", "https://tagmanager.google.com"] },
+    { directive = "style-src", domains = ["'self'", "https://googletagmanager.com", "https://tagmanager.google.com", "https://fonts.googleapis.com"] },
+    { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
+    # { directive = "script-src", domains = ["'unsafe-inline'", "https://www.googletagmanager.com"] },
     { directive = "connect-src", domains = ["https://*.google-analytics.com", "https://*.analytics.google.com",
                                             "https://*.googletagmanager.com", "https://*.g.doubleclick.net",
                                             "https://*.google.com", "https://*.google.<TLD>"] },
