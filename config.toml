@@ -275,7 +275,8 @@ allowed_domains = [
     { directive = "style-src", domains = ["https://googletagmanager.com", "https://tagmanager.google.com", "https://fonts.googleapis.com"] },
     { directive = "img-src", domains = ["https://googletagmanager.com", "https://ssl.gstatic.com", "https://www.gstatic.com"] },
     { directive = "font-src", domains = ["https://fonts.gstatic.com", "data:"] },
-
+    { directive = "script-src", domains = ["'unsafe-inline'", "https://www.googletagmanager.com"] },
+    { directive = "img-src", domains = ["www.googletagmanager.com"]},
 ]
 
 # Custom subset of characters for the header.
